@@ -26,10 +26,9 @@ import org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfi
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
-import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
 import org.springframework.boot.http.client.ClientHttpRequestFactoryBuilder;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.boot.webmvc.autoconfigure.DispatcherServletAutoConfiguration;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -71,7 +70,6 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 				Arguments.of(//
 						"Test case 01", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withRestClientBuilder()
 							.withClientHttpRequestFactoryBuilder()
 							.withWebClientBuilder()
@@ -80,7 +78,6 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 				Arguments.of(//
 						"Test case 02", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withRestClientBuilder()
 							.withClientHttpRequestFactoryBuilder()
 							.build(), //
@@ -88,7 +85,6 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 				Arguments.of(//
 						"Test case 03", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withRestClientBuilder()
 							.withWebClientBuilder()
 							.build(), //
@@ -96,14 +92,13 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 				Arguments.of(//
 						"Test case 04", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withRestClientBuilder()
+							.withClientHttpRequestFactoryBuilder()
 							.build(), //
-						BlockingRegistrationClient.class),
+						RestClientRegistrationClient.class),
 				Arguments.of(//
 						"Test case 05", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withClientHttpRequestFactoryBuilder()
 							.withWebClientBuilder()
 							.build(), //
@@ -111,21 +106,19 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 				Arguments.of(//
 						"Test case 06", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withClientHttpRequestFactoryBuilder()
 							.build(), //
 						BlockingRegistrationClient.class),
 				Arguments.of(//
 						"Test case 07", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withWebClientBuilder()
 							.build(), //
 						ReactiveRegistrationClient.class),
 				Arguments.of(//
 						"Test case 08", //
 						customizer() //
-							.withRestTemplateBuilder()
+							.withClientHttpRequestFactoryBuilder()
 							.build(), //
 						BlockingRegistrationClient.class),
 				Arguments.of(//
@@ -173,12 +166,6 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 	private static final class ContextRunnerCustomizerBuilder {
 
 		private Function<WebApplicationContextRunner, WebApplicationContextRunner> customizer = (runner) -> runner;
-
-		ContextRunnerCustomizerBuilder withRestTemplateBuilder() {
-			customizer = customizer
-				.andThen((runner) -> runner.withBean(RestTemplateBuilder.class, RestTemplateBuilder::new));
-			return this;
-		}
 
 		ContextRunnerCustomizerBuilder withRestClientBuilder() {
 			customizer = customizer.andThen((runner) -> runner.withBean(RestClient.Builder.class, RestClient::builder));

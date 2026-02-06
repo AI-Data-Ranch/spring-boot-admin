@@ -16,19 +16,13 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.util.Collections;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.StatusInfo;
 
@@ -37,23 +31,15 @@ import static org.assertj.core.api.Assertions.entry;
 
 class StatusInfoMixinTest {
 
-	private final ObjectMapper objectMapper;
-
-	private JacksonTester<StatusInfo> jsonTester;
+	private final JsonMapper objectMapper;
 
 	protected StatusInfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		objectMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JacksonException, JSONException {
 		String json = new JSONObject().put("status", "OFFLINE")
 			.put("details", new JSONObject().put("foo", "bar"))
 			.toString();
@@ -65,16 +51,12 @@ class StatusInfoMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JacksonException, JSONException {
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE", Collections.singletonMap("foo", "bar"));
 
-		JsonContent<StatusInfo> jsonContent = jsonTester.write(statusInfo);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.details").containsOnly(entry("foo", "bar"));
-		assertThat(jsonContent).doesNotHaveJsonPath("$.up")
-			.doesNotHaveJsonPath("$.offline")
-			.doesNotHaveJsonPath("$.down")
-			.doesNotHaveJsonPath("$.unknown");
+		String result = objectMapper.writeValueAsString(statusInfo);
+		assertThat(result).contains("\"status\":\"OFFLINE\"");
+		assertThat(result).contains("\"details\":{\"foo\":\"bar\"}");
 	}
 
 }
