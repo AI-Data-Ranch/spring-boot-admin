@@ -30,7 +30,6 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import tools.jackson.databind.json.JsonMapper;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.ResolvableType;
 import org.springframework.core.io.buffer.DataBuffer;
@@ -40,6 +39,7 @@ import org.springframework.http.codec.json.JacksonJsonEncoder;
 import org.springframework.lang.Nullable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Endpoint;
 

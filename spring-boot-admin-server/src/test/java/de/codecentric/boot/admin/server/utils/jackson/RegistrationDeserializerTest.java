@@ -16,11 +16,11 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import tools.jackson.core.JsonProcessingException;
-import tools.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JsonProcessingException;
+import tools.jackson.databind.ObjectMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Registration;
 

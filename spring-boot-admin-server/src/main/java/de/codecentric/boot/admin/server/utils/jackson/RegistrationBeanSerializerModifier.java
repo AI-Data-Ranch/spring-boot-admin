@@ -19,8 +19,8 @@ package de.codecentric.boot.admin.server.utils.jackson;
 import java.util.List;
 
 import tools.jackson.databind.BeanDescription;
-import tools.jackson.databind.ValueSerializer;
 import tools.jackson.databind.SerializationConfig;
+import tools.jackson.databind.ValueSerializer;
 import tools.jackson.databind.ser.BeanPropertyWriter;
 import tools.jackson.databind.ser.ValueSerializerModifier;
 
