@@ -1,0 +1,6 @@
+pom.xml:35:        <java.version>21</java.version>
+pom.xml:40:        <maven.compiler.source>${java.version}</maven.compiler.source>
+pom.xml:41:        <maven.compiler.target>${java.version}</maven.compiler.target>
+pom.xml:149:                    <source>${java.version}</source>
+pom.xml:191:                    <source>${maven.compiler.source}</source>
+pom.xml:192:                    <target>${maven.compiler.target}</target>
