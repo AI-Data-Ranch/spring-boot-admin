@@ -18,8 +18,14 @@ package de.codecentric.boot.admin.server.utils.jackson;
 
 import tools.jackson.databind.module.SimpleModule;
 
+import de.codecentric.boot.admin.server.domain.values.BuildVersion;
+import de.codecentric.boot.admin.server.domain.values.Endpoint;
+import de.codecentric.boot.admin.server.domain.values.Endpoints;
+import de.codecentric.boot.admin.server.domain.values.Info;
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
 import de.codecentric.boot.admin.server.domain.values.Registration;
+import de.codecentric.boot.admin.server.domain.values.StatusInfo;
+import de.codecentric.boot.admin.server.domain.values.Tags;
 
 /**
  * Jackson 3.x module for Spring Boot Admin Server. This module is needed because Spring
@@ -35,8 +41,27 @@ public class AdminServerModule3 extends SimpleModule {
 
 		// Register serializers and deserializers for value types
 		addDeserializer(Registration.class, new RegistrationDeserializer3());
+
 		addSerializer(InstanceId.class, new InstanceIdSerializer3());
 		addDeserializer(InstanceId.class, new InstanceIdDeserializer3());
+
+		addSerializer(Info.class, new InfoSerializer3());
+		addDeserializer(Info.class, new InfoDeserializer3());
+
+		addSerializer(StatusInfo.class, new StatusInfoSerializer3());
+		addDeserializer(StatusInfo.class, new StatusInfoDeserializer3());
+
+		addSerializer(BuildVersion.class, new BuildVersionSerializer3());
+		addDeserializer(BuildVersion.class, new BuildVersionDeserializer3());
+
+		addSerializer(Tags.class, new TagsSerializer3());
+		addDeserializer(Tags.class, new TagsDeserializer3());
+
+		addSerializer(Endpoint.class, new EndpointSerializer3());
+		addDeserializer(Endpoint.class, new EndpointDeserializer3());
+
+		addSerializer(Endpoints.class, new EndpointsSerializer3());
+		addDeserializer(Endpoints.class, new EndpointsDeserializer3());
 	}
 
 }
