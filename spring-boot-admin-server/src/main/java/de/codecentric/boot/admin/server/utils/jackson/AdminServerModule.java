@@ -16,7 +16,7 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import com.fasterxml.jackson.databind.module.SimpleModule;
+import tools.jackson.databind.module.SimpleModule;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceDeregisteredEvent;
 import de.codecentric.boot.admin.server.domain.events.InstanceEndpointsDetectedEvent;
@@ -40,7 +40,7 @@ import de.codecentric.boot.admin.server.domain.values.Tags;
  * configuration. <pre>
  *     ObjectMapper mapper = new ObjectMapper();
  *     mapper.registerModule(new AdminServerModule());
- *     mapper.registerModule(new JavaTimeModule());
+ *     mapper.registerModule(new DateTimeModule());
  * </pre>
  *
  * @author Stefan Rempfer

@@ -31,8 +31,8 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.client.DefaultServiceInstance;
 import org.springframework.cloud.client.discovery.event.InstanceRegisteredEvent;
+import org.springframework.cloud.client.discovery.simple.InstanceProperties;
 import org.springframework.cloud.client.discovery.simple.SimpleDiscoveryProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -104,10 +104,7 @@ class AdminApplicationDiscoveryTest {
 		// We register the instance by setting static values for the SimpleDiscoveryClient
 		// and issuing a
 		// InstanceRegisteredEvent that makes sure the instance gets registered.
-		DefaultServiceInstance serviceInstance = new DefaultServiceInstance();
-		serviceInstance.setServiceId("Test-Instance");
-		serviceInstance.setUri(URI.create("http://localhost:" + this.port));
-		serviceInstance.getMetadata().put("management.context-path", "/mgmt");
+		InstanceProperties serviceInstance = createServiceInstance();
 		this.simpleDiscovery.getInstances().put("Test-Application", singletonList(serviceInstance));
 
 		this.instance.publishEvent(new InstanceRegisteredEvent<>(new Object(), null));
@@ -177,7 +174,8 @@ class AdminApplicationDiscoveryTest {
 	}
 
 	private WebTestClient createWebClient(int port) {
-		ObjectMapper mapper = new ObjectMapper().registerModule(new JsonOrgModule());
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.registerModule(new JsonOrgModule());
 		return WebTestClient.bindToServer()
 			.baseUrl("http://localhost:" + port)
 			.exchangeStrategies(ExchangeStrategies.builder().codecs((configurer) -> {
@@ -185,6 +183,16 @@ class AdminApplicationDiscoveryTest {
 				configurer.defaultCodecs().jackson2JsonEncoder(new Jackson2JsonEncoder(mapper));
 			}).build())
 			.build();
+	}
+
+	private InstanceProperties createServiceInstance() {
+		InstanceProperties instance = new InstanceProperties();
+		instance.setServiceId("Test-Instance");
+		instance.setHost("localhost");
+		instance.setPort(this.port);
+		instance.setSecure(false);
+		instance.getMetadata().put("management.context-path", "/mgmt");
+		return instance;
 	}
 
 	@AfterEach
