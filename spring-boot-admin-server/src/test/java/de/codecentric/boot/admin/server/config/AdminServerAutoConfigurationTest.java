@@ -17,6 +17,8 @@
 package de.codecentric.boot.admin.server.config;
 
 import com.hazelcast.config.Config;
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
@@ -64,8 +66,10 @@ class AdminServerAutoConfigurationTest {
 	public static class TestHazelcastConfig {
 
 		@Bean
-		public Config config() {
-			return new Config();
+		public HazelcastInstance hazelcastInstance() {
+			Config config = new Config();
+			config.setClusterName("test-cluster-" + System.currentTimeMillis());
+			return Hazelcast.newHazelcastInstance(config);
 		}
 
 		@Bean
