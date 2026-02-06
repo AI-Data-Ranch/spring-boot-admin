@@ -1,0 +1,25 @@
+Task Start Time: 2026-02-06 07:05:30 UTC
+=== Analyzing project structure ===
+Current Spring Boot version: 3.5.10
+Target Spring Boot version: 4.0.0
+Modules found:
+./spring-boot-admin-starter-server/pom.xml
+./spring-boot-admin-client/pom.xml
+./spring-boot-admin-docs/pom.xml
+./spring-boot-admin-server-ui/pom.xml
+./spring-boot-admin-starter-client/pom.xml
+./pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-consul/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-servlet/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-war/pom.xml
+./spring-boot-admin-samples/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-eureka/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-reactive/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-servlet-graalvm/pom.xml
+./spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/pom.xml
+./spring-boot-admin-dependencies/pom.xml
+./spring-boot-admin-build/pom.xml
+./spring-boot-admin-server-cloud/pom.xml
+./spring-boot-admin-server/pom.xml

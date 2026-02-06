@@ -1,0 +1,720 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Spring Boot Admin                                                  [pom]
+[INFO] Spring Boot Admin Dependencies                                     [pom]
+[INFO] Spring Boot Admin Build                                            [pom]
+[INFO] Spring Boot Admin Server                                           [jar]
+[INFO] Spring Boot Admin Server UI                                        [jar]
+[INFO] Spring Boot Admin Client                                           [jar]
+[INFO] Spring Boot Admin Docs                                             [pom]
+[INFO] Spring Boot Admin Server Cloud                                     [jar]
+[INFO] Spring Boot Admin Server Starter                                   [jar]
+[INFO] Spring Boot Admin Client Starter                                   [jar]
+[INFO] Spring Boot Admin Samples                                          [pom]
+[INFO] Spring Boot Admin Server custom UI                                 [jar]
+[INFO] Spring Boot Admin Sample Servlet                                   [jar]
+[INFO] Spring Boot Admin Sample Reactive                                  [jar]
+[INFO] Spring Boot Admin Sample War                                       [war]
+[INFO] Spring Boot Admin Sample Hazelcast                                 [jar]
+[INFO] Spring Boot Admin Sample Eureka                                    [jar]
+[INFO] Spring Boot Admin Sample Consul                                    [jar]
+[INFO] Spring Boot Admin Sample Zookeeper                                 [jar]
+[INFO] 
+[INFO] ------------------< de.codecentric:spring-boot-admin >------------------
+[INFO] Building Spring Boot Admin 3.5.8-SNAPSHOT                         [1/19]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] -----------< de.codecentric:spring-boot-admin-dependencies >------------
+[INFO] Building Spring Boot Admin Dependencies 3.5.8-SNAPSHOT            [2/19]
+[INFO]   from spring-boot-admin-dependencies/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-dependencies ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-dependencies ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-dependencies:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-dependencies ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] ---------------< de.codecentric:spring-boot-admin-build >---------------
+[INFO] Building Spring Boot Admin Build 3.5.8-SNAPSHOT                   [3/19]
+[INFO]   from spring-boot-admin-build/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-build ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-build ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-build ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-build:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-build ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-server >---------------
+[INFO] Building Spring Boot Admin Server 3.5.8-SNAPSHOT                  [4/19]
+[INFO]   from spring-boot-admin-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-server ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-server ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-server:jar:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-server ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 154 source files with javac [debug parameters target 17] to target/classes
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractContentNotifier.java:[105,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/PagerdutyNotifier.java:[136,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/OpsGenieNotifier.java:[176,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/MicrosoftTeamsNotifier.java:[231,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/FeiShuNotifier.java:[203,53] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[76,35] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[79,31] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[80,31] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[475,69] non-varargs call of varargs method with inexact argument type for last parameter;
+  cast to java.lang.Object for a varargs call
+  cast to java.lang.Object[] for a non-varargs call and to suppress this warning
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Some input files use or override a deprecated API.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java uses unchecked or unsafe operations.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-server ---
+[INFO] Copying 27 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-server ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 95 source files with javac [debug parameters target 17] to target/test-classes
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/AbstractAdminApplicationTest.java:[152,84] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/AbstractAdminApplicationTest.java:[152,59] jackson2JsonDecoder(org.springframework.core.codec.Decoder<?>) in org.springframework.http.codec.CodecConfigurer.DefaultCodecs has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/AbstractAdminApplicationTest.java:[153,84] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/AbstractAdminApplicationTest.java:[153,59] jackson2JsonEncoder(org.springframework.core.codec.Encoder<?>) in org.springframework.http.codec.CodecConfigurer.DefaultCodecs has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/BuildVersionMixinTest.java:[37,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/EndpointMixinTest.java:[39,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/EndpointsMixinTest.java:[41,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InfoMixinTest.java:[44,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceDeregisteredEventMixinTest.java:[43,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceEndpointsDetectedEventMixinTest.java:[46,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceEventMixinTest.java:[45,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceIdMixinTest.java:[38,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceInfoChangedEventMixinTest.java:[48,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceRegisteredEventMixinTest.java:[47,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceRegistrationUpdatedEventMixinTest.java:[47,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/InstanceStatusChangedEventMixinTest.java:[48,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializerTest.java:[37,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/StatusInfoMixinTest.java:[42,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/utils/jackson/TagsMixinTest.java:[43,32] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConvertersTest.java:[41,23] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConvertersTest.java:[41,23] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConvertersTest.java:[41,23] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConvertersTest.java:[41,23] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConvertersTest.java:[41,23] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConvertersTest.java:[41,57] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/reactive/InstancesProxyControllerIntegrationTest.java: Some input files use or override a deprecated API.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/test/java/de/codecentric/boot/admin/server/web/reactive/InstancesProxyControllerIntegrationTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-server ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.codecentric.boot.admin.server.AdminApplicationHazelcastTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.881 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminApplicationHazelcastTest
+[ERROR] de.codecentric.boot.admin.server.AdminApplicationHazelcastTest.lifecycle -- Time elapsed: 5.861 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at de.codecentric.boot.admin.server.AdminApplicationHazelcastTest.lifecycle(AdminApplicationHazelcastTest.java:89)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.services.EndpointDetectorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.926 s -- in de.codecentric.boot.admin.server.services.EndpointDetectorTest
+[INFO] Running de.codecentric.boot.admin.server.services.StatusUpdaterTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.096 s -- in de.codecentric.boot.admin.server.services.StatusUpdaterTest
+[INFO] Running de.codecentric.boot.admin.server.services.CloudFoundryInstanceIdGeneratorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in de.codecentric.boot.admin.server.services.CloudFoundryInstanceIdGeneratorTest
+[INFO] Running de.codecentric.boot.admin.server.services.endpoints.ChainingStrategyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in de.codecentric.boot.admin.server.services.endpoints.ChainingStrategyTest
+[INFO] Running de.codecentric.boot.admin.server.services.endpoints.QueryIndexEndpointStrategyTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.664 s -- in de.codecentric.boot.admin.server.services.endpoints.QueryIndexEndpointStrategyTest
+[INFO] Running de.codecentric.boot.admin.server.services.endpoints.ProbeEndpointsStrategyTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.603 s -- in de.codecentric.boot.admin.server.services.endpoints.ProbeEndpointsStrategyTest
+[INFO] Running de.codecentric.boot.admin.server.services.InfoUpdaterTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.770 s -- in de.codecentric.boot.admin.server.services.InfoUpdaterTest
+[INFO] Running de.codecentric.boot.admin.server.services.EndpointDetectionTriggerTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.675 s -- in de.codecentric.boot.admin.server.services.EndpointDetectionTriggerTest
+[INFO] Running de.codecentric.boot.admin.server.services.ApplicationRegistryTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.194 s -- in de.codecentric.boot.admin.server.services.ApplicationRegistryTest
+[INFO] Running de.codecentric.boot.admin.server.services.InstanceRegistryTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in de.codecentric.boot.admin.server.services.InstanceRegistryTest
+[INFO] Running de.codecentric.boot.admin.server.services.IntervalCheckTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.03 s -- in de.codecentric.boot.admin.server.services.IntervalCheckTest
+[INFO] Running de.codecentric.boot.admin.server.services.InfoUpdateTriggerTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.987 s -- in de.codecentric.boot.admin.server.services.InfoUpdateTriggerTest
+[INFO] Running de.codecentric.boot.admin.server.services.StatusUpdateTriggerTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.868 s -- in de.codecentric.boot.admin.server.services.StatusUpdateTriggerTest
+[INFO] Running de.codecentric.boot.admin.server.config.AdminServerCloudFoundryAutoConfigurationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.441 s -- in de.codecentric.boot.admin.server.config.AdminServerCloudFoundryAutoConfigurationTest
+[INFO] Running de.codecentric.boot.admin.server.config.AdminServerPropertiesTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s -- in de.codecentric.boot.admin.server.config.AdminServerPropertiesTest
+[INFO] Running de.codecentric.boot.admin.server.config.AdminServerInstanceWebClientConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 s -- in de.codecentric.boot.admin.server.config.AdminServerInstanceWebClientConfigurationTest
+[INFO] Running de.codecentric.boot.admin.server.config.SpringBootAdminServerEnabledConditionTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 s -- in de.codecentric.boot.admin.server.config.SpringBootAdminServerEnabledConditionTest
+[INFO] Running de.codecentric.boot.admin.server.config.AdminServerNotifierAutoConfigurationTest
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.304 s -- in de.codecentric.boot.admin.server.config.AdminServerNotifierAutoConfigurationTest
+[INFO] Running de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.135 s <<< FAILURE! -- in de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest
+[ERROR] de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.hazelcastConfig -- Time elapsed: 0.074 s <<< FAILURE!
+java.lang.AssertionError: 
+[Bean of type <interface de.codecentric.boot.admin.server.eventstore.InstanceEventStore> from <Started application [AnnotationConfigServletWebApplicationContext@7d3d4b83 id = 'org.springframework.boot.web.context.servlet.AnnotationConfigServletWebApplicationContext@7d3d4b83', applicationName = '', beanDefinitionCount = 102]>] 
+Expecting actual:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore@3c12ee82
+to be an instance of:
+  de.codecentric.boot.admin.server.eventstore.HazelcastEventStore
+but was instance of:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore
+	at de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.lambda$hazelcastConfig$1(AdminServerAutoConfigurationTest.java:59)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.accept(AbstractApplicationContextRunner.java:457)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.consumeAssertableContext(AbstractApplicationContextRunner.java:371)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.lambda$run$1(AbstractApplicationContextRunner.java:349)
+	at org.springframework.boot.test.util.TestPropertyValues.lambda$applyToSystemProperties$0(TestPropertyValues.java:177)
+	at org.springframework.boot.test.util.TestPropertyValues.applyToSystemProperties(TestPropertyValues.java:191)
+	at org.springframework.boot.test.util.TestPropertyValues.applyToSystemProperties(TestPropertyValues.java:176)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.lambda$run$0(AbstractApplicationContextRunner.java:349)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.withContextClassLoader(AbstractApplicationContextRunner.java:377)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.run(AbstractApplicationContextRunner.java:348)
+	at de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.hazelcastConfig(AdminServerAutoConfigurationTest.java:58)
+
+[INFO] Running de.codecentric.boot.admin.server.AdminReactiveApplicationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.474 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminReactiveApplicationTest
+[ERROR] de.codecentric.boot.admin.server.AdminReactiveApplicationTest.lifecycle -- Time elapsed: 2.473 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.EndpointsMixinTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in de.codecentric.boot.admin.server.utils.jackson.EndpointsMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceIdMixinTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceIdMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.RegistrationDeserializerTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in de.codecentric.boot.admin.server.utils.jackson.RegistrationDeserializerTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceEventMixinTest$InstanceEventTests
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceEventMixinTest$InstanceEventTests
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceStatusChangedEventMixinTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceStatusChangedEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceInfoChangedEventMixinTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceInfoChangedEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceRegisteredEventMixinTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceRegisteredEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.StatusInfoMixinTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.utils.jackson.StatusInfoMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.TagsMixinTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.utils.jackson.TagsMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceRegistrationUpdatedEventMixinTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceRegistrationUpdatedEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InfoMixinTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.utils.jackson.InfoMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.EndpointMixinTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in de.codecentric.boot.admin.server.utils.jackson.EndpointMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceDeregisteredEventMixinTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceDeregisteredEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.InstanceEndpointsDetectedEventMixinTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in de.codecentric.boot.admin.server.utils.jackson.InstanceEndpointsDetectedEventMixinTest
+[INFO] Running de.codecentric.boot.admin.server.utils.jackson.BuildVersionMixinTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.utils.jackson.BuildVersionMixinTest
+[INFO] Running de.codecentric.boot.admin.server.eventstore.HazelcastEventStoreWithClientConfigTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.108 s -- in de.codecentric.boot.admin.server.eventstore.HazelcastEventStoreWithClientConfigTest
+[INFO] Running de.codecentric.boot.admin.server.eventstore.HazelcastEventStoreTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.436 s -- in de.codecentric.boot.admin.server.eventstore.HazelcastEventStoreTest
+[INFO] Running de.codecentric.boot.admin.server.eventstore.InMemoryEventStoreTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in de.codecentric.boot.admin.server.eventstore.InMemoryEventStoreTest
+[INFO] Running de.codecentric.boot.admin.server.eventstore.HazelcastEventStoreWithServerConfigTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.371 s -- in de.codecentric.boot.admin.server.eventstore.HazelcastEventStoreWithServerConfigTest
+[INFO] Running de.codecentric.boot.admin.server.AdminServletApplicationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.546 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminServletApplicationTest
+[ERROR] de.codecentric.boot.admin.server.AdminServletApplicationTest.lifecycle -- Time elapsed: 3.546 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.notify.RocketChatNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.317 s -- in de.codecentric.boot.admin.server.notify.RocketChatNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.MattermostNotifierTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in de.codecentric.boot.admin.server.notify.MattermostNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.HipchatNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in de.codecentric.boot.admin.server.notify.HipchatNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.OpsGenieNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in de.codecentric.boot.admin.server.notify.OpsGenieNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.FeiShuNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in de.codecentric.boot.admin.server.notify.FeiShuNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.DiscordNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in de.codecentric.boot.admin.server.notify.DiscordNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.HazelcastNotificationTriggerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.304 s -- in de.codecentric.boot.admin.server.notify.HazelcastNotificationTriggerTest
+[INFO] Running de.codecentric.boot.admin.server.notify.DingTalkNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in de.codecentric.boot.admin.server.notify.DingTalkNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.CompositeNotifierTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.notify.CompositeNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.LetsChatNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.notify.LetsChatNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.WebexNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in de.codecentric.boot.admin.server.notify.WebexNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.filter.FilteringNotifierTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in de.codecentric.boot.admin.server.notify.filter.FilteringNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.filter.InstanceIdNotificationFilterTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in de.codecentric.boot.admin.server.notify.filter.InstanceIdNotificationFilterTest
+[INFO] Running de.codecentric.boot.admin.server.notify.filter.InstanceNameNotificationFilterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.111 s -- in de.codecentric.boot.admin.server.notify.filter.InstanceNameNotificationFilterTest
+[INFO] Running de.codecentric.boot.admin.server.notify.filter.web.NotificationFilterControllerTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s -- in de.codecentric.boot.admin.server.notify.filter.web.NotificationFilterControllerTest
+[INFO] Running de.codecentric.boot.admin.server.notify.MicrosoftTeamsNotifierTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s -- in de.codecentric.boot.admin.server.notify.MicrosoftTeamsNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.NotificationTriggerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.229 s -- in de.codecentric.boot.admin.server.notify.NotificationTriggerTest
+[INFO] Running de.codecentric.boot.admin.server.notify.RemindingNotifierTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 s -- in de.codecentric.boot.admin.server.notify.RemindingNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.PagerdutyNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in de.codecentric.boot.admin.server.notify.PagerdutyNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.TelegramNotifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in de.codecentric.boot.admin.server.notify.TelegramNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.MailNotifierIntegrationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.762 s -- in de.codecentric.boot.admin.server.notify.MailNotifierIntegrationTest
+[INFO] Running de.codecentric.boot.admin.server.notify.MailNotifierTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.327 s -- in de.codecentric.boot.admin.server.notify.MailNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.notify.SlackNotifierTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in de.codecentric.boot.admin.server.notify.SlackNotifierTest
+[INFO] Running de.codecentric.boot.admin.server.web.InstancesControllerIntegrationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.674 s -- in de.codecentric.boot.admin.server.web.InstancesControllerIntegrationTest
+[INFO] Running de.codecentric.boot.admin.server.web.servlet.InstancesProxyControllerIntegrationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.137 s -- in de.codecentric.boot.admin.server.web.servlet.InstancesProxyControllerIntegrationTest
+[INFO] Running de.codecentric.boot.admin.server.web.reactive.InstancesProxyControllerIntegrationTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.72 s -- in de.codecentric.boot.admin.server.web.reactive.InstancesProxyControllerIntegrationTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.CompositeHttpHeadersProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in de.codecentric.boot.admin.server.web.client.CompositeHttpHeadersProviderTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.cookies.CookieStoreCleanupTriggerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.315 s -- in de.codecentric.boot.admin.server.web.client.cookies.CookieStoreCleanupTriggerTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.cookies.JdkPerInstanceCookieStoreTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s -- in de.codecentric.boot.admin.server.web.client.cookies.JdkPerInstanceCookieStoreTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.BasicAuthHttpHeaderProviderTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.web.client.BasicAuthHttpHeaderProviderTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.reactive.CompositeReactiveHttpHeadersProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in de.codecentric.boot.admin.server.web.client.reactive.CompositeReactiveHttpHeadersProviderTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceWebClientTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.web.client.InstanceWebClientTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.LegacyEndpointConvertersTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in de.codecentric.boot.admin.server.web.client.LegacyEndpointConvertersTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$AddDefaultHeaders
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$AddDefaultHeaders
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$AddHeaders
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$AddHeaders
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$ConvertLegacyEndpoints
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$ConvertLegacyEndpoints
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$AddHeadersReactive
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$AddHeadersReactive
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$Retry
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$Retry
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$RewriteEndpointUrl
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$RewriteEndpointUrl
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$Timeout
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.004 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$Timeout
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$LogfileAcceptWorkaround
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$LogfileAcceptWorkaround
+[INFO] Running de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$CookieHandling
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest$CookieHandling
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.047 s -- in de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunctionsTest
+[INFO] Running de.codecentric.boot.admin.server.web.client.CloudFoundryHttpHeaderProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in de.codecentric.boot.admin.server.web.client.CloudFoundryHttpHeaderProviderTest
+[INFO] Running de.codecentric.boot.admin.server.web.PathUtilsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in de.codecentric.boot.admin.server.web.PathUtilsTest
+[INFO] Running de.codecentric.boot.admin.server.domain.entities.EventsourcingInstanceRepositoryTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in de.codecentric.boot.admin.server.domain.entities.EventsourcingInstanceRepositoryTest
+[INFO] Running de.codecentric.boot.admin.server.domain.entities.SnapshottingInstanceRepositoryTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.140 s -- in de.codecentric.boot.admin.server.domain.entities.SnapshottingInstanceRepositoryTest
+[INFO] Running de.codecentric.boot.admin.server.domain.entities.InstanceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in de.codecentric.boot.admin.server.domain.entities.InstanceTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.InstanceIdTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in de.codecentric.boot.admin.server.domain.values.InstanceIdTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.RegistrationTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in de.codecentric.boot.admin.server.domain.values.RegistrationTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.TagsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in de.codecentric.boot.admin.server.domain.values.TagsTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.StatusInfoTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in de.codecentric.boot.admin.server.domain.values.StatusInfoTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.EndpointTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in de.codecentric.boot.admin.server.domain.values.EndpointTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.EndpointsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in de.codecentric.boot.admin.server.domain.values.EndpointsTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.InfoTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in de.codecentric.boot.admin.server.domain.values.InfoTest
+[INFO] Running de.codecentric.boot.admin.server.domain.values.BuildVersionTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in de.codecentric.boot.admin.server.domain.values.BuildVersionTest
+[INFO] Running de.codecentric.boot.admin.server.AdminApplicationHazelcastTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.563 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminApplicationHazelcastTest
+[ERROR] de.codecentric.boot.admin.server.AdminApplicationHazelcastTest.lifecycle -- Time elapsed: 2.561 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at de.codecentric.boot.admin.server.AdminApplicationHazelcastTest.lifecycle(AdminApplicationHazelcastTest.java:89)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.AdminServletApplicationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.377 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminServletApplicationTest
+[ERROR] de.codecentric.boot.admin.server.AdminServletApplicationTest.lifecycle -- Time elapsed: 2.375 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.042 s <<< FAILURE! -- in de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest
+[ERROR] de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.hazelcastConfig -- Time elapsed: 0.037 s <<< FAILURE!
+java.lang.AssertionError: 
+[Bean of type <interface de.codecentric.boot.admin.server.eventstore.InstanceEventStore> from <Started application [AnnotationConfigServletWebApplicationContext@4a87c701 id = 'org.springframework.boot.web.context.servlet.AnnotationConfigServletWebApplicationContext@4a87c701', applicationName = '', beanDefinitionCount = 102]>] 
+Expecting actual:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore@65280649
+to be an instance of:
+  de.codecentric.boot.admin.server.eventstore.HazelcastEventStore
+but was instance of:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore
+	at de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.lambda$hazelcastConfig$1(AdminServerAutoConfigurationTest.java:59)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.accept(AbstractApplicationContextRunner.java:457)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.consumeAssertableContext(AbstractApplicationContextRunner.java:371)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.lambda$run$1(AbstractApplicationContextRunner.java:349)
+	at org.springframework.boot.test.util.TestPropertyValues.lambda$applyToSystemProperties$0(TestPropertyValues.java:177)
+	at org.springframework.boot.test.util.TestPropertyValues.applyToSystemProperties(TestPropertyValues.java:191)
+	at org.springframework.boot.test.util.TestPropertyValues.applyToSystemProperties(TestPropertyValues.java:176)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.lambda$run$0(AbstractApplicationContextRunner.java:349)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.withContextClassLoader(AbstractApplicationContextRunner.java:377)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.run(AbstractApplicationContextRunner.java:348)
+	at de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.hazelcastConfig(AdminServerAutoConfigurationTest.java:58)
+
+[INFO] Running de.codecentric.boot.admin.server.AdminReactiveApplicationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.264 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminReactiveApplicationTest
+[ERROR] de.codecentric.boot.admin.server.AdminReactiveApplicationTest.lifecycle -- Time elapsed: 2.262 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.AdminApplicationHazelcastTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.443 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminApplicationHazelcastTest
+[ERROR] de.codecentric.boot.admin.server.AdminApplicationHazelcastTest.lifecycle -- Time elapsed: 2.441 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at de.codecentric.boot.admin.server.AdminApplicationHazelcastTest.lifecycle(AdminApplicationHazelcastTest.java:89)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.AdminServletApplicationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.401 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminServletApplicationTest
+[ERROR] de.codecentric.boot.admin.server.AdminServletApplicationTest.lifecycle -- Time elapsed: 2.399 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] Running de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.049 s <<< FAILURE! -- in de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest
+[ERROR] de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.hazelcastConfig -- Time elapsed: 0.045 s <<< FAILURE!
+java.lang.AssertionError: 
+[Bean of type <interface de.codecentric.boot.admin.server.eventstore.InstanceEventStore> from <Started application [AnnotationConfigServletWebApplicationContext@674d08e id = 'org.springframework.boot.web.context.servlet.AnnotationConfigServletWebApplicationContext@674d08e', applicationName = '', beanDefinitionCount = 102]>] 
+Expecting actual:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore@589628a4
+to be an instance of:
+  de.codecentric.boot.admin.server.eventstore.HazelcastEventStore
+but was instance of:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore
+	at de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.lambda$hazelcastConfig$1(AdminServerAutoConfigurationTest.java:59)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.accept(AbstractApplicationContextRunner.java:457)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.consumeAssertableContext(AbstractApplicationContextRunner.java:371)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.lambda$run$1(AbstractApplicationContextRunner.java:349)
+	at org.springframework.boot.test.util.TestPropertyValues.lambda$applyToSystemProperties$0(TestPropertyValues.java:177)
+	at org.springframework.boot.test.util.TestPropertyValues.applyToSystemProperties(TestPropertyValues.java:191)
+	at org.springframework.boot.test.util.TestPropertyValues.applyToSystemProperties(TestPropertyValues.java:176)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.lambda$run$0(AbstractApplicationContextRunner.java:349)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.withContextClassLoader(AbstractApplicationContextRunner.java:377)
+	at org.springframework.boot.test.context.runner.AbstractApplicationContextRunner.run(AbstractApplicationContextRunner.java:348)
+	at de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.hazelcastConfig(AdminServerAutoConfigurationTest.java:58)
+
+[INFO] Running de.codecentric.boot.admin.server.AdminReactiveApplicationTest
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.297 s <<< FAILURE! -- in de.codecentric.boot.admin.server.AdminReactiveApplicationTest
+[ERROR] de.codecentric.boot.admin.server.AdminReactiveApplicationTest.lifecycle -- Time elapsed: 2.296 s <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.info.test"
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:350)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:148)
+	at org.springframework.test.web.support.AbstractJsonPathAssertions.isEqualTo(AbstractJsonPathAssertions.java:74)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.getInstance(AbstractAdminApplicationTest.java:107)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lambda$lifecycle$5(AbstractAdminApplicationTest.java:65)
+	at reactor.test.DefaultStepVerifierBuilder$TaskEvent.run(DefaultStepVerifierBuilder.java:2422)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.waitTaskEvent(DefaultStepVerifierBuilder.java:1727)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.pollTaskEventOrComplete(DefaultStepVerifierBuilder.java:1748)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultVerifySubscriber.verify(DefaultStepVerifierBuilder.java:1320)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:845)
+	at de.codecentric.boot.admin.server.AbstractAdminApplicationTest.lifecycle(AbstractAdminApplicationTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $['info']['test']
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR] de.codecentric.boot.admin.server.AdminApplicationHazelcastTest.lifecycle
+[ERROR]   Run 1: AdminApplicationHazelcastTest.lifecycle:89->AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[ERROR]   Run 2: AdminApplicationHazelcastTest.lifecycle:89->AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[ERROR]   Run 3: AdminApplicationHazelcastTest.lifecycle:89->AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[INFO] 
+[ERROR] de.codecentric.boot.admin.server.AdminReactiveApplicationTest.lifecycle
+[ERROR]   Run 1: AdminReactiveApplicationTest>AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[ERROR]   Run 2: AdminReactiveApplicationTest>AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[ERROR]   Run 3: AdminReactiveApplicationTest>AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[INFO] 
+[ERROR] de.codecentric.boot.admin.server.AdminServletApplicationTest.lifecycle
+[ERROR]   Run 1: AdminServletApplicationTest>AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[ERROR]   Run 2: AdminServletApplicationTest>AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[ERROR]   Run 3: AdminServletApplicationTest>AbstractAdminApplicationTest.lifecycle:72->AbstractAdminApplicationTest.lambda$lifecycle$5:65->AbstractAdminApplicationTest.getInstance:107 No value at JSON path "$.info.test"
+[INFO] 
+[ERROR] de.codecentric.boot.admin.server.config.AdminServerAutoConfigurationTest.hazelcastConfig
+[ERROR]   Run 1: AdminServerAutoConfigurationTest.hazelcastConfig:58->lambda$hazelcastConfig$1:59 [Bean of type <interface de.codecentric.boot.admin.server.eventstore.InstanceEventStore> from <Started application [AnnotationConfigServletWebApplicationContext@7d3d4b83 id = 'org.springframework.boot.web.context.servlet.AnnotationConfigServletWebApplicationContext@7d3d4b83', applicationName = '', beanDefinitionCount = 102]>] 
+Expecting actual:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore@3c12ee82
+to be an instance of:
+  de.codecentric.boot.admin.server.eventstore.HazelcastEventStore
+but was instance of:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore
+[ERROR]   Run 2: AdminServerAutoConfigurationTest.hazelcastConfig:58->lambda$hazelcastConfig$1:59 [Bean of type <interface de.codecentric.boot.admin.server.eventstore.InstanceEventStore> from <Started application [AnnotationConfigServletWebApplicationContext@4a87c701 id = 'org.springframework.boot.web.context.servlet.AnnotationConfigServletWebApplicationContext@4a87c701', applicationName = '', beanDefinitionCount = 102]>] 
+Expecting actual:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore@65280649
+to be an instance of:
+  de.codecentric.boot.admin.server.eventstore.HazelcastEventStore
+but was instance of:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore
+[ERROR]   Run 3: AdminServerAutoConfigurationTest.hazelcastConfig:58->lambda$hazelcastConfig$1:59 [Bean of type <interface de.codecentric.boot.admin.server.eventstore.InstanceEventStore> from <Started application [AnnotationConfigServletWebApplicationContext@674d08e id = 'org.springframework.boot.web.context.servlet.AnnotationConfigServletWebApplicationContext@674d08e', applicationName = '', beanDefinitionCount = 102]>] 
+Expecting actual:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore@589628a4
+to be an instance of:
+  de.codecentric.boot.admin.server.eventstore.HazelcastEventStore
+but was instance of:
+  de.codecentric.boot.admin.server.eventstore.InMemoryEventStore
+[INFO] 
+[INFO] 
+[ERROR] Tests run: 389, Failures: 4, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Spring Boot Admin 3.5.8-SNAPSHOT:
+[INFO] 
+[INFO] Spring Boot Admin .................................. SUCCESS [  2.307 s]
+[INFO] Spring Boot Admin Dependencies ..................... SUCCESS [  0.074 s]
+[INFO] Spring Boot Admin Build ............................ SUCCESS [  0.179 s]
+[INFO] Spring Boot Admin Server ........................... FAILURE [02:19 min]
+[INFO] Spring Boot Admin Server UI ........................ SKIPPED
+[INFO] Spring Boot Admin Client ........................... SKIPPED
+[INFO] Spring Boot Admin Docs ............................. SKIPPED
+[INFO] Spring Boot Admin Server Cloud ..................... SKIPPED
+[INFO] Spring Boot Admin Server Starter ................... SKIPPED
+[INFO] Spring Boot Admin Client Starter ................... SKIPPED
+[INFO] Spring Boot Admin Samples .......................... SKIPPED
+[INFO] Spring Boot Admin Server custom UI ................. SKIPPED
+[INFO] Spring Boot Admin Sample Servlet ................... SKIPPED
+[INFO] Spring Boot Admin Sample Reactive .................. SKIPPED
+[INFO] Spring Boot Admin Sample War ....................... SKIPPED
+[INFO] Spring Boot Admin Sample Hazelcast ................. SKIPPED
+[INFO] Spring Boot Admin Sample Eureka .................... SKIPPED
+[INFO] Spring Boot Admin Sample Consul .................... SKIPPED
+[INFO] Spring Boot Admin Sample Zookeeper ................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:22 min
+[INFO] Finished at: 2026-02-06T19:11:11Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.4:test (default-test) on project spring-boot-admin-server: There are test failures.
+[ERROR] 
+[ERROR] See /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-server
