@@ -65,6 +65,10 @@ public class AdminServerProperties {
 			"threaddump", "jolokia", "info", "logfile", "refresh", "flyway", "liquibase", "heapdump", "loggers",
 			"auditevents", "mappings", "scheduledtasks", "configprops", "caches", "beans" };
 
+	public String getContextPath() {
+		return this.contextPath;
+	}
+
 	public void setContextPath(String contextPath) {
 		this.contextPath = PathUtils.normalizePath(contextPath);
 	}

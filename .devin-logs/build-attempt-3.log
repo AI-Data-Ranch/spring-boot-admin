@@ -1,0 +1,335 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Spring Boot Admin                                                  [pom]
+[INFO] Spring Boot Admin Dependencies                                     [pom]
+[INFO] Spring Boot Admin Build                                            [pom]
+[INFO] Spring Boot Admin Server                                           [jar]
+[INFO] Spring Boot Admin Server UI                                        [jar]
+[INFO] Spring Boot Admin Client                                           [jar]
+[INFO] Spring Boot Admin Docs                                             [pom]
+[INFO] Spring Boot Admin Server Cloud                                     [jar]
+[INFO] Spring Boot Admin Server Starter                                   [jar]
+[INFO] Spring Boot Admin Client Starter                                   [jar]
+[INFO] Spring Boot Admin Samples                                          [pom]
+[INFO] Spring Boot Admin Server custom UI                                 [jar]
+[INFO] Spring Boot Admin Sample Servlet                                   [jar]
+[INFO] Spring Boot Admin Sample Reactive                                  [jar]
+[INFO] Spring Boot Admin Sample War                                       [war]
+[INFO] Spring Boot Admin Sample Hazelcast                                 [jar]
+[INFO] Spring Boot Admin Sample Eureka                                    [jar]
+[INFO] Spring Boot Admin Sample Consul                                    [jar]
+[INFO] Spring Boot Admin Sample Zookeeper                                 [jar]
+[INFO] 
+[INFO] ------------------< de.codecentric:spring-boot-admin >------------------
+[INFO] Building Spring Boot Admin 3.5.8-SNAPSHOT                         [1/19]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin/3.5.8-SNAPSHOT/spring-boot-admin-3.5.8-SNAPSHOT.pom
+[INFO] 
+[INFO] -----------< de.codecentric:spring-boot-admin-dependencies >------------
+[INFO] Building Spring Boot Admin Dependencies 3.5.8-SNAPSHOT            [2/19]
+[INFO]   from spring-boot-admin-dependencies/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-dependencies ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-dependencies ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-dependencies:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-dependencies ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-dependencies ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-dependencies/3.5.8-SNAPSHOT/spring-boot-admin-dependencies-3.5.8-SNAPSHOT.pom
+[INFO] 
+[INFO] ---------------< de.codecentric:spring-boot-admin-build >---------------
+[INFO] Building Spring Boot Admin Build 3.5.8-SNAPSHOT                   [3/19]
+[INFO]   from spring-boot-admin-build/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-build ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-build ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-build:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-build ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-build ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-build/3.5.8-SNAPSHOT/spring-boot-admin-build-3.5.8-SNAPSHOT.pom
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-server >---------------
+[INFO] Building Spring Boot Admin Server 3.5.8-SNAPSHOT                  [4/19]
+[INFO]   from spring-boot-admin-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-server ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-server ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-server:jar:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-server ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-server ---
+[INFO] Copying 27 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-server ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-server ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-3.5.8-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-server ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-3.5.8-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-server ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Spring Boot Admin 3.5.8-SNAPSHOT:
+[INFO] 
+[INFO] Spring Boot Admin .................................. SUCCESS [  2.435 s]
+[INFO] Spring Boot Admin Dependencies ..................... SUCCESS [  0.065 s]
+[INFO] Spring Boot Admin Build ............................ SUCCESS [  0.166 s]
+[INFO] Spring Boot Admin Server ........................... FAILURE [ 12.237 s]
+[INFO] Spring Boot Admin Server UI ........................ SKIPPED
+[INFO] Spring Boot Admin Client ........................... SKIPPED
+[INFO] Spring Boot Admin Docs ............................. SKIPPED
+[INFO] Spring Boot Admin Server Cloud ..................... SKIPPED
+[INFO] Spring Boot Admin Server Starter ................... SKIPPED
+[INFO] Spring Boot Admin Client Starter ................... SKIPPED
+[INFO] Spring Boot Admin Samples .......................... SKIPPED
+[INFO] Spring Boot Admin Server custom UI ................. SKIPPED
+[INFO] Spring Boot Admin Sample Servlet ................... SKIPPED
+[INFO] Spring Boot Admin Sample Reactive .................. SKIPPED
+[INFO] Spring Boot Admin Sample War ....................... SKIPPED
+[INFO] Spring Boot Admin Sample Hazelcast ................. SKIPPED
+[INFO] Spring Boot Admin Sample Eureka .................... SKIPPED
+[INFO] Spring Boot Admin Sample Consul .................... SKIPPED
+[INFO] Spring Boot Admin Sample Zookeeper ................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.906 s
+[INFO] Finished at: 2026-02-06T07:09:04Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-javadoc-plugin:3.12.0:jar (attach-javadocs) on project spring-boot-admin-server: MavenReportException: Error while generating Javadoc: 
+[ERROR] Exit code: 1
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerNotifierAutoConfiguration.java:36: error: package org.springframework.boot.autoconfigure.mail does not exist
+[ERROR] import org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration;
+[ERROR]                                                   ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/FeiShuNotifier.java:32: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.ObjectMapper;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerWebConfiguration.java:19: error: package com.fasterxml.jackson.databind.module does not exist
+[ERROR] import com.fasterxml.jackson.databind.module.SimpleModule;
+[ERROR]                                             ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerWebConfiguration.java:23: error: package org.springframework.boot.autoconfigure.web.servlet does not exist
+[ERROR] import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
+[ERROR]                                                          ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerWebConfiguration.java:48: error: cannot find symbol
+[ERROR] 	public SimpleModule adminJacksonModule() {
+[ERROR] 	       ^
+[ERROR]   symbol:   class SimpleModule
+[ERROR]   location: class AdminServerWebConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:31: error: package org.springframework.boot.autoconfigure.hazelcast does not exist
+[ERROR] import org.springframework.boot.autoconfigure.hazelcast.HazelcastAutoConfiguration;
+[ERROR]                                                        ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:27: error: package org.springframework.boot.autoconfigure.web.reactive.function.client does not exist
+[ERROR] import org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration;
+[ERROR]                                                                           ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:22: error: package com.fasterxml.jackson.core does not exist
+[ERROR] import com.fasterxml.jackson.core.JsonParser;
+[ERROR]                                  ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:23: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.DeserializationContext;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:24: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.JsonNode;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:25: error: package com.fasterxml.jackson.databind.deser.std does not exist
+[ERROR] import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+[ERROR]                                                ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:29: error: cannot find symbol
+[ERROR] public class RegistrationDeserializer extends StdDeserializer<Registration> {
+[ERROR]                                               ^
+[ERROR]   symbol: class StdDeserializer
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:39: error: cannot find symbol
+[ERROR] 	public Registration deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
+[ERROR] 	                                ^
+[ERROR]   symbol:   class JsonParser
+[ERROR]   location: class RegistrationDeserializer
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:39: error: cannot find symbol
+[ERROR] 	public Registration deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
+[ERROR] 	                                              ^
+[ERROR]   symbol:   class DeserializationContext
+[ERROR]   location: class RegistrationDeserializer
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationDeserializer.java:66: error: cannot find symbol
+[ERROR] 	private String firstNonNullAsText(JsonNode node, String... fieldNames) {
+[ERROR] 	                                  ^
+[ERROR]   symbol:   class JsonNode
+[ERROR]   location: class RegistrationDeserializer
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/AdminServerModule.java:48: error: cannot find symbol
+[ERROR] public class AdminServerModule extends SimpleModule {
+[ERROR]                                        ^
+[ERROR]   symbol: class SimpleModule
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:21: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.BeanDescription;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:22: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.JsonSerializer;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:23: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.SerializationConfig;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:24: error: package com.fasterxml.jackson.databind.ser does not exist
+[ERROR] import com.fasterxml.jackson.databind.ser.BeanPropertyWriter;
+[ERROR]                                          ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:25: error: package com.fasterxml.jackson.databind.ser does not exist
+[ERROR] import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
+[ERROR]                                          ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:29: error: cannot find symbol
+[ERROR] public class RegistrationBeanSerializerModifier extends BeanSerializerModifier {
+[ERROR]                                                         ^
+[ERROR]   symbol: class BeanSerializerModifier
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:31: error: cannot find symbol
+[ERROR] 	private final JsonSerializer<Object> metadataSerializer;
+[ERROR] 	              ^
+[ERROR]   symbol:   class JsonSerializer
+[ERROR]   location: class RegistrationBeanSerializerModifier
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:25: error: package com.fasterxml.jackson.core does not exist
+[ERROR] import com.fasterxml.jackson.core.JsonGenerator;
+[ERROR]                                  ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:26: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.SerializerProvider;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:27: error: package com.fasterxml.jackson.databind.ser.std does not exist
+[ERROR] import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+[ERROR]                                              ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:30: error: cannot find symbol
+[ERROR] public class SanitizingMapSerializer extends StdSerializer<Map<String, String>> {
+[ERROR]                                              ^
+[ERROR]   symbol: class StdSerializer
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:39: error: cannot find symbol
+[ERROR] 	public List<BeanPropertyWriter> changeProperties(SerializationConfig config, BeanDescription beanDesc,
+[ERROR] 	                                                 ^
+[ERROR]   symbol:   class SerializationConfig
+[ERROR]   location: class RegistrationBeanSerializerModifier
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:39: error: cannot find symbol
+[ERROR] 	public List<BeanPropertyWriter> changeProperties(SerializationConfig config, BeanDescription beanDesc,
+[ERROR] 	                                                                             ^
+[ERROR]   symbol:   class BeanDescription
+[ERROR]   location: class RegistrationBeanSerializerModifier
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:40: error: cannot find symbol
+[ERROR] 			List<BeanPropertyWriter> beanProperties) {
+[ERROR] 			     ^
+[ERROR]   symbol:   class BeanPropertyWriter
+[ERROR]   location: class RegistrationBeanSerializerModifier
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/RegistrationBeanSerializerModifier.java:39: error: cannot find symbol
+[ERROR] 	public List<BeanPropertyWriter> changeProperties(SerializationConfig config, BeanDescription beanDesc,
+[ERROR] 	            ^
+[ERROR]   symbol:   class BeanPropertyWriter
+[ERROR]   location: class RegistrationBeanSerializerModifier
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:48: error: cannot find symbol
+[ERROR] 	public void serialize(Map<String, String> value, JsonGenerator gen, SerializerProvider provider)
+[ERROR] 	                                                 ^
+[ERROR]   symbol:   class JsonGenerator
+[ERROR]   location: class SanitizingMapSerializer
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:48: error: cannot find symbol
+[ERROR] 	public void serialize(Map<String, String> value, JsonGenerator gen, SerializerProvider provider)
+[ERROR] 	                                                                    ^
+[ERROR]   symbol:   class SerializerProvider
+[ERROR]   location: class SanitizingMapSerializer
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:33: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.ObjectMapper;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:34: error: package com.fasterxml.jackson.databind does not exist
+[ERROR] import com.fasterxml.jackson.databind.SerializationFeature;
+[ERROR]                                      ^
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerNotifierAutoConfiguration.java:80: error: cannot find symbol
+[ERROR] @AutoConfigureAfter({ MailSenderAutoConfiguration.class })
+[ERROR]                       ^
+[ERROR]   symbol: class MailSenderAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerWebConfiguration.java:99: error: cannot find symbol
+[ERROR] 	@AutoConfigureAfter(WebMvcAutoConfiguration.class)
+[ERROR] 	                    ^
+[ERROR]   symbol:   class WebMvcAutoConfiguration
+[ERROR]   location: class AdminServerWebConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:49: error: cannot find symbol
+[ERROR] @AutoConfigureAfter(HazelcastAutoConfiguration.class)
+[ERROR]                     ^
+[ERROR]   symbol: class HazelcastAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:62: error: cannot find symbol
+[ERROR] @AutoConfigureAfter({ WebClientAutoConfiguration.class })
+[ERROR]                       ^
+[ERROR]   symbol: class WebClientAutoConfiguration
+[ERROR] 39 errors
+[ERROR] Command line was: /usr/lib/jvm/java-17-openjdk-amd64/bin/javadoc -J-Duser.language= -J-Duser.country= @options @packages
+[ERROR] 
+[ERROR] Refer to the generated Javadoc files in '/home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/reports/apidocs' dir.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-server

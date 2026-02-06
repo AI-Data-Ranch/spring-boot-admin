@@ -1,0 +1,553 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Spring Boot Admin                                                  [pom]
+[INFO] Spring Boot Admin Dependencies                                     [pom]
+[INFO] Spring Boot Admin Build                                            [pom]
+[INFO] Spring Boot Admin Server                                           [jar]
+[INFO] Spring Boot Admin Server UI                                        [jar]
+[INFO] Spring Boot Admin Client                                           [jar]
+[INFO] Spring Boot Admin Docs                                             [pom]
+[INFO] Spring Boot Admin Server Cloud                                     [jar]
+[INFO] Spring Boot Admin Server Starter                                   [jar]
+[INFO] Spring Boot Admin Client Starter                                   [jar]
+[INFO] Spring Boot Admin Samples                                          [pom]
+[INFO] Spring Boot Admin Server custom UI                                 [jar]
+[INFO] Spring Boot Admin Sample Servlet                                   [jar]
+[INFO] Spring Boot Admin Sample Reactive                                  [jar]
+[INFO] Spring Boot Admin Sample War                                       [war]
+[INFO] Spring Boot Admin Sample Hazelcast                                 [jar]
+[INFO] Spring Boot Admin Sample Eureka                                    [jar]
+[INFO] Spring Boot Admin Sample Consul                                    [jar]
+[INFO] Spring Boot Admin Sample Zookeeper                                 [jar]
+[INFO] 
+[INFO] ------------------< de.codecentric:spring-boot-admin >------------------
+[INFO] Building Spring Boot Admin 3.5.8-SNAPSHOT                         [1/19]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin/3.5.8-SNAPSHOT/spring-boot-admin-3.5.8-SNAPSHOT.pom
+[INFO] 
+[INFO] -----------< de.codecentric:spring-boot-admin-dependencies >------------
+[INFO] Building Spring Boot Admin Dependencies 3.5.8-SNAPSHOT            [2/19]
+[INFO]   from spring-boot-admin-dependencies/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-dependencies ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-dependencies ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-dependencies:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-dependencies ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-dependencies ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-dependencies/3.5.8-SNAPSHOT/spring-boot-admin-dependencies-3.5.8-SNAPSHOT.pom
+[INFO] 
+[INFO] ---------------< de.codecentric:spring-boot-admin-build >---------------
+[INFO] Building Spring Boot Admin Build 3.5.8-SNAPSHOT                   [3/19]
+[INFO]   from spring-boot-admin-build/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-build ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-build ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-build ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-build:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-build ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-build ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-build/3.5.8-SNAPSHOT/spring-boot-admin-build-3.5.8-SNAPSHOT.pom
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-server >---------------
+[INFO] Building Spring Boot Admin Server 3.5.8-SNAPSHOT                  [4/19]
+[INFO]   from spring-boot-admin-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-server ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-server ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-server:jar:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-server ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 150 source files with javac [debug parameters target 17] to target/classes
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractContentNotifier.java:[105,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/PagerdutyNotifier.java:[136,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/OpsGenieNotifier.java:[176,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/MicrosoftTeamsNotifier.java:[231,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/FeiShuNotifier.java:[203,53] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[76,35] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[79,31] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[80,31] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[475,69] non-varargs call of varargs method with inexact argument type for last parameter;
+  cast to java.lang.Object for a varargs call
+  cast to java.lang.Object[] for a non-varargs call and to suppress this warning
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Some input files use or override a deprecated API.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java uses unchecked or unsafe operations.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-server ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-server ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-server ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-3.5.8-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-server ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-3.5.8-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-server ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-server ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server/3.5.8-SNAPSHOT/spring-boot-admin-server-3.5.8-SNAPSHOT.pom
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-3.5.8-SNAPSHOT.jar to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server/3.5.8-SNAPSHOT/spring-boot-admin-server-3.5.8-SNAPSHOT.jar
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-3.5.8-SNAPSHOT-sources.jar to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server/3.5.8-SNAPSHOT/spring-boot-admin-server-3.5.8-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] -------------< de.codecentric:spring-boot-admin-server-ui >-------------
+[INFO] Building Spring Boot Admin Server UI 3.5.8-SNAPSHOT               [5/19]
+[INFO]   from spring-boot-admin-server-ui/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server-ui ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server-ui ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server-ui ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server-ui ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-server-ui ---
+[INFO] 
+[INFO] --- frontend:2.0.0:install-node-and-npm (install-node-and-npm) @ spring-boot-admin-server-ui ---
+[INFO] Node v22.12.0 is already installed.
+[INFO] 
+[INFO] --- frontend:2.0.0:npm (npm-install) @ spring-boot-admin-server-ui ---
+[INFO] Running 'npm ci --prefer-offline --no-progress --no-audit --silent' in /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui
+[INFO] 
+[INFO] --- frontend:2.0.0:npm (npm-build) @ spring-boot-admin-server-ui ---
+[INFO] Running 'npm run build' in /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui
+[INFO] 
+[INFO] > build
+[INFO] > vite build --emptyOutDir --sourcemap
+[INFO] 
+[INFO] vite v7.3.1 building client environment for production...
+[INFO] <script src="sba-settings.js"> in "/index.html" can't be bundled without type="module" attribute
+[INFO] transforming...
+[INFO] ✓ 3164 modules transformed.
+[INFO] rendering chunks...
+[INFO] computing gzip size...
+[INFO] [vite-plugin-static-copy] Copied 2 items.
+[INFO] ../../../target/dist/login.html                          1.99 kB │ gzip:   1.02 kB
+[INFO] ../../../target/dist/index.html                          2.08 kB │ gzip:   0.97 kB
+[INFO] ../../../target/dist/assets/index-DMWFqugC.css           5.74 kB │ gzip:   0.90 kB
+[INFO] ../../../target/dist/assets/login-BMeRwJf6.css         594.85 kB │ gzip:  49.22 kB
+[INFO] ../../../target/dist/assets/sba-Bd0B4ogX.css           636.21 kB │ gzip:  57.12 kB
+[INFO] ../../../target/dist/assets/login-Dw9iL159.js            2.30 kB │ gzip:   1.16 kB │ map:     6.52 kB
+[INFO] ../../../target/dist/assets/eventsource-D4-6TuZ_.js     12.49 kB │ gzip:   4.93 kB │ map:    55.52 kB
+[INFO] ../../../target/dist/assets/index-COSZtsDP.js          496.84 kB │ gzip: 145.82 kB │ map: 2,482.05 kB
+[INFO] ../../../target/dist/assets/sba-BkDntFUm.js          2,649.44 kB │ gzip: 732.33 kB │ map: 8,441.33 kB
+[INFO] ../../../target/dist/assets/index-COSZtsDP.js          496.84 kB │ gzip: 145.82 kB │ map: 2,482.05 kB
+[INFO] (!) Some chunks are larger than 500 kB after minification. Consider:
+[INFO] - Using dynamic import() to code-split the application
+[INFO] ✓ built in 18.02s
+[INFO] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[INFO] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-server-ui ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-server-ui ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-server-ui:jar:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- resources:3.4.0:copy-resources (copy-resources) @ spring-boot-admin-server-ui ---
+[INFO] Copying 20 resources from target/dist to target/classes/META-INF/spring-boot-admin-server-ui
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-server-ui ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 19 source files with javac [debug parameters target 17] to target/classes
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/package-info.java: Some input files use or override a deprecated API.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/package-info.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-server-ui ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-server-ui ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-server-ui ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- frontend:2.0.0:npm (npm-test) @ spring-boot-admin-server-ui ---
+[INFO] Running 'npm run test' in /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui
+[INFO] 
+[INFO] > test
+[INFO] > vitest run --silent
+[INFO] 
+[INFO] 
+[INFO]  RUN  v4.0.18 /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui
+[INFO] 
+[INFO]  ✓ src/main/frontend/views/instances/loggers/service.spec.ts (4 tests) 40ms
+[INFO] 7:45:30 AM [vite] (client) warning: <tr> cannot be child of <table>, according to HTML specifications. This can cause hydration errors or potentially disrupt future functionality.
+[INFO] 25 |      >
+[INFO] 26 |        <table class="is-narrow is-size-7">
+[INFO] 27 |          <tr>
+[INFO]    |          ^^^^
+[INFO] 28 |            <th v-text="$t('instances.httpexchanges.chart.total_requests')" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 29 |            <td v-text="tooltipContent.totalCount" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 30 |          </tr>
+[INFO]    |  ^^^^^^^^^^^^^
+[INFO]   Plugin: vite:vue
+[INFO]   File: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/frontend/views/instances/httpexchanges/exchanges-chart.vue
+[INFO] 7:45:30 AM [vite] (client) warning: <tr> cannot be child of <table>, according to HTML specifications. This can cause hydration errors or potentially disrupt future functionality.
+[INFO] 29 |            <td v-text="tooltipContent.totalCount" />
+[INFO] 30 |          </tr>
+[INFO] 31 |          <tr>
+[INFO]    |          ^^^^
+[INFO] 32 |            <th
+[INFO]    |  ^^^^^^^^^^^^^
+[INFO] 33 |              v-text="$t('instances.httpexchanges.chart.successful_requests')"
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 34 |            />
+[INFO]    |  ^^^^^^^^^^^^
+[INFO] 35 |            <td v-text="tooltipContent.totalSuccess" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 36 |          </tr>
+[INFO]    |  ^^^^^^^^^^^^^
+[INFO]   Plugin: vite:vue
+[INFO]   File: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/frontend/views/instances/httpexchanges/exchanges-chart.vue
+[INFO] 7:45:30 AM [vite] (client) warning: <tr> cannot be child of <table>, according to HTML specifications. This can cause hydration errors or potentially disrupt future functionality.
+[INFO] 35 |            <td v-text="tooltipContent.totalSuccess" />
+[INFO] 36 |          </tr>
+[INFO] 37 |          <tr>
+[INFO]    |          ^^^^
+[INFO] 38 |            <th v-text="$t('instances.httpexchanges.chart.status_4xx')" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 39 |            <td v-text="tooltipContent.totalClientErrors" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 40 |          </tr>
+[INFO]    |  ^^^^^^^^^^^^^
+[INFO]   Plugin: vite:vue
+[INFO]   File: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/frontend/views/instances/httpexchanges/exchanges-chart.vue
+[INFO] 7:45:30 AM [vite] (client) warning: <tr> cannot be child of <table>, according to HTML specifications. This can cause hydration errors or potentially disrupt future functionality.
+[INFO] 39 |            <td v-text="tooltipContent.totalClientErrors" />
+[INFO] 40 |          </tr>
+[INFO] 41 |          <tr>
+[INFO]    |          ^^^^
+[INFO] 42 |            <th v-text="$t('instances.httpexchanges.chart.status_5xx')" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 43 |            <td v-text="tooltipContent.totalServerErrors" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 44 |          </tr>
+[INFO]    |  ^^^^^^^^^^^^^
+[INFO]   Plugin: vite:vue
+[INFO]   File: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/frontend/views/instances/httpexchanges/exchanges-chart.vue
+[INFO] 7:45:30 AM [vite] (client) warning: <tr> cannot be child of <table>, according to HTML specifications. This can cause hydration errors or potentially disrupt future functionality.
+[INFO] 43 |            <td v-text="tooltipContent.totalServerErrors" />
+[INFO] 44 |          </tr>
+[INFO] 45 |          <tr>
+[INFO]    |          ^^^^
+[INFO] 46 |            <th v-text="$t('instances.httpexchanges.chart.max_time')" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 47 |            <td v-text="`${tooltipContent.maxTime.toFixed(0)}ms`" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 48 |          </tr>
+[INFO]    |  ^^^^^^^^^^^^^
+[INFO]   Plugin: vite:vue
+[INFO]   File: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/frontend/views/instances/httpexchanges/exchanges-chart.vue
+[INFO] 7:45:30 AM [vite] (client) warning: <tr> cannot be child of <table>, according to HTML specifications. This can cause hydration errors or potentially disrupt future functionality.
+[INFO] 47 |            <td v-text="`${tooltipContent.maxTime.toFixed(0)}ms`" />
+[INFO] 48 |          </tr>
+[INFO] 49 |          <tr>
+[INFO]    |          ^^^^
+[INFO] 50 |            <th v-text="$t('instances.httpexchanges.chart.avg_time')" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 51 |            <td v-text="`${tooltipContent.avgTime.toFixed(0)}ms`" />
+[INFO]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[INFO] 52 |          </tr>
+[INFO]    |  ^^^^^^^^^^^^^
+[INFO]   Plugin: vite:vue
+[INFO]   File: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/frontend/views/instances/httpexchanges/exchanges-chart.vue
+[INFO]  ✓ src/main/frontend/utils/sanitizeHtml.spec.ts (20 tests) 20ms
+[INFO]  ✓ src/main/frontend/views/instances/jolokia/m-bean-attribute.spec.ts (9 tests) 1175ms
+[INFO]  ✓ src/main/frontend/views/instances/details/health-details.spec.ts (11 tests) 1769ms
+[INFO]        ✓ should display health components status  381ms
+[INFO]  ✓ src/main/frontend/views/instances/details/details-cache.spec.ts (6 tests) 1252ms
+[INFO]      ✓ should render cache name  585ms
+[INFO]  ✓ src/main/frontend/views/instances/jolokia/responseHandler.spec.ts (4 tests) 13ms
+[INFO]  ✓ src/main/frontend/views/instances/httpexchanges/index.spec.ts (11 tests) 1544ms
+[INFO]        ✓ excludes actuator exchanges by default  404ms
+[INFO]  ✓ src/main/frontend/views/applications/applications.spec.ts (7 tests) 1825ms
+[INFO]      ✓ when applications are loading, a hint should be shown  513ms
+[INFO]  ✓ src/main/frontend/services/startup-actuator.spec.ts (9 tests) 366ms
+[INFO]  ✓ src/main/frontend/views/instances/details/details-datasource.spec.ts (4 tests) 797ms
+[INFO]      ✓ renders panel title with datasource name  436ms
+[INFO]  ✓ src/main/frontend/views/instances/dependencies/index.spec.ts (16 tests) 5535ms
+[INFO]        ✓ both sbom ids  895ms
+[INFO]        ✓ table shows correct information  315ms
+[INFO]        ✓ for dependency name  497ms
+[INFO]        ✓ for dependency group  535ms
+[INFO]        ✓ for dependency license  311ms
+[INFO]        ✓ by 'name' DESC  314ms
+[INFO]        ✓ by 'publisher' DESC  321ms
+[INFO]  ✓ src/main/frontend/views/instances/sbomdependencytrees/tree.spec.ts (5 tests) 960ms
+[INFO]      ✓ renders correctly with given props  424ms
+[INFO]  ✓ src/main/frontend/viewRegistry.spec.ts (6 tests) 12ms
+[INFO]  ✓ src/main/frontend/views/instances/details/details-info.spec.ts (4 tests) 798ms
+[INFO]      ✓ should render info table with keys and values  514ms
+[INFO]  ✓ src/main/frontend/views/applications/ApplicationListItemAction.spec.ts (6 tests) 1623ms
+[INFO]        ✓ on instance  652ms
+[INFO]  ✓ src/main/frontend/views/instances/details/details-health.spec.ts (4 tests) 1216ms
+[INFO]      ✓ should display groups as part of health section  548ms
+[INFO]  ✓ src/main/frontend/views/instances/sbomdependencytrees/sbomUtils.spec.ts (12 tests) 14ms
+[INFO]  ✓ src/main/frontend/store.spec.ts (4 tests) 1321ms
+[INFO]      ✓ removes an application  515ms
+[INFO]  ✓ src/main/frontend/views/applications/InstancesList.spec.ts (6 tests) 763ms
+[INFO]        ✓ should show service url when hide-url is set to false  394ms
+[INFO]  ✓ src/main/frontend/components/sba-pagination-nav.spec.ts (3 tests) 1507ms
+[INFO]      ✓ should show a button when page count is 0  437ms
+[INFO]      ✓ should show first and last page when page count is 12 including intermediate pages  888ms
+[INFO]  ✓ src/main/frontend/views/journal/index.spec.ts (2 tests) 1201ms
+[INFO]      ✓ should update instance names when registration is updated  780ms
+[INFO]      ✓ should handle both REGISTERED and REGISTRATION_UPDATED events  417ms
+[INFO]  ✓ src/main/frontend/views/instances/details/details-threads.spec.ts (2 tests) 286ms
+[INFO]  ✓ src/main/frontend/views/instances/mappings/index.spec.ts (13 tests) 2035ms
+[INFO]      ✓ should render handler name when dispatcherServlets are available  1421ms
+[INFO] Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+[INFO] Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+[INFO] Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+[INFO] Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+[INFO] Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+[INFO] Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+[INFO] Not implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package
+[INFO]  ✓ src/main/frontend/views/instances/details/details-memory.spec.ts (9 tests) 514ms
+[INFO]  ✓ src/main/frontend/views/instances/mappings/DispatcherMappings.spec.ts (4 tests) 593ms
+[INFO]        ✓ should render endpoint path  384ms
+[INFO]  ✓ src/main/frontend/utils/rxjs.spec.ts (5 tests) 36ms
+[INFO]  ✓ src/main/frontend/views/external/index.spec.ts (5 tests) 11ms
+[INFO]  ✓ src/main/frontend/utils/collections.spec.ts (9 tests) 10ms
+[INFO]  ✓ src/main/frontend/views/wallboard/wallboard.spec.ts (4 tests) 611ms
+[INFO]  ✓ src/main/frontend/views/instances/env/refresh.spec.ts (2 tests) 545ms
+[INFO]      ✓ shows the changed configurations for the current instance  355ms
+[INFO]  ✓ src/main/frontend/utils/autolink.spec.ts (5 tests) 18ms
+[INFO]  ✓ src/main/frontend/views/applications/ApplicationStatusHero.spec.ts (9 tests) 716ms
+[INFO]  ✓ src/main/frontend/components/sba-status.spec.ts (7 tests) 242ms
+[INFO]  ✓ src/main/frontend/services/application.spec.ts (7 tests) 16ms
+[INFO]  ✓ src/main/frontend/views/instances/scheduledtasks/scheduled-task-executions.spec.ts (4 tests) 428ms
+[INFO]  ✓ src/main/frontend/utils/useRouterState.spec.ts (4 tests) 14ms
+[INFO]  ✓ src/main/frontend/components/sba-formatted-obj.spec.ts (6 tests) 204ms
+[INFO]  ✓ src/main/frontend/views/instances/jolokia/index.spec.ts (5 tests) 1365ms
+[INFO]      ✓ DefaultDomain is selected as default  337ms
+[INFO]  ✓ src/main/frontend/shell/sba-nav-language-selector.spec.ts (9 tests) 804ms
+[INFO]  ✓ src/main/frontend/utils/axios.spec.ts (3 tests) 8ms
+[INFO]  ✓ src/main/frontend/views/instances/auditevents/index.spec.ts (4 tests) 771ms
+[INFO]  ✓ src/main/frontend/views/instances/jolokia/m-bean-operation.spec.ts (2 tests) 628ms
+[INFO]      ✓ should open confirmation modal if operation contains no arguments  584ms
+[INFO]  ✓ src/main/frontend/components/sba-toggle-scope-button.spec.ts (2 tests) 382ms
+[INFO]  ✓ src/main/frontend/views/instances/env/busrefresh.spec.ts (2 tests) 399ms
+[INFO]      ✓ should trigger busrefresh on confirm  329ms
+[INFO]  ✓ src/main/frontend/shell/navbar.spec.ts (5 tests) 451ms
+[INFO]      ✓ User menu is visible, when a user is logged in  345ms
+[INFO]  ✓ src/main/frontend/views/instances/conditions/conditions-list-details.spec.ts (8 tests) 218ms
+[INFO]  ✓ src/main/frontend/utils/shortenClassname.spec.ts (3 tests) 6ms
+[INFO]  ✓ src/main/frontend/components/sba-time-ago.spec.ts (3 tests) 155ms
+[INFO]  ✓ src/main/frontend/views/instances/details/index.spec.ts (2 tests) 389ms
+[INFO]        ✓ should hide loading spinner, when network call fails  302ms
+[INFO]  ✓ src/main/frontend/components/sba-confirm-button.spec.ts (2 tests) 364ms
+[INFO]  ✓ src/main/frontend/utils/transformToJSON.spec.ts (4 tests) 7ms
+[INFO]  ✓ src/main/frontend/utils/iso8601-duration.spec.ts (4 tests) 6ms
+[INFO]  ✓ src/main/frontend/utils/sortObject.spec.ts (5 tests) 9ms
+[INFO]  ✓ src/main/frontend/components/sba-action-button-scoped.spec.tsx (1 test) 329ms
+[INFO]      ✓ should cal actionFn when confirmed  326ms
+[INFO]  ✓ src/main/frontend/views/instances/jolokia/utils.spec.ts (7 tests) 7ms
+[INFO]  ✓ src/main/frontend/services/instance.spec.ts (5 tests) 10ms
+[INFO]  ✓ src/main/frontend/views/instances/loggers/loggers-list.spec.ts (1 test) 88ms
+[INFO]  ✓ src/main/frontend/components/sba-modal.spec.ts (1 test) 320ms
+[INFO]      ✓ modal is closed when close button is clicked  316ms
+[INFO]  ✓ src/main/frontend/views/wallboard/utils.spec.ts (2 tests) 6ms
+[INFO]  ✓ src/main/frontend/components/sba-status-badge.spec.ts (2 tests) 25ms
+[INFO]  ✓ src/main/frontend/views/instances/quartz/trigger-row.spec.ts (2 tests) 277ms
+[INFO]  ✓ src/main/frontend/utils/uri.spec.ts (1 test) 5ms
+[INFO]  ✓ src/main/frontend/composables/useClassnameShortener.spec.ts (4 tests) 6ms
+[INFO] 
+[INFO]  Test Files  63 passed (63)
+[INFO]       Tests  337 passed (337)
+[INFO]    Start at  07:45:26
+[INFO]    Duration  28.25s (transform 12.52s, setup 54.67s, import 47.31s, tests 37.07s, environment 41.55s)
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-server-ui ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target/spring-boot-admin-server-ui-3.5.8-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-server-ui ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target/spring-boot-admin-server-ui-3.5.8-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-server-ui ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- frontend:2.0.0:npm (npm-lint) @ spring-boot-admin-server-ui ---
+[INFO] Running 'npm run lint' in /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui
+[INFO] 
+[INFO] > lint
+[INFO] > eslint --ext .js,.ts,.vue src/main/frontend
+[INFO] 
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-server-ui ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server-ui/3.5.8-SNAPSHOT/spring-boot-admin-server-ui-3.5.8-SNAPSHOT.pom
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target/spring-boot-admin-server-ui-3.5.8-SNAPSHOT.jar to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server-ui/3.5.8-SNAPSHOT/spring-boot-admin-server-ui-3.5.8-SNAPSHOT.jar
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target/spring-boot-admin-server-ui-3.5.8-SNAPSHOT-sources.jar to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server-ui/3.5.8-SNAPSHOT/spring-boot-admin-server-ui-3.5.8-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-client >---------------
+[INFO] Building Spring Boot Admin Client 3.5.8-SNAPSHOT                  [6/19]
+[INFO]   from spring-boot-admin-client/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-client ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-client ---
+[INFO] Starting audit...
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:33:1: Wrong order for 'org.springframework.boot.restclient.autoconfigure.RestClientAutoConfiguration' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:36:1: Wrong order for 'org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:39:1: Wrong order for 'org.springframework.boot.context.properties.EnableConfigurationProperties' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:24:1: Wrong order for 'org.springframework.boot.web.server.Ssl' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:25:1: Wrong order for 'org.springframework.boot.web.server.Ssl' import. [SpringImportOrder]
+Audit done.
+[INFO] There are 5 errors reported by Checkstyle 12.3.1 with src/checkstyle/checkstyle.xml ruleset.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[33,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.restclient.autoconfigure.RestClientAutoConfiguration' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[36,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[39,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.context.properties.EnableConfigurationProperties' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[24,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.web.server.Ssl' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[25,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.web.server.Ssl' import.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Spring Boot Admin 3.5.8-SNAPSHOT:
+[INFO] 
+[INFO] Spring Boot Admin .................................. SUCCESS [  1.919 s]
+[INFO] Spring Boot Admin Dependencies ..................... SUCCESS [  0.075 s]
+[INFO] Spring Boot Admin Build ............................ SUCCESS [  0.178 s]
+[INFO] Spring Boot Admin Server ........................... SUCCESS [  8.889 s]
+[INFO] Spring Boot Admin Server UI ........................ SUCCESS [01:15 min]
+[INFO] Spring Boot Admin Client ........................... FAILURE [  0.256 s]
+[INFO] Spring Boot Admin Docs ............................. SKIPPED
+[INFO] Spring Boot Admin Server Cloud ..................... SKIPPED
+[INFO] Spring Boot Admin Server Starter ................... SKIPPED
+[INFO] Spring Boot Admin Client Starter ................... SKIPPED
+[INFO] Spring Boot Admin Samples .......................... SKIPPED
+[INFO] Spring Boot Admin Server custom UI ................. SKIPPED
+[INFO] Spring Boot Admin Sample Servlet ................... SKIPPED
+[INFO] Spring Boot Admin Sample Reactive .................. SKIPPED
+[INFO] Spring Boot Admin Sample War ....................... SKIPPED
+[INFO] Spring Boot Admin Sample Hazelcast ................. SKIPPED
+[INFO] Spring Boot Admin Sample Eureka .................... SKIPPED
+[INFO] Spring Boot Admin Sample Consul .................... SKIPPED
+[INFO] Spring Boot Admin Sample Zookeeper ................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:27 min
+[INFO] Finished at: 2026-02-06T07:46:07Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:3.6.0:check (checkstyle-validation) on project spring-boot-admin-client: You have 5 Checkstyle violations. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-client

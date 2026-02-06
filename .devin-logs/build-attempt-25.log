@@ -1,0 +1,31 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-client >---------------
+[INFO] Building Spring Boot Admin Client 3.5.8-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-client ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-client ---
+[INFO] Starting audit...
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:31:1: Wrong order for 'org.springframework.boot.cloud.CloudPlatform' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:30:1: Wrong order for 'org.springframework.boot.web.server.Ssl' import. [SpringImportOrder]
+Audit done.
+[INFO] There are 2 errors reported by Checkstyle 12.3.1 with src/checkstyle/checkstyle.xml ruleset.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:[31,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.cloud.CloudPlatform' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[30,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.web.server.Ssl' import.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.326 s
+[INFO] Finished at: 2026-02-06T07:54:41Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:3.6.0:check (checkstyle-validation) on project spring-boot-admin-client: You have 2 Checkstyle violations. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

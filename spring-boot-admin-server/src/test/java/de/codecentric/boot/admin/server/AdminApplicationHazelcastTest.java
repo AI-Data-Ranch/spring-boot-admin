@@ -25,6 +25,8 @@ import com.hazelcast.config.InMemoryFormat;
 import com.hazelcast.config.MapConfig;
 import com.hazelcast.config.MergePolicyConfig;
 import com.hazelcast.config.TcpIpConfig;
+import com.hazelcast.core.Hazelcast;
+import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.spi.merge.PutIfAbsentMergePolicy;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -133,7 +135,7 @@ class AdminApplicationHazelcastTest extends AbstractAdminApplicationTest {
 		}
 
 		@Bean
-		public Config hazelcastConfig() {
+		public HazelcastInstance hazelcastInstance() {
 			MapConfig eventStoreMap = new MapConfig(DEFAULT_NAME_EVENT_STORE_MAP)
 				.setInMemoryFormat(InMemoryFormat.OBJECT)
 				.setBackupCount(1)
@@ -152,7 +154,7 @@ class AdminApplicationHazelcastTest extends AbstractAdminApplicationTest {
 			TcpIpConfig tcpIpConfig = config.getNetworkConfig().getJoin().getTcpIpConfig();
 			tcpIpConfig.setEnabled(true);
 			tcpIpConfig.setMembers(singletonList("127.0.0.1"));
-			return config;
+			return Hazelcast.newHazelcastInstance(config);
 		}
 
 	}
