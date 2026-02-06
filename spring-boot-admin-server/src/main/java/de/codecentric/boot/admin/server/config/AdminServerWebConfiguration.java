@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
 import org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
@@ -31,6 +32,7 @@ import de.codecentric.boot.admin.server.eventstore.InstanceEventStore;
 import de.codecentric.boot.admin.server.services.ApplicationRegistry;
 import de.codecentric.boot.admin.server.services.InstanceRegistry;
 import de.codecentric.boot.admin.server.utils.jackson.AdminServerModule;
+import de.codecentric.boot.admin.server.utils.jackson.AdminServerModule3;
 import de.codecentric.boot.admin.server.web.ApplicationsController;
 import de.codecentric.boot.admin.server.web.InstancesController;
 import de.codecentric.boot.admin.server.web.client.InstanceWebClient;
@@ -47,6 +49,16 @@ public class AdminServerWebConfiguration {
 	@Bean
 	public SimpleModule adminJacksonModule() {
 		return new AdminServerModule(this.adminServerProperties.getMetadataKeysToSanitize());
+	}
+
+	/**
+	 * Register Jackson 3.x module for Spring Boot 4.0.0 compatibility. Spring Boot 4.0.0
+	 * uses Jackson 3.x (tools.jackson) for HTTP message conversion.
+	 * @return the customizer that registers the AdminServerModule3
+	 */
+	@Bean
+	public JsonMapperBuilderCustomizer adminJackson3Customizer() {
+		return (builder) -> builder.addModule(new AdminServerModule3());
 	}
 
 	@Bean
