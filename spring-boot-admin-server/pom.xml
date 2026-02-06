@@ -78,6 +78,25 @@
             <artifactId>hazelcast</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- Spring Boot 4.0.0 module dependencies for auto-configuration -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-webclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-hazelcast</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- Jackson 2.x compatibility for Spring Boot 4.0.0 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-jackson2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure-processor</artifactId>
@@ -142,10 +161,6 @@
             <artifactId>testcontainers</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
+        <!-- Note: junit-jupiter module was merged into testcontainers core in 2.x -->
     </dependencies>
 </project>

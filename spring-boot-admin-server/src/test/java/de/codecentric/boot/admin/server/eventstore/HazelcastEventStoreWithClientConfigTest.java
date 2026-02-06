@@ -22,37 +22,53 @@ import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.map.IMap;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
+import org.testcontainers.DockerClientFactory;
 import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceEvent;
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
 
-@Testcontainers(disabledWithoutDocker = true)
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
+
 @Tag("docker")
 public class HazelcastEventStoreWithClientConfigTest extends AbstractEventStoreTest {
 
-	@Container
-	private static final GenericContainer<?> hazelcastServer = new GenericContainer<>("hazelcast/hazelcast:4.2.2")
-		.withExposedPorts(5701);
+	private static GenericContainer<?> hazelcastServer;
 
-	private final HazelcastInstance hazelcast;
+	private HazelcastInstance hazelcast;
 
-	public HazelcastEventStoreWithClientConfigTest() {
-		this.hazelcast = createHazelcastInstance();
+	@BeforeAll
+	static void startContainer() {
+		assumeTrue(DockerClientFactory.instance().isDockerAvailable(), "Docker is not available");
+		hazelcastServer = new GenericContainer<>("hazelcast/hazelcast:4.2.2").withExposedPorts(5701);
+		hazelcastServer.start();
+	}
+
+	@AfterAll
+	static void stopContainer() {
+		if (hazelcastServer != null) {
+			hazelcastServer.stop();
+		}
 	}
 
 	@Override
 	protected InstanceEventStore createStore(int maxLogSizePerAggregate) {
+		if (this.hazelcast == null) {
+			this.hazelcast = createHazelcastInstance();
+		}
 		IMap<InstanceId, List<InstanceEvent>> eventLog = this.hazelcast.getMap("testList" + System.currentTimeMillis());
 		return new HazelcastEventStore(maxLogSizePerAggregate, eventLog);
 	}
 
 	@Override
 	protected void shutdownStore() {
-		this.hazelcast.shutdown();
+		if (this.hazelcast != null) {
+			this.hazelcast.shutdown();
+			this.hazelcast = null;
+		}
 	}
 
 	private HazelcastInstance createHazelcastInstance() {
