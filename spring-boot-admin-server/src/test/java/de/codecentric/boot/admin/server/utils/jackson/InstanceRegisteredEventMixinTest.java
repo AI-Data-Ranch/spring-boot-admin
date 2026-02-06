@@ -16,20 +16,17 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceRegisteredEvent;
@@ -44,17 +41,10 @@ class InstanceRegisteredEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceRegisteredEvent> jsonTester;
-
 	protected InstanceRegisteredEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -145,7 +135,7 @@ class InstanceRegisteredEventMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		Registration registration = Registration.create("test", "http://localhost:9080/heath")
@@ -158,61 +148,62 @@ class InstanceRegisteredEventMixinTest {
 
 		InstanceRegisteredEvent event = new InstanceRegisteredEvent(id, 12345678L, timestamp, registration);
 
-		JsonContent<InstanceRegisteredEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("REGISTERED");
-		assertThat(jsonContent).extractingJsonPathValue("$.registration").isNotNull();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(12345678L);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.000000000);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("REGISTERED");
+		assertThat(jsonNode.has("registration")).isTrue();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.name").isEqualTo("test");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.managementUrl")
-			.isEqualTo("http://localhost:9080/");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.healthUrl")
-			.isEqualTo("http://localhost:9080/heath");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.serviceUrl")
-			.isEqualTo("http://localhost:8080/");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.source").isEqualTo("http-api");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.registration.metadata")
-			.containsOnly(entry("PASSWORD", "******"), entry("user", "humptydumpty"));
+		JsonNode regNode = jsonNode.get("registration");
+		assertThat(regNode.get("name").asText()).isEqualTo("test");
+		assertThat(regNode.get("managementUrl").asText()).isEqualTo("http://localhost:9080/");
+		assertThat(regNode.get("healthUrl").asText()).isEqualTo("http://localhost:9080/heath");
+		assertThat(regNode.get("serviceUrl").asText()).isEqualTo("http://localhost:8080/");
+		assertThat(regNode.get("source").asText()).isEqualTo("http-api");
+		assertThat(regNode.get("metadata").get("PASSWORD").asText()).isEqualTo("******");
+		assertThat(regNode.get("metadata").get("user").asText()).isEqualTo("humptydumpty");
 	}
 
 	@Test
-	void verifySerializeWithOnlyRequiredProperties() throws IOException {
+	void verifySerializeWithOnlyRequiredProperties() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		Registration registration = Registration.create("test", "http://localhost:9080/heath").build();
 
 		InstanceRegisteredEvent event = new InstanceRegisteredEvent(id, 0L, timestamp, registration);
 
-		JsonContent<InstanceRegisteredEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("REGISTERED");
-		assertThat(jsonContent).extractingJsonPathValue("$.registration").isNotNull();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(0L);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.000000000);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("REGISTERED");
+		assertThat(jsonNode.has("registration")).isTrue();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.name").isEqualTo("test");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.managementUrl").isNull();
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.healthUrl")
-			.isEqualTo("http://localhost:9080/heath");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.serviceUrl").isNull();
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.source").isNull();
-		assertThat(jsonContent).extractingJsonPathMapValue("$.registration.metadata").isEmpty();
+		JsonNode regNode = jsonNode.get("registration");
+		assertThat(regNode.get("name").asText()).isEqualTo("test");
+		assertThat(regNode.get("managementUrl").isNull()).isTrue();
+		assertThat(regNode.get("healthUrl").asText()).isEqualTo("http://localhost:9080/heath");
+		assertThat(regNode.get("serviceUrl").isNull()).isTrue();
+		assertThat(regNode.get("source").isNull()).isTrue();
+		assertThat(regNode.get("metadata").size()).isEqualTo(0);
 	}
 
 	@Test
-	void verifySerializeWithoutRegistration() throws IOException {
+	void verifySerializeWithoutRegistration() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceRegisteredEvent event = new InstanceRegisteredEvent(id, 12345678L, timestamp, null);
 
-		JsonContent<InstanceRegisteredEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("REGISTERED");
-		assertThat(jsonContent).extractingJsonPathValue("$.registration").isNull();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(12345678L);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.000000000);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("REGISTERED");
+		assertThat(jsonNode.get("registration").isNull()).isTrue();
 	}
 
 }

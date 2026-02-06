@@ -1,0 +1,250 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Spring Boot Admin                                                  [pom]
+[INFO] Spring Boot Admin Dependencies                                     [pom]
+[INFO] Spring Boot Admin Build                                            [pom]
+[INFO] Spring Boot Admin Server                                           [jar]
+[INFO] Spring Boot Admin Server UI                                        [jar]
+[INFO] Spring Boot Admin Client                                           [jar]
+[INFO] Spring Boot Admin Docs                                             [pom]
+[INFO] Spring Boot Admin Server Cloud                                     [jar]
+[INFO] Spring Boot Admin Server Starter                                   [jar]
+[INFO] Spring Boot Admin Client Starter                                   [jar]
+[INFO] Spring Boot Admin Samples                                          [pom]
+[INFO] Spring Boot Admin Server custom UI                                 [jar]
+[INFO] Spring Boot Admin Sample Servlet                                   [jar]
+[INFO] Spring Boot Admin Sample Reactive                                  [jar]
+[INFO] Spring Boot Admin Sample War                                       [war]
+[INFO] Spring Boot Admin Sample Hazelcast                                 [jar]
+[INFO] Spring Boot Admin Sample Eureka                                    [jar]
+[INFO] Spring Boot Admin Sample Consul                                    [jar]
+[INFO] Spring Boot Admin Sample Zookeeper                                 [jar]
+[INFO] 
+[INFO] ------------------< de.codecentric:spring-boot-admin >------------------
+[INFO] Building Spring Boot Admin 3.5.8-SNAPSHOT                         [1/19]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] -----------< de.codecentric:spring-boot-admin-dependencies >------------
+[INFO] Building Spring Boot Admin Dependencies 3.5.8-SNAPSHOT            [2/19]
+[INFO]   from spring-boot-admin-dependencies/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-dependencies ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-dependencies ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-dependencies:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] ---------------< de.codecentric:spring-boot-admin-build >---------------
+[INFO] Building Spring Boot Admin Build 3.5.8-SNAPSHOT                   [3/19]
+[INFO]   from spring-boot-admin-build/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-build ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-build ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-build ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-build:pom:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-server >---------------
+[INFO] Building Spring Boot Admin Server 3.5.8-SNAPSHOT                  [4/19]
+[INFO]   from spring-boot-admin-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-server ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-server ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-server:jar:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-server ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 150 source files with javac [debug parameters target 17] to target/classes
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractContentNotifier.java:[105,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/PagerdutyNotifier.java:[136,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/OpsGenieNotifier.java:[176,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/MicrosoftTeamsNotifier.java:[231,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/FeiShuNotifier.java:[203,53] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/InstanceExchangeFilterFunctions.java:[238,50] asMultiValueMap() in org.springframework.http.HttpHeaders has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/InstanceExchangeFilterFunctions.java:[254,57] asMultiValueMap() in org.springframework.http.HttpHeaders has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[68,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[70,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[76,35] org.springframework.http.converter.json.Jackson2ObjectMapperBuilder in org.springframework.http.converter.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[79,31] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[80,31] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[475,69] non-varargs call of varargs method with inexact argument type for last parameter;
+  cast to java.lang.Object for a varargs call
+  cast to java.lang.Object[] for a non-varargs call and to suppress this warning
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Some input files use or override a deprecated API.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java uses unchecked or unsafe operations.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] -------------< de.codecentric:spring-boot-admin-server-ui >-------------
+[INFO] Building Spring Boot Admin Server UI 3.5.8-SNAPSHOT               [5/19]
+[INFO]   from spring-boot-admin-server-ui/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server-ui ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server-ui ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server-ui ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server-ui ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-server-ui ---
+[INFO] 
+[INFO] --- frontend:2.0.0:install-node-and-npm (install-node-and-npm) @ spring-boot-admin-server-ui ---
+[INFO] Skipping execution.
+[INFO] 
+[INFO] --- frontend:2.0.0:npm (npm-install) @ spring-boot-admin-server-ui ---
+[INFO] Skipping execution.
+[INFO] 
+[INFO] --- frontend:2.0.0:npm (npm-build) @ spring-boot-admin-server-ui ---
+[INFO] Skipping execution.
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-server-ui ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-server-ui ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-server-ui:jar:3.5.8-SNAPSHOT...
+[INFO] 
+[INFO] --- resources:3.4.0:copy-resources (copy-resources) @ spring-boot-admin-server-ui ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target/dist
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-server-ui ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 19 source files with javac [debug parameters target 17] to target/classes
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/package-info.java: Some input files use or override a deprecated API.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/package-info.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-client >---------------
+[INFO] Building Spring Boot Admin Client 3.5.8-SNAPSHOT                  [6/19]
+[INFO]   from spring-boot-admin-client/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-client ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-client ---
+[INFO] Starting audit...
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:31:1: Wrong order for 'org.springframework.boot.cloud.CloudPlatform' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:24:1: Wrong order for 'org.springframework.boot.web.server.Ssl' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:30:1: Wrong order for 'org.springframework.boot.web.server.Ssl' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:25:1: Wrong order for 'org.springframework.boot.web.server.Ssl' import. [SpringImportOrder]
+Audit done.
+[INFO] There are 4 errors reported by Checkstyle 12.3.1 with src/checkstyle/checkstyle.xml ruleset.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:[31,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.cloud.CloudPlatform' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[24,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.web.server.Ssl' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[30,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.web.server.Ssl' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[25,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.web.server.Ssl' import.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Spring Boot Admin 3.5.8-SNAPSHOT:
+[INFO] 
+[INFO] Spring Boot Admin .................................. SUCCESS [  1.582 s]
+[INFO] Spring Boot Admin Dependencies ..................... SUCCESS [  0.069 s]
+[INFO] Spring Boot Admin Build ............................ SUCCESS [  0.166 s]
+[INFO] Spring Boot Admin Server ........................... SUCCESS [  8.752 s]
+[INFO] Spring Boot Admin Server UI ........................ SUCCESS [  1.124 s]
+[INFO] Spring Boot Admin Client ........................... FAILURE [  0.222 s]
+[INFO] Spring Boot Admin Docs ............................. SKIPPED
+[INFO] Spring Boot Admin Server Cloud ..................... SKIPPED
+[INFO] Spring Boot Admin Server Starter ................... SKIPPED
+[INFO] Spring Boot Admin Client Starter ................... SKIPPED
+[INFO] Spring Boot Admin Samples .......................... SKIPPED
+[INFO] Spring Boot Admin Server custom UI ................. SKIPPED
+[INFO] Spring Boot Admin Sample Servlet ................... SKIPPED
+[INFO] Spring Boot Admin Sample Reactive .................. SKIPPED
+[INFO] Spring Boot Admin Sample War ....................... SKIPPED
+[INFO] Spring Boot Admin Sample Hazelcast ................. SKIPPED
+[INFO] Spring Boot Admin Sample Eureka .................... SKIPPED
+[INFO] Spring Boot Admin Sample Consul .................... SKIPPED
+[INFO] Spring Boot Admin Sample Zookeeper ................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.330 s
+[INFO] Finished at: 2026-02-06T01:54:17Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:3.6.0:check (checkstyle-validation) on project spring-boot-admin-client: You have 4 Checkstyle violations. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-client

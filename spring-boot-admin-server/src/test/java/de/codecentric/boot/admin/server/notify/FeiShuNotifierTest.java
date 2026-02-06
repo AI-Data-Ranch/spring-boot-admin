@@ -81,7 +81,7 @@ public class FeiShuNotifierTest {
 				.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), StatusInfo.ofUp())))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
+		assertThat(httpRequest.getValue().getHeaders().asMultiValueMap()).containsEntry("Content-Type",
 				Collections.singletonList("application/json"));
 
 		Map<String, Object> body = httpRequest.getValue().getBody();
@@ -109,7 +109,7 @@ public class FeiShuNotifierTest {
 			.create(notifier.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), infoDown)))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
+		assertThat(httpRequest.getValue().getHeaders().asMultiValueMap()).containsEntry("Content-Type",
 				Collections.singletonList("application/json"));
 		Map<String, Object> body = httpRequest.getValue().getBody();
 		assertThat(body).containsEntry("card",

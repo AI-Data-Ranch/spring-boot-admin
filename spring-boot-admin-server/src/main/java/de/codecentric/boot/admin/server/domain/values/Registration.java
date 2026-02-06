@@ -23,6 +23,8 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.ToString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,8 +73,11 @@ public final class Registration implements Serializable {
 	private final Map<String, String> metadata;
 
 	@lombok.Builder(builderClassName = "Builder", toBuilder = true)
-	private Registration(String name, @Nullable String managementUrl, String healthUrl, @Nullable String serviceUrl,
-			String source, @lombok.Singular("metadata") Map<String, String> metadata) {
+	@JsonCreator
+	private Registration(@JsonProperty("name") String name,
+			@JsonProperty("managementUrl") @Nullable String managementUrl, @JsonProperty("healthUrl") String healthUrl,
+			@JsonProperty("serviceUrl") @Nullable String serviceUrl, @JsonProperty("source") String source,
+			@JsonProperty("metadata") @lombok.Singular("metadata") Map<String, String> metadata) {
 		Assert.hasText(name, "'name' must not be empty.");
 		Assert.hasText(healthUrl, "'healthUrl' must not be empty.");
 		Assert.isTrue(checkUrl(healthUrl), "'healthUrl' is not valid: " + healthUrl);
