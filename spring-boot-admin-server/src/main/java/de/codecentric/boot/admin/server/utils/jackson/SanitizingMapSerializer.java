@@ -21,11 +21,10 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import org.springframework.lang.Nullable;
 import tools.jackson.core.JsonGenerator;
 import tools.jackson.databind.SerializationContext;
 import tools.jackson.databind.ser.std.StdSerializer;
-
-import org.springframework.lang.Nullable;
 
 public class SanitizingMapSerializer extends StdSerializer<Map<String, String>> {
 
