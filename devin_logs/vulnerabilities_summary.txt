@@ -1,0 +1,230 @@
+
+=== Project: spring-boot-admin-docs/src/site/package-lock.json ===
+  - @babel/helpers@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/core@7.29.0', '@babel/helpers@7.28.6']
+  - @babel/helpers@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/core@7.29.0', '@babel/helpers@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/types@3.9.2']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'react-loadable-ssr-addon-v5-slorber@1.0.1', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'react-router@5.3.4', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'react-router-config@5.1.1', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'react-router-dom@5.3.4', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/module-type-aliases@3.9.2', '@docusaurus/types@3.9.2']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'react-loadable-ssr-addon-v5-slorber@1.0.1', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'react-router@5.3.4', 'history@4.10.1', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'react-router@5.3.4', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'react-router-config@5.1.1', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'react-router-dom@5.3.4', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'react-router@5.3.4', 'history@4.10.1', '@babel/runtime@7.28.6']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/preset-env@7.29.0', '@babel/plugin-transform-regenerator@7.29.0']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', '@docusaurus/types@3.9.2']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/preset-env@7.29.0', '@babel/plugin-transform-regenerator@7.29.0']
+  - @babel/runtime@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', '@docusaurus/types@3.9.2']
+  - @babel/runtime-corejs3@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/runtime-corejs3@7.29.0']
+  - @babel/runtime-corejs3@7.26.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@babel/runtime-corejs3@7.29.0']
+  - brace-expansion@1.1.11: low - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'serve-handler@6.1.6', 'minimatch@3.1.2', 'brace-expansion@1.1.12']
+  - brace-expansion@1.1.11: low - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'serve-handler@6.1.6', 'minimatch@3.1.2', 'brace-expansion@1.1.12']
+  - brace-expansion@1.1.11: low - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, 'asciidoctor@3.0.4', 'ejs@3.1.10', 'jake@10.9.4']
+  - brace-expansion@2.0.1: low - Regular Expression Denial of Service (ReDoS)
+  - brace-expansion@2.0.1: low - Regular Expression Denial of Service (ReDoS)
+  - diff@5.2.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', 'libnpmdiff@7.0.1', 'diff@5.2.2']
+  - diff@5.2.0: medium - Regular Expression Denial of Service (ReDoS)
+    Upgrade path: [False, 'remark-deflist@1.0.0', 'mdast-util-from-markdown@1.3.1', 'micromark@3.2.0', 'micromark-core-commonmark@1.1.0', 'micromark-factory-label@1.1.0', 'uvu@0.5.6', 'diff@5.2.2']
+  - estree-util-value-to-estree@3.2.1: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', 'estree-util-value-to-estree@3.5.0']
+  - estree-util-value-to-estree@3.2.1: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', 'estree-util-value-to-estree@3.5.0']
+  - glob@10.4.5: high - Command Injection
+  - glob@10.4.5: high - Command Injection
+  - glob@10.4.5: high - Command Injection
+  - glob@10.4.5: high - Command Injection
+  - glob@10.4.5: high - Command Injection
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'pacote@20.0.0', '@npmcli/run-script@9.1.0', 'node-gyp@11.5.0']
+  - glob@10.4.5: high - Command Injection
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'cacache@19.0.1', 'tar@7.5.7', 'minizlib@3.1.0']
+  - inflight@1.0.6: medium - Missing Release of Resource after Effective Lifetime
+  - @isaacs/brace-expansion@5.0.0: critical - Allocation of Resources Without Limits or Throttling
+    Upgrade path: [False, 'glob@13.0.0', 'minimatch@10.1.2', '@isaacs/brace-expansion@5.0.1']
+  - js-yaml@3.14.1: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', 'gray-matter@4.0.3', 'js-yaml@3.14.2']
+  - js-yaml@3.14.1: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', 'gray-matter@4.0.3', 'js-yaml@3.14.2']
+  - js-yaml@4.1.0: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/plugin-content-docs@3.9.2', 'js-yaml@4.1.1']
+  - js-yaml@4.1.0: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', 'js-yaml@4.1.1']
+  - js-yaml@4.1.0: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', '@docusaurus/utils-validation@3.9.2', 'js-yaml@4.1.1']
+  - js-yaml@4.1.0: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', 'js-yaml@4.1.1']
+  - js-yaml@4.1.0: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/bundler@3.9.2', 'postcss-loader@7.3.4', 'cosmiconfig@8.3.6', 'js-yaml@4.1.1']
+  - js-yaml@4.1.0: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', '@docusaurus/utils-validation@3.9.2', 'js-yaml@4.1.1']
+  - js-yaml@4.1.0: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/bundler@3.9.2', 'postcss-loader@7.3.4', 'cosmiconfig@8.3.6', 'js-yaml@4.1.1']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'html-webpack-plugin@5.6.6', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/plugin-content-blog@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/plugin-content-docs@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/theme-classic@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/theme-search-algolia@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', '@docusaurus/utils-validation@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'html-webpack-plugin@5.6.6', 'pretty-error@4.0.0', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'html-webpack-plugin@5.6.6', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', '@docusaurus/utils-validation@3.9.2', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'html-webpack-plugin@5.6.6', 'pretty-error@4.0.0', 'renderkid@3.0.0', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'html-webpack-plugin@5.6.6', 'pretty-error@4.0.0', 'lodash@4.17.23']
+  - lodash@4.17.21: medium - Prototype Pollution
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'html-webpack-plugin@5.6.6', 'pretty-error@4.0.0', 'renderkid@3.0.0', 'lodash@4.17.23']
+  - mdast-util-to-hast@13.2.0: medium - Improperly Controlled Modification of Dynamically-Determined Object Attributes
+    Upgrade path: [False, '@docusaurus/types@3.9.2', '@mdx-js/mdx@3.1.1', 'remark-rehype@11.1.2', 'mdast-util-to-hast@13.2.1']
+  - mdast-util-to-hast@13.2.0: medium - Improperly Controlled Modification of Dynamically-Determined Object Attributes
+    Upgrade path: [False, '@docusaurus/module-type-aliases@3.9.2', '@docusaurus/types@3.9.2', '@mdx-js/mdx@3.1.1', 'remark-rehype@11.1.2', 'mdast-util-to-hast@13.2.1']
+  - mdast-util-to-hast@13.2.0: medium - Improperly Controlled Modification of Dynamically-Determined Object Attributes
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', 'rehype-raw@7.0.0', 'hast-util-raw@9.1.0', 'mdast-util-to-hast@13.2.1']
+  - mdast-util-to-hast@13.2.0: medium - Improperly Controlled Modification of Dynamically-Determined Object Attributes
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/mdx-loader@3.9.2', 'rehype-raw@7.0.0', 'hast-util-raw@9.1.0', 'mdast-util-to-hast@13.2.1']
+  - mdast-util-to-hast@13.2.0: medium - Improperly Controlled Modification of Dynamically-Determined Object Attributes
+    Upgrade path: [False, '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', '@docusaurus/types@3.9.2', '@mdx-js/mdx@3.1.1', 'remark-rehype@11.1.2', 'mdast-util-to-hast@13.2.1']
+  - mdast-util-to-hast@13.2.0: medium - Improperly Controlled Modification of Dynamically-Determined Object Attributes
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', '@docusaurus/babel@3.9.2', '@docusaurus/utils@3.9.2', '@docusaurus/types@3.9.2', '@mdx-js/mdx@3.1.1', 'remark-rehype@11.1.2', 'mdast-util-to-hast@13.2.1']
+  - node-forge@1.3.1: critical - Interpretation Conflict
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'selfsigned@5.5.0']
+  - node-forge@1.3.1: medium - Integer Overflow or Wraparound
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'selfsigned@5.5.0']
+  - node-forge@1.3.1: high - Uncontrolled Recursion
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'selfsigned@5.5.0']
+  - node-forge@1.3.1: critical - Interpretation Conflict
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'selfsigned@5.5.0']
+  - node-forge@1.3.1: medium - Integer Overflow or Wraparound
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'selfsigned@5.5.0']
+  - node-forge@1.3.1: high - Uncontrolled Recursion
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'selfsigned@5.5.0']
+  - on-headers@1.0.2: medium - Improper Handling of Unexpected Data Type
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'compression@1.8.1', 'on-headers@1.1.0']
+  - on-headers@1.0.2: medium - Improper Handling of Unexpected Data Type
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'compression@1.8.1', 'on-headers@1.1.0']
+  - @pnpm/npm-conf@2.2.2: high - Command Injection
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'update-notifier@6.0.2', 'latest-version@7.0.0', 'package-json@8.1.1', 'registry-auth-token@5.1.1', '@pnpm/npm-conf@3.0.2']
+  - @pnpm/npm-conf@2.2.2: high - Command Injection
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'update-notifier@6.0.2', 'latest-version@7.0.0', 'package-json@8.1.1', 'registry-auth-token@5.1.1', '@pnpm/npm-conf@3.0.2']
+  - prismjs@1.29.0: low - Arbitrary Code Injection
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/theme-classic@3.9.2', 'prismjs@1.30.0']
+  - qs@6.13.0: high - Allocation of Resources Without Limits or Throttling
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'express@4.22.1', 'qs@6.14.1']
+  - qs@6.13.0: high - Allocation of Resources Without Limits or Throttling
+    Upgrade path: [False, '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'express@4.22.1', 'body-parser@1.20.4', 'qs@6.14.1']
+  - qs@6.13.0: high - Allocation of Resources Without Limits or Throttling
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'express@4.22.1', 'qs@6.14.1']
+  - qs@6.13.0: high - Allocation of Resources Without Limits or Throttling
+    Upgrade path: [False, '@docusaurus/preset-classic@3.9.2', '@docusaurus/core@3.9.2', 'webpack-dev-server@5.2.3', 'express@4.22.1', 'body-parser@1.20.4', 'qs@6.14.1']
+  - sirv@2.0.4: low - Directory Traversal
+  - sirv@2.0.4: low - Directory Traversal
+  - tar@7.4.3: medium - Directory Traversal
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'cacache@19.0.1', 'tar@7.5.7']
+  - tar@7.4.3: medium - Improper Handling of Unicode Encoding
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'cacache@19.0.1', 'tar@7.5.7']
+  - tar@7.4.3: medium - Directory Traversal
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'cacache@19.0.1', 'tar@7.5.7']
+  - tar@7.4.3: medium - Directory Traversal
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'pacote@20.0.0', '@npmcli/run-script@9.1.0', 'node-gyp@11.5.0', 'tar@7.5.7']
+  - tar@7.4.3: medium - Improper Handling of Unicode Encoding
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'pacote@20.0.0', '@npmcli/run-script@9.1.0', 'node-gyp@11.5.0', 'tar@7.5.7']
+  - tar@7.4.3: medium - Directory Traversal
+    Upgrade path: [False, 'react-multi-carousel@2.8.6', 'npm@10.9.4', '@npmcli/arborist@8.0.1', '@npmcli/metavuln-calculator@8.0.1', 'pacote@20.0.0', '@npmcli/run-script@9.1.0', 'node-gyp@11.5.0', 'tar@7.5.7']
+  - tar@6.2.1: medium - Directory Traversal
+  - tar@6.2.1: medium - Improper Handling of Unicode Encoding
+  - tar@6.2.1: medium - Directory Traversal
+  - tar@6.2.1: medium - Directory Traversal
+  - tar@6.2.1: medium - Improper Handling of Unicode Encoding
+  - tar@6.2.1: medium - Directory Traversal
+  - tar@6.2.1: medium - Directory Traversal
+  - tar@6.2.1: medium - Improper Handling of Unicode Encoding
+  - tar@6.2.1: medium - Directory Traversal
+  - tar@6.2.1: medium - Directory Traversal
+  - tar@6.2.1: medium - Improper Handling of Unicode Encoding
+  - tar@6.2.1: medium - Directory Traversal
+
+=== Project: spring-boot-admin-samples/spring-boot-admin-sample-eureka/pom.xml ===
+  - com.google.guava:guava@14.0.1: low - Information Disclosure
+  - com.google.guava:guava@14.0.1: medium - Deserialization of Untrusted Data
+  - com.google.guava:guava@14.0.1: low - Creation of Temporary File in Directory with Insecure Permissions
+  - commons-configuration:commons-configuration@1.10: medium - Allocation of Resources Without Limits or Throttling
+  - commons-lang:commons-lang@2.6: high - Uncontrolled Recursion
+  - com.thoughtworks.xstream:xstream@1.4.20: high - Deserialization of Untrusted Data
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1', 'com.netflix.eureka:eureka-client@2.0.5', 'com.thoughtworks.xstream:xstream@1.4.21']
+  - org.apache.httpcomponents:httpclient@4.5.3: medium - Improper Input Validation
+
+=== Project: spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/pom.xml ===
+  - commons-io:commons-io@2.11.0: medium - Uncontrolled Resource Consumption ('Resource Exhaustion')
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@5.0.0', 'org.apache.curator:curator-x-discovery@5.9.0', 'org.apache.curator:curator-recipes@5.9.0', 'org.apache.curator:curator-framework@5.9.0', 'org.apache.curator:curator-client@5.9.0', 'org.apache.zookeeper:zookeeper@3.9.3', 'commons-io:commons-io@2.17.0']
+  - org.apache.zookeeper:zookeeper@3.9.2: medium - Improper Handling of Insufficient Permissions or Privileges
+  - org.apache.zookeeper:zookeeper@3.9.2: medium - Authentication Bypass by Spoofing
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@5.0.0', 'org.apache.curator:curator-x-discovery@5.9.0', 'org.apache.curator:curator-recipes@5.9.0', 'org.apache.curator:curator-framework@5.9.0', 'org.apache.curator:curator-client@5.9.0', 'org.apache.zookeeper:zookeeper@3.9.3']
+
+=== Project: spring-boot-admin-server-cloud/pom.xml ===
+  - com.google.guava:guava@14.0.1: low - Information Disclosure
+  - com.google.guava:guava@14.0.1: medium - Deserialization of Untrusted Data
+  - com.google.guava:guava@14.0.1: low - Creation of Temporary File in Directory with Insecure Permissions
+  - com.google.protobuf:protobuf-java@3.24.3: high - Stack-based Buffer Overflow
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.1', 'io.kubernetes:client-java@19.0.3', 'com.google.protobuf:protobuf-java@3.25.5']
+  - commons-configuration:commons-configuration@1.10: medium - Allocation of Resources Without Limits or Throttling
+  - commons-lang:commons-lang@2.6: high - Uncontrolled Recursion
+  - com.thoughtworks.xstream:xstream@1.4.20: high - Deserialization of Untrusted Data
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1', 'com.netflix.eureka:eureka-client@2.0.5', 'com.thoughtworks.xstream:xstream@1.4.21']
+  - io.vertx:vertx-core@4.5.14: high - Exposure of Resource to Wrong Sphere
+  - io.vertx:vertx-core@4.5.14: medium - HTTP Request Smuggling
+  - org.apache.commons:commons-lang3@3.17.0: high - Uncontrolled Recursion
+  - org.apache.httpcomponents:httpclient@4.5.3: medium - Improper Input Validation
+  - org.bitbucket.b_c:jose4j@0.9.3: high - Allocation of Resources Without Limits or Throttling
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-kubernetes-client@5.0.0', 'org.springframework.cloud:spring-cloud-kubernetes-client-discovery@5.0.0', 'org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@5.0.0', 'io.kubernetes:client-java@24.0.0', 'org.bitbucket.b_c:jose4j@0.9.6']
+  - org.bitbucket.b_c:jose4j@0.9.3: high - Denial of Service (DoS)
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.1', 'io.kubernetes:client-java@19.0.3', 'org.bitbucket.b_c:jose4j@0.9.4']
+  - org.bouncycastle:bcpkix-jdk18on@1.76: medium - Allocation of Resources Without Limits or Throttling
+    Upgrade path: [False, 'org.springframework.cloud:spring-cloud-starter-kubernetes-client@5.0.0', 'org.springframework.cloud:spring-cloud-kubernetes-client-discovery@5.0.0', 'org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@5.0.0', 'io.kubernetes:client-java@24.0.0', 'org.bouncycastle:bcpkix-jdk18on@1.80']
+  - org.jetbrains.kotlin:kotlin-stdlib@1.9.25: low - Information Exposure
