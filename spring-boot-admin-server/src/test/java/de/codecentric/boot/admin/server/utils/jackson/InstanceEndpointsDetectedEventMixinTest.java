@@ -20,7 +20,6 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,8 +46,8 @@ class InstanceEndpointsDetectedEventMixinTest {
 
 	protected InstanceEndpointsDetectedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+
+		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule).build();
 	}
 
 	@BeforeEach
