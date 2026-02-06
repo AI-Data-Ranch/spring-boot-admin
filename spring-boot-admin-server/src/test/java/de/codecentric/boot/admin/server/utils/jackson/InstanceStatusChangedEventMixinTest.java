@@ -23,6 +23,7 @@ import java.util.Collections;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.DatabindException;
+import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.json.JsonMapper;
 
 import org.json.JSONException;
@@ -48,7 +49,10 @@ class InstanceStatusChangedEventMixinTest {
 
 	protected InstanceStatusChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		jsonMapper = JsonMapper.builder().addModule(adminServerModule).build();
+		jsonMapper = JsonMapper.builder()
+			.addModule(adminServerModule)
+			.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+			.build();
 	}
 
 	@BeforeEach

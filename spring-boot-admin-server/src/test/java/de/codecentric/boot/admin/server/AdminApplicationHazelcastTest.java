@@ -40,6 +40,7 @@ import org.springframework.security.config.annotation.web.reactive.EnableWebFlux
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
@@ -130,6 +131,11 @@ class AdminApplicationHazelcastTest extends AbstractAdminApplicationTest {
 			return http.authorizeExchange((authorizeExchange) -> authorizeExchange.anyExchange().permitAll())
 				.csrf(ServerHttpSecurity.CsrfSpec::disable)
 				.build();
+		}
+
+		@Bean
+		public WebClient.Builder webClientBuilder() {
+			return WebClient.builder();
 		}
 
 		@Bean

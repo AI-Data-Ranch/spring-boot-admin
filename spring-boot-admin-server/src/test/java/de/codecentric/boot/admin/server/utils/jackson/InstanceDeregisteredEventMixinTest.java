@@ -22,6 +22,7 @@ import java.time.temporal.ChronoUnit;
 
 import tools.jackson.core.JacksonException;
 import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.DeserializationFeature;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,7 +44,10 @@ class InstanceDeregisteredEventMixinTest {
 
 	protected InstanceDeregisteredEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		jsonMapper = JsonMapper.builder().addModule(adminServerModule).build();
+		jsonMapper = JsonMapper.builder()
+			.addModule(adminServerModule)
+			.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+			.build();
 	}
 
 	@BeforeEach
