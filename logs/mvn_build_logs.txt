@@ -1,0 +1,622 @@
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-starter-client ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-starter-client/src/main/resources
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-starter-client ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-starter-client:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-starter-client ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-starter-client ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-starter-client/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-starter-client ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-starter-client ---
+[INFO] No tests to run.
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-starter-client ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-starter-client/target/spring-boot-admin-starter-client-3.5.8-SNAPSHOT.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-starter-client ---
+[INFO] No sources in project. Archive not created.
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-starter-client ---
+[INFO] No Javadoc in project. Archive not created.
+[INFO]
+[INFO] --------------< de.codecentric:spring-boot-admin-samples >--------------
+[INFO] Building Spring Boot Admin Samples 3.5.8-SNAPSHOT                [11/19]
+[INFO]   from spring-boot-admin-samples/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-samples ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-samples ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-samples ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-samples ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-samples ---
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-samples ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-samples:pom:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-samples ---
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-samples ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO]
+[INFO] ---------< de.codecentric:spring-boot-admin-sample-custom-ui >----------
+[INFO] Building Spring Boot Admin Server custom UI 3.5.8-SNAPSHOT       [12/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-custom-ui ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-custom-ui ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-custom-ui ---
+[INFO]
+[INFO] --- frontend:2.0.0:install-node-and-npm (install-node-and-npm) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Node v22.12.0 is already installed.
+[INFO]
+[INFO] --- frontend:2.0.0:npm (npm-install) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Running 'npm ci --prefer-offline --no-progress --no-audit --silent' in /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-custom-ui
+[INFO]
+[INFO] --- frontend:2.0.0:npm (npm-build) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Running 'npm run build' in /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-custom-ui
+[INFO]
+[INFO] > spring-boot-admin-sample-custom-ui@0.0.0 build
+[INFO] > vite build
+[INFO]
+[INFO] vite v7.3.1 building client environment for production...
+[INFO] transforming...
+[INFO] ✓ 9 modules transformed.
+[INFO] rendering chunks...
+[INFO] computing gzip size...
+[INFO] target/dist/spring-boot-admin-sample-custom-ui.css  0.21 kB │ gzip: 0.15 kB
+[INFO] target/dist/custom-ui.js                            8.64 kB │ gzip: 2.54 kB │ map: 12.45 kB
+[INFO] [vite-plugin-static-copy] Copied 1 items.
+[INFO] ✓ built in 210ms
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-custom-ui ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/src/main/resources
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/src/main/resources
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-custom-ui:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- resources:3.4.0:copy-resources (copy-resources) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Copying 4 resources from target/dist to target/classes/META-INF/spring-boot-admin-server-ui/extensions/custom
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-custom-ui ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-custom-ui ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-custom-ui ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-custom-ui ---
+[INFO] No tests to run.
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-sample-custom-ui ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/target/spring-boot-admin-sample-custom-ui-3.5.8-SNAPSHOT.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-custom-ui ---
+[INFO] No sources in project. Archive not created.
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-custom-ui ---
+[INFO] No Javadoc in project. Archive not created.
+[INFO]
+[INFO] ----------< de.codecentric:spring-boot-admin-sample-servlet >-----------
+[INFO] Building Spring Boot Admin Sample Servlet 3.5.8-SNAPSHOT         [13/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-servlet/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-servlet ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-servlet ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-servlet ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-servlet ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-servlet ---
+[INFO]
+[INFO] --- cyclonedx:2.9.1:makeAggregateBom (default) @ spring-boot-admin-sample-servlet ---
+[INFO] CycloneDX: Resolving Dependencies
+[INFO] CycloneDX: Creating BOM version 1.6 with 115 component(s)
+[INFO] CycloneDX: Writing and validating BOM (JSON): /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/target/classes/bom.json
+[WARNING] Unknown keyword meta:enum - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+[WARNING] Unknown keyword deprecated - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+[INFO]
+[INFO] --- spring-boot:3.5.10:build-info (default) @ spring-boot-admin-sample-servlet ---
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-servlet ---
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-servlet ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-servlet:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-servlet ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 7 source files with javac [debug parameters target 21] to target/classes
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-servlet ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-servlet ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-servlet ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.codecentric.boot.admin.sample.SpringBootAdminServletApplicationTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.802 s -- in de.codecentric.boot.admin.sample.SpringBootAdminServletApplicationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-sample-servlet ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/target/spring-boot-admin-sample-servlet.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-servlet ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/target/spring-boot-admin-sample-servlet-sources.jar
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-servlet ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/target/spring-boot-admin-sample-servlet-javadoc.jar
+[INFO]
+[INFO] --- spring-boot:3.5.10:repackage (default) @ spring-boot-admin-sample-servlet ---
+[INFO] Replacing main artifact /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/target/spring-boot-admin-sample-servlet.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-servlet/target/spring-boot-admin-sample-servlet.jar.original
+[INFO]
+[INFO] ----------< de.codecentric:spring-boot-admin-sample-reactive >----------
+[INFO] Building Spring Boot Admin Sample Reactive 3.5.8-SNAPSHOT        [14/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-reactive/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-reactive ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-reactive/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-reactive ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-reactive ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-reactive ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-reactive ---
+[INFO]
+[INFO] --- spring-boot:3.5.10:build-info (default) @ spring-boot-admin-sample-reactive ---
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-reactive ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-reactive ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-reactive:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-reactive ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/classes
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-reactive ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-reactive/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-reactive ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-reactive ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.codecentric.boot.admin.sample.SpringBootAdminReactiveApplicationTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.167 s -- in de.codecentric.boot.admin.sample.SpringBootAdminReactiveApplicationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-sample-reactive ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-reactive/target/spring-boot-admin-sample-reactive.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-reactive ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-reactive/target/spring-boot-admin-sample-reactive-sources.jar
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-reactive ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-reactive/target/spring-boot-admin-sample-reactive-javadoc.jar
+[INFO]
+[INFO] --- spring-boot:3.5.10:repackage (default) @ spring-boot-admin-sample-reactive ---
+[INFO] Replacing main artifact /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-reactive/target/spring-boot-admin-sample-reactive.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-reactive/target/spring-boot-admin-sample-reactive.jar.original
+[INFO]
+[INFO] ------------< de.codecentric:spring-boot-admin-sample-war >-------------
+[INFO] Building Spring Boot Admin Sample War 3.5.8-SNAPSHOT             [15/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-war/pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-war ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-war ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-war ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-war ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-war ---
+[INFO]
+[INFO] --- spring-boot:3.5.10:build-info (default) @ spring-boot-admin-sample-war ---
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-war ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-war ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-war:war:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-war ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/classes
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-war ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-war ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-war ---
+[INFO] No tests to run.
+[INFO]
+[INFO] --- war:3.5.1:war (default-war) @ spring-boot-admin-sample-war ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [spring-boot-admin-sample-war] in [/home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/target/spring-boot-admin-sample-war]
+[INFO] Processing war project
+[INFO] Building war: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/target/spring-boot-admin-sample-war.war
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-war ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/target/spring-boot-admin-sample-war-sources.jar
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-war ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/target/spring-boot-admin-sample-war-javadoc.jar
+[INFO]
+[INFO] --- spring-boot:3.5.10:repackage (default) @ spring-boot-admin-sample-war ---
+[INFO] Replacing main artifact /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/target/spring-boot-admin-sample-war.war with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-war/target/spring-boot-admin-sample-war.war.original
+[INFO]
+[INFO] ---------< de.codecentric:spring-boot-admin-sample-hazelcast >----------
+[INFO] Building Spring Boot Admin Sample Hazelcast 3.5.8-SNAPSHOT       [16/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-hazelcast ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-hazelcast ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-hazelcast ---
+[INFO]
+[INFO] --- spring-boot:3.5.10:build-info (default) @ spring-boot-admin-sample-hazelcast ---
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-hazelcast:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/classes
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-hazelcast ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.codecentric.boot.admin.sample.SpringBootAdminHazelcastApplicationTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.740 s -- in de.codecentric.boot.admin.sample.SpringBootAdminHazelcastApplicationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/target/spring-boot-admin-sample-hazelcast.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/target/spring-boot-admin-sample-hazelcast-sources.jar
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/target/spring-boot-admin-sample-hazelcast-javadoc.jar
+[INFO]
+[INFO] --- spring-boot:3.5.10:repackage (default) @ spring-boot-admin-sample-hazelcast ---
+[INFO] Replacing main artifact /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/target/spring-boot-admin-sample-hazelcast.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/target/spring-boot-admin-sample-hazelcast.jar.original
+[INFO]
+[INFO] -----------< de.codecentric:spring-boot-admin-sample-eureka >-----------
+[INFO] Building Spring Boot Admin Sample Eureka 3.5.8-SNAPSHOT          [17/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-eureka/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-eureka ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-eureka/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-eureka ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-eureka ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-eureka ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-eureka ---
+[INFO]
+[INFO] --- spring-boot:3.5.10:build-info (default) @ spring-boot-admin-sample-eureka ---
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-eureka ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-eureka ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-eureka:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-eureka ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/classes
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-eureka ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-eureka/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-eureka ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-eureka ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.codecentric.boot.admin.SpringBootAdminEurekaApplicationTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.569 s -- in de.codecentric.boot.admin.SpringBootAdminEurekaApplicationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-sample-eureka ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-eureka/target/spring-boot-admin-sample-eureka.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-eureka ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-eureka/target/spring-boot-admin-sample-eureka-sources.jar
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-eureka ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-eureka/target/spring-boot-admin-sample-eureka-javadoc.jar
+[INFO]
+[INFO] --- spring-boot:3.5.10:repackage (default) @ spring-boot-admin-sample-eureka ---
+[INFO] Replacing main artifact /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-eureka/target/spring-boot-admin-sample-eureka.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-eureka/target/spring-boot-admin-sample-eureka.jar.original
+[INFO]
+[INFO] -----------< de.codecentric:spring-boot-admin-sample-consul >-----------
+[INFO] Building Spring Boot Admin Sample Consul 3.5.8-SNAPSHOT          [18/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-consul/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-consul ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-consul/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-consul ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-consul ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-consul ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-consul ---
+[INFO]
+[INFO] --- spring-boot:3.5.10:build-info (default) @ spring-boot-admin-sample-consul ---
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-consul ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-consul ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-consul:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-consul ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/classes
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-consul ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-consul/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-consul ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-consul ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.codecentric.boot.admin.sample.SpringBootAdminConsulApplicationTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.735 s -- in de.codecentric.boot.admin.sample.SpringBootAdminConsulApplicationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-sample-consul ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-consul/target/spring-boot-admin-sample-consul.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-consul ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-consul/target/spring-boot-admin-sample-consul-sources.jar
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-consul ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-consul/target/spring-boot-admin-sample-consul-javadoc.jar
+[INFO]
+[INFO] --- spring-boot:3.5.10:repackage (default) @ spring-boot-admin-sample-consul ---
+[INFO] Replacing main artifact /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-consul/target/spring-boot-admin-sample-consul.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-consul/target/spring-boot-admin-sample-consul.jar.original
+[INFO]
+[INFO] ---------< de.codecentric:spring-boot-admin-sample-zookeeper >----------
+[INFO] Building Spring Boot Admin Sample Zookeeper 3.5.8-SNAPSHOT       [19/19]
+[INFO]   from spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/target
+[INFO]
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO]
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-sample-zookeeper ---
+[INFO]
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-sample-zookeeper ---
+[INFO]
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-sample-zookeeper ---
+[INFO]
+[INFO] --- spring-boot:3.5.10:build-info (default) @ spring-boot-admin-sample-zookeeper ---
+[INFO]
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO]
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-sample-zookeeper:jar:3.5.8-SNAPSHOT...
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/classes
+[INFO]
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-sample-zookeeper ---
+[INFO] skip non existing resourceDirectory /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/src/test/resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters target 21] to target/test-classes
+[INFO]
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running de.codecentric.boot.admin.sample.SpringBootAdminZookeeperApplicationTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.674 s -- in de.codecentric.boot.admin.sample.SpringBootAdminZookeeperApplicationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/target/spring-boot-admin-sample-zookeeper.jar
+[INFO]
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/target/spring-boot-admin-sample-zookeeper-sources.jar
+[INFO]
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/target/spring-boot-admin-sample-zookeeper-javadoc.jar
+[INFO]
+[INFO] --- spring-boot:3.5.10:repackage (default) @ spring-boot-admin-sample-zookeeper ---
+[INFO] Replacing main artifact /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/target/spring-boot-admin-sample-zookeeper.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/target/spring-boot-admin-sample-zookeeper.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Spring Boot Admin 3.5.8-SNAPSHOT:
+[INFO]
+[INFO] Spring Boot Admin .................................. SUCCESS [  2.684 s]
+[INFO] Spring Boot Admin Dependencies ..................... SUCCESS [  0.081 s]
+[INFO] Spring Boot Admin Build ............................ SUCCESS [  0.153 s]
+[INFO] Spring Boot Admin Server ........................... SUCCESS [03:11 min]
+[INFO] Spring Boot Admin Server UI ........................ SUCCESS [01:53 min]
+[INFO] Spring Boot Admin Client ........................... SUCCESS [ 25.932 s]
+[INFO] Spring Boot Admin Docs ............................. SUCCESS [  0.112 s]
+[INFO] Spring Boot Admin Server Cloud ..................... SUCCESS [ 24.632 s]
+[INFO] Spring Boot Admin Server Starter ................... SUCCESS [  0.266 s]
+[INFO] Spring Boot Admin Client Starter ................... SUCCESS [  0.260 s]
+[INFO] Spring Boot Admin Samples .......................... SUCCESS [  0.328 s]
+[INFO] Spring Boot Admin Server custom UI ................. SUCCESS [  2.687 s]
+[INFO] Spring Boot Admin Sample Servlet ................... SUCCESS [ 15.226 s]
+[INFO] Spring Boot Admin Sample Reactive .................. SUCCESS [  7.562 s]
+[INFO] Spring Boot Admin Sample War ....................... SUCCESS [  2.517 s]
+[INFO] Spring Boot Admin Sample Hazelcast ................. SUCCESS [ 10.659 s]
+[INFO] Spring Boot Admin Sample Eureka .................... SUCCESS [ 12.908 s]
+[INFO] Spring Boot Admin Sample Consul .................... SUCCESS [ 10.098 s]
+[INFO] Spring Boot Admin Sample Zookeeper ................. SUCCESS [  8.676 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  07:10 min
+[INFO] Finished at: 2026-02-06T19:47:05Z
+[INFO] ------------------------------------------------------------------------
+ubuntu@devin-box:~/repos/spring-boot-admin$ mvn clean package
