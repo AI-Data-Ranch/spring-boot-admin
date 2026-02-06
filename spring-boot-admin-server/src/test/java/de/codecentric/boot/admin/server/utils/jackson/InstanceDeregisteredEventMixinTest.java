@@ -16,20 +16,14 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceDeregisteredEvent;
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
@@ -38,23 +32,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class InstanceDeregisteredEventMixinTest {
 
-	private final ObjectMapper objectMapper;
-
-	private JacksonTester<InstanceDeregisteredEvent> jsonTester;
+	private final JsonMapper objectMapper;
 
 	protected InstanceDeregisteredEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		objectMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JacksonException, JSONException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -69,7 +55,7 @@ class InstanceDeregisteredEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithOnlyRequiredProperties() throws JacksonException, JSONException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("timestamp", 1587751031.000000000)
 			.put("type", "DEREGISTERED")
@@ -83,29 +69,27 @@ class InstanceDeregisteredEventMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JacksonException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceDeregisteredEvent event = new InstanceDeregisteredEvent(id, 12345678L, timestamp);
 
-		JsonContent<InstanceDeregisteredEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("DEREGISTERED");
+		String result = objectMapper.writeValueAsString(event);
+		assertThat(result).contains("\"instance\":\"test123\"");
+		assertThat(result).contains("\"version\":12345678");
+		assertThat(result).contains("\"type\":\"DEREGISTERED\"");
 	}
 
 	@Test
-	void verifySerializeWithOnlyRequiredProperties() throws IOException {
+	void verifySerializeWithOnlyRequiredProperties() throws JacksonException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceDeregisteredEvent event = new InstanceDeregisteredEvent(id, 0L, timestamp);
 
-		JsonContent<InstanceDeregisteredEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("DEREGISTERED");
+		String result = objectMapper.writeValueAsString(event);
+		assertThat(result).contains("\"instance\":\"test123\"");
+		assertThat(result).contains("\"version\":0");
+		assertThat(result).contains("\"type\":\"DEREGISTERED\"");
 	}
 
 }

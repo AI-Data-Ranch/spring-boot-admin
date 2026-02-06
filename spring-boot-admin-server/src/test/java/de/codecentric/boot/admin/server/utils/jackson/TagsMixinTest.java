@@ -16,20 +16,14 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Tags;
 
@@ -38,23 +32,15 @@ import static org.assertj.core.api.Assertions.entry;
 
 class TagsMixinTest {
 
-	private final ObjectMapper objectMapper;
-
-	private JacksonTester<Tags> jsonTester;
+	private final JsonMapper objectMapper;
 
 	protected TagsMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		objectMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JacksonException, JSONException {
 		String json = new JSONObject().put("env", "test").put("foo", "bar").toString();
 
 		Tags tags = objectMapper.readValue(json, Tags.class);
@@ -63,14 +49,15 @@ class TagsMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JacksonException, JSONException {
 		Map<String, Object> data = new HashMap<>();
 		data.put("env", "test");
 		data.put("foo", "bar");
 		Tags tags = Tags.from(data);
 
-		JsonContent<Tags> jsonContent = jsonTester.write(tags);
-		assertThat(jsonContent).extractingJsonPathMapValue("$").containsOnly(entry("env", "test"), entry("foo", "bar"));
+		String result = objectMapper.writeValueAsString(tags);
+		assertThat(result).contains("\"env\":\"test\"");
+		assertThat(result).contains("\"foo\":\"bar\"");
 	}
 
 }

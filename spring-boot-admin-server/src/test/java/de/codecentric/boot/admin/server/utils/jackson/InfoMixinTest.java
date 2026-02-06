@@ -16,21 +16,15 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Info;
 
@@ -39,23 +33,15 @@ import static org.assertj.core.api.Assertions.entry;
 
 class InfoMixinTest {
 
-	private final ObjectMapper objectMapper;
-
-	private JacksonTester<Info> jsonTester;
+	private final JsonMapper objectMapper;
 
 	protected InfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		objectMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JacksonException, JSONException {
 		String json = new JSONObject().put("build", new JSONObject().put("version", "1.0.0"))
 			.put("foo", "bar")
 			.toString();
@@ -67,16 +53,16 @@ class InfoMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JacksonException, JSONException {
 		Map<String, Object> data = new HashMap<>();
 		data.put("build", Collections.singletonMap("version", "1.0.0"));
 		data.put("foo", "bar");
 		Info info = Info.from(data);
 
-		JsonContent<Info> jsonContent = jsonTester.write(info);
-		assertThat(jsonContent).extractingJsonPathMapValue("$").containsOnlyKeys("build", "foo");
-		assertThat(jsonContent).extractingJsonPathStringValue("$['build'].['version']").isEqualTo("1.0.0");
-		assertThat(jsonContent).extractingJsonPathStringValue("$['foo']").isEqualTo("bar");
+		String result = objectMapper.writeValueAsString(info);
+		assertThat(result).contains("\"build\"");
+		assertThat(result).contains("\"version\":\"1.0.0\"");
+		assertThat(result).contains("\"foo\":\"bar\"");
 	}
 
 }

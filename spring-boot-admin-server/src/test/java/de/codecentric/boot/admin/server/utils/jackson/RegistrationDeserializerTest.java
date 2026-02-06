@@ -16,11 +16,11 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Registration;
 
@@ -30,15 +30,15 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class RegistrationDeserializerTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper objectMapper;
 
 	protected RegistrationDeserializerTest() {
 		AdminServerModule module = new AdminServerModule(new String[] { ".*password$" });
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(module).build();
+		objectMapper = JsonMapper.builder().addModule(module).build();
 	}
 
 	@Test
-	void test_1_2_json_format() throws Exception {
+	void test_1_2_json_format() throws JacksonException, JSONException {
 		String json = new JSONObject().put("name", "test").put("url", "https://test").toString();
 		Registration value = objectMapper.readValue(json, Registration.class);
 		assertThat(value.getName()).isEqualTo("test");
@@ -48,7 +48,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_1_4_json_format() throws Exception {
+	void test_1_4_json_format() throws JacksonException, JSONException {
 		String json = new JSONObject().put("name", "test")
 			.put("managementUrl", "https://test")
 			.put("healthUrl", "https://health")
@@ -63,7 +63,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_1_5_json_format() throws Exception {
+	void test_1_5_json_format() throws JacksonException, JSONException {
 		String json = new JSONObject().put("name", "test")
 			.put("managementUrl", "https://test")
 			.put("healthUrl", "https://health")
@@ -79,7 +79,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_onlyHealthUrl() throws Exception {
+	void test_onlyHealthUrl() throws JacksonException, JSONException {
 		String json = new JSONObject().put("name", "test").put("healthUrl", "https://test").toString();
 		Registration value = objectMapper.readValue(json, Registration.class);
 		assertThat(value.getName()).isEqualTo("test");
@@ -89,7 +89,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_name_expected() throws Exception {
+	void test_name_expected() throws JacksonException, JSONException {
 		String json = new JSONObject().put("name", "")
 			.put("managementUrl", "https://test")
 			.put("healthUrl", "https://health")
@@ -101,7 +101,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_healthUrl_expected() throws Exception {
+	void test_healthUrl_expected() throws JacksonException, JSONException {
 		String json = new JSONObject().put("name", "test")
 			.put("managementUrl", "https://test")
 			.put("healthUrl", "")
@@ -112,7 +112,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_sanitize_metadata() throws JsonProcessingException {
+	void test_sanitize_metadata() throws JacksonException, JSONException {
 		Registration app = Registration.create("test", "https://health")
 			.metadata("PASSWORD", "qwertz123")
 			.metadata("user", "humptydumpty")
@@ -123,7 +123,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_snake_case() throws Exception {
+	void test_snake_case() throws JacksonException, JSONException {
 		String json = new JSONObject().put("name", "test")
 			.put("management_url", "https://test")
 			.put("health_url", "https://health")
