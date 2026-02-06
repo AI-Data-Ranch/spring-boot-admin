@@ -18,9 +18,8 @@ package de.codecentric.boot.admin.server.utils.jackson;
 
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import tools.jackson.core.JacksonException;
-import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Registration;
 
@@ -30,11 +29,11 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class RegistrationDeserializerTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper objectMapper;
 
 	protected RegistrationDeserializerTest() {
 		AdminServerModule module = new AdminServerModule(new String[] { ".*password$" });
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(module).build();
+		objectMapper = JsonMapper.builder().addModule(module).build();
 	}
 
 	@Test

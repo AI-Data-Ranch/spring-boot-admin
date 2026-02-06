@@ -85,8 +85,8 @@ class HipchatNotifierTest {
 				.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), StatusInfo.ofUp())))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
-				Collections.singletonList("application/json"));
+		assertThat((java.util.Map<String, java.util.List<String>>) httpRequest.getValue().getHeaders())
+			.containsEntry("Content-Type", Collections.singletonList("application/json"));
 
 		Map<String, Object> body = httpRequest.getValue().getBody();
 		assertThat(body).containsEntry("color", "green");
@@ -115,8 +115,8 @@ class HipchatNotifierTest {
 			.create(notifier.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), infoDown)))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
-				Collections.singletonList("application/json"));
+		assertThat((java.util.Map<String, java.util.List<String>>) httpRequest.getValue().getHeaders())
+			.containsEntry("Content-Type", Collections.singletonList("application/json"));
 		Map<String, Object> body = httpRequest.getValue().getBody();
 		assertThat(body).containsEntry("color", "red");
 		assertThat(body).containsEntry("message", "<strong>App</strong>/-id- is <strong>DOWN</strong>");
