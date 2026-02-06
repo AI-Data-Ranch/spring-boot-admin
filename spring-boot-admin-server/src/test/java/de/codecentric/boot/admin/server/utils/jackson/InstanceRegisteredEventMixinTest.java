@@ -20,17 +20,16 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import tools.jackson.core.JsonProcessingException;
-import tools.jackson.databind.JsonMappingException;
-import tools.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.DatabindException;
+import tools.jackson.databind.json.JsonMapper;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceRegisteredEvent;
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
@@ -42,23 +41,22 @@ import static org.assertj.core.api.Assertions.entry;
 
 class InstanceRegisteredEventMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper jsonMapper;
 
 	private JacksonTester<InstanceRegisteredEvent> jsonTester;
 
 	protected InstanceRegisteredEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		jsonMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@BeforeEach
 	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		JacksonTester.initFields(this, jsonMapper);
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -72,7 +70,7 @@ class InstanceRegisteredEventMixinTest {
 						.put("metadata", new JSONObject().put("PASSWORD", "******").put("user", "humptydumpty")))
 			.toString();
 
-		InstanceRegisteredEvent event = objectMapper.readValue(json, InstanceRegisteredEvent.class);
+		InstanceRegisteredEvent event = jsonMapper.readValue(json, InstanceRegisteredEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isEqualTo(12345678L);
@@ -89,14 +87,14 @@ class InstanceRegisteredEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("timestamp", 1587751031.000000000)
 			.put("type", "REGISTERED")
 			.put("registration", new JSONObject().put("name", "test").put("healthUrl", "http://localhost:9080/heath"))
 			.toString();
 
-		InstanceRegisteredEvent event = objectMapper.readValue(json, InstanceRegisteredEvent.class);
+		InstanceRegisteredEvent event = jsonMapper.readValue(json, InstanceRegisteredEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isZero();
@@ -113,14 +111,14 @@ class InstanceRegisteredEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithoutRegistration() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithoutRegistration() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
 			.put("type", "REGISTERED")
 			.toString();
 
-		InstanceRegisteredEvent event = objectMapper.readValue(json, InstanceRegisteredEvent.class);
+		InstanceRegisteredEvent event = jsonMapper.readValue(json, InstanceRegisteredEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isEqualTo(12345678L);
@@ -138,8 +136,8 @@ class InstanceRegisteredEventMixinTest {
 			.put("registration", new JSONObject())
 			.toString();
 
-		assertThatThrownBy(() -> objectMapper.readValue(json, InstanceRegisteredEvent.class))
-			.isInstanceOf(JsonMappingException.class)
+		assertThatThrownBy(() -> jsonMapper.readValue(json, InstanceRegisteredEvent.class))
+			.isInstanceOf(DatabindException.class)
 			.hasCauseInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("must not be empty");
 	}

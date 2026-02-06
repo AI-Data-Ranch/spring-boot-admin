@@ -18,9 +18,9 @@ package de.codecentric.boot.admin.server.utils.jackson;
 
 import java.io.IOException;
 
-import tools.jackson.core.JsonProcessingException;
-import tools.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,7 +28,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.Endpoint;
 import de.codecentric.boot.admin.server.domain.values.Endpoints;
@@ -37,28 +36,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class EndpointsMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper jsonMapper;
 
 	private JacksonTester<Endpoints> jsonTester;
 
 	protected EndpointsMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		jsonMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@BeforeEach
 	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		JacksonTester.initFields(this, jsonMapper);
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException, JacksonException {
 		String json = new JSONArray().put(new JSONObject().put("id", "info").put("url", "http://localhost:8080/info"))
 			.put(new JSONObject().put("id", "health").put("url", "http://localhost:8080/health"))
 			.toString();
 
-		Endpoints endpoints = objectMapper.readValue(json, Endpoints.class);
+		Endpoints endpoints = jsonMapper.readValue(json, Endpoints.class);
 		assertThat(endpoints).isNotNull()
 			.containsExactlyInAnyOrder(Endpoint.of("info", "http://localhost:8080/info"),
 					Endpoint.of("health", "http://localhost:8080/health"));

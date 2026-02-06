@@ -20,9 +20,9 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import tools.jackson.core.JsonProcessingException;
-import tools.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +30,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceEndpointsDetectedEvent;
 import de.codecentric.boot.admin.server.domain.values.Endpoint;
@@ -41,23 +40,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class InstanceEndpointsDetectedEventMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper jsonMapper;
 
 	private JacksonTester<InstanceEndpointsDetectedEvent> jsonTester;
 
 	protected InstanceEndpointsDetectedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		jsonMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@BeforeEach
 	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		JacksonTester.initFields(this, jsonMapper);
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -67,7 +65,7 @@ class InstanceEndpointsDetectedEventMixinTest {
 						.put(new JSONObject().put("id", "health").put("url", "http://localhost:8080/health")))
 			.toString();
 
-		InstanceEndpointsDetectedEvent event = objectMapper.readValue(json, InstanceEndpointsDetectedEvent.class);
+		InstanceEndpointsDetectedEvent event = jsonMapper.readValue(json, InstanceEndpointsDetectedEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isEqualTo(12345678L);
@@ -77,7 +75,7 @@ class InstanceEndpointsDetectedEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithEmptyEndpoints() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithEmptyEndpoints() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -85,7 +83,7 @@ class InstanceEndpointsDetectedEventMixinTest {
 			.put("endpoints", new JSONArray())
 			.toString();
 
-		InstanceEndpointsDetectedEvent event = objectMapper.readValue(json, InstanceEndpointsDetectedEvent.class);
+		InstanceEndpointsDetectedEvent event = jsonMapper.readValue(json, InstanceEndpointsDetectedEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isEqualTo(12345678L);
@@ -94,13 +92,13 @@ class InstanceEndpointsDetectedEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("timestamp", 1587751031.000000000)
 			.put("type", "ENDPOINTS_DETECTED")
 			.toString();
 
-		InstanceEndpointsDetectedEvent event = objectMapper.readValue(json, InstanceEndpointsDetectedEvent.class);
+		InstanceEndpointsDetectedEvent event = jsonMapper.readValue(json, InstanceEndpointsDetectedEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isZero();

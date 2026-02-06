@@ -19,16 +19,15 @@ package de.codecentric.boot.admin.server.utils.jackson;
 import java.io.IOException;
 import java.util.Collections;
 
-import tools.jackson.core.JsonProcessingException;
-import tools.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.StatusInfo;
 
@@ -37,28 +36,27 @@ import static org.assertj.core.api.Assertions.entry;
 
 class StatusInfoMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper jsonMapper;
 
 	private JacksonTester<StatusInfo> jsonTester;
 
 	protected StatusInfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		jsonMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@BeforeEach
 	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		JacksonTester.initFields(this, jsonMapper);
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException, JacksonException {
 		String json = new JSONObject().put("status", "OFFLINE")
 			.put("details", new JSONObject().put("foo", "bar"))
 			.toString();
 
-		StatusInfo statusInfo = objectMapper.readValue(json, StatusInfo.class);
+		StatusInfo statusInfo = jsonMapper.readValue(json, StatusInfo.class);
 		assertThat(statusInfo).isNotNull();
 		assertThat(statusInfo.getStatus()).isEqualTo("OFFLINE");
 		assertThat(statusInfo.getDetails()).containsOnly(entry("foo", "bar"));
