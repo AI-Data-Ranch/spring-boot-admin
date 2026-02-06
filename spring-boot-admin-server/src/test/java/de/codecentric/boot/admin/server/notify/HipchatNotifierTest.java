@@ -17,7 +17,6 @@
 package de.codecentric.boot.admin.server.notify;
 
 import java.net.URI;
-import java.util.Collections;
 import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -85,8 +84,7 @@ class HipchatNotifierTest {
 				.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), StatusInfo.ofUp())))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
-				Collections.singletonList("application/json"));
+		assertThat(httpRequest.getValue().getHeaders().get("Content-Type")).containsExactly("application/json");
 
 		Map<String, Object> body = httpRequest.getValue().getBody();
 		assertThat(body).containsEntry("color", "green");
@@ -115,8 +113,7 @@ class HipchatNotifierTest {
 			.create(notifier.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), infoDown)))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
-				Collections.singletonList("application/json"));
+		assertThat(httpRequest.getValue().getHeaders().get("Content-Type")).containsExactly("application/json");
 		Map<String, Object> body = httpRequest.getValue().getBody();
 		assertThat(body).containsEntry("color", "red");
 		assertThat(body).containsEntry("message", "<strong>App</strong>/-id- is <strong>DOWN</strong>");

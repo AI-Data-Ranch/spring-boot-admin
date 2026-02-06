@@ -21,17 +21,15 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.cfg.DateTimeFeature;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceStatusChangedEvent;
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
@@ -43,14 +41,17 @@ import static org.assertj.core.api.Assertions.entry;
 
 class InstanceStatusChangedEventMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper objectMapper;
 
 	private JacksonTester<InstanceStatusChangedEvent> jsonTester;
 
 	protected InstanceStatusChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		objectMapper = JsonMapper.builder()
+			.addModule(adminServerModule)
+			.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS)
+			.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+			.build();
 	}
 
 	@BeforeEach
@@ -59,7 +60,7 @@ class InstanceStatusChangedEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -81,7 +82,7 @@ class InstanceStatusChangedEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("timestamp", 1587751031.000000000)
 			.put("type", "STATUS_CHANGED")
@@ -101,7 +102,7 @@ class InstanceStatusChangedEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithoutStatusInfo() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithoutStatusInfo() throws JSONException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -126,7 +127,7 @@ class InstanceStatusChangedEventMixinTest {
 			.toString();
 
 		assertThatThrownBy(() -> objectMapper.readValue(json, InstanceStatusChangedEvent.class))
-			.isInstanceOf(JsonMappingException.class)
+			.isInstanceOf(tools.jackson.core.JacksonException.class)
 			.hasCauseInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("must not be empty");
 	}

@@ -53,7 +53,8 @@ public class AdminServerInstanceWebClientConfiguration {
 	private final InstanceWebClient.Builder instanceWebClientBuilder;
 
 	public AdminServerInstanceWebClientConfiguration(ObjectProvider<InstanceWebClientCustomizer> customizers,
-			WebClient.Builder webClient) {
+			ObjectProvider<WebClient.Builder> webClientProvider) {
+		WebClient.Builder webClient = webClientProvider.getIfAvailable(WebClient::builder);
 		this.instanceWebClientBuilder = InstanceWebClient.builder(webClient);
 		customizers.orderedStream().forEach((customizer) -> customizer.customize(this.instanceWebClientBuilder));
 	}

@@ -47,6 +47,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-webmvc</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
@@ -103,6 +108,16 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-http-client</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-restclient</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
             <scope>test</scope>
         </dependency>
@@ -144,7 +159,7 @@
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
-            <artifactId>junit-jupiter</artifactId>
+            <artifactId>testcontainers-junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
