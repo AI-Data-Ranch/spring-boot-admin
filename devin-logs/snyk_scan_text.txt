@@ -1,0 +1,578 @@
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       pom.xml
+Project name:      de.codecentric:spring-boot-admin
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested /home/ubuntu/repos/spring-boot-admin for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-build/pom.xml
+Project name:      de.codecentric:spring-boot-admin-build
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested /home/ubuntu/repos/spring-boot-admin for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-client/pom.xml
+Project name:      de.codecentric:spring-boot-admin-client
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 49 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-dependencies/pom.xml
+Project name:      de.codecentric:spring-boot-admin-dependencies
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested /home/ubuntu/repos/spring-boot-admin for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-docs/pom.xml
+Project name:      de.codecentric:spring-boot-admin-docs
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested /home/ubuntu/repos/spring-boot-admin for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Tested 1386 dependencies for known issues, found 23 issues, 105 vulnerable paths.
+
+
+Issues with no direct upgrade or patch:
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-BABELHELPERS-9397697] in @babel/helpers@7.26.0
+    introduced by @docusaurus/core@3.9.2 > @docusaurus/babel@3.9.2 > @babel/core@7.26.0 > @babel/helpers@7.26.0 and 1 other path(s)
+  This issue was fixed in versions: 7.26.10, 8.0.0-alpha.17
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-BABELRUNTIME-10044504] in @babel/runtime@7.26.0
+    introduced by @docusaurus/types@3.9.2 > @slorber/react-helmet-async@1.3.0 > @babel/runtime@7.26.0 and 17 other path(s)
+  This issue was fixed in versions: 7.26.10, 8.0.0-alpha.17
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-BABELRUNTIMECOREJS3-9397696] in @babel/runtime-corejs3@7.26.0
+    introduced by @docusaurus/core@3.9.2 > @docusaurus/babel@3.9.2 > @babel/runtime-corejs3@7.26.0 and 1 other path(s)
+  This issue was fixed in versions: 7.26.10, 8.0.0-alpha.17
+  ✗ Regular Expression Denial of Service (ReDoS) [Low Severity][https://security.snyk.io/vuln/SNYK-JS-BRACEEXPANSION-9789073] in brace-expansion@2.0.1
+    introduced by @docusaurus/core@3.9.2 > serve-handler@6.1.6 > minimatch@3.1.2 > brace-expansion@1.1.11 and 4 other path(s)
+  This issue was fixed in versions: 1.1.12, 2.0.2, 3.0.1, 4.0.1
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-DIFF-14917201] in diff@5.2.0
+    introduced by react-multi-carousel@2.8.6 > npm@10.9.2 > libnpmdiff@7.0.0 > diff@5.2.0 and 1 other path(s)
+  This issue was fixed in versions: 4.0.4, 5.2.2, 8.0.3
+  ✗ Prototype Pollution [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ESTREEUTILVALUETOESTREE-9734388] in estree-util-value-to-estree@3.2.1
+    introduced by @docusaurus/core@3.9.2 > @docusaurus/mdx-loader@3.9.2 > estree-util-value-to-estree@3.2.1 and 1 other path(s)
+  This issue was fixed in versions: 3.3.3
+  ✗ Command Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-GLOB-14040952] in glob@10.4.5
+    introduced by react-multi-carousel@2.8.6 > npm@10.9.2 > glob@10.4.5 and 5 other path(s)
+  This issue was fixed in versions: 10.5.0, 11.1.0
+  ✗ Missing Release of Resource after Effective Lifetime [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-INFLIGHT-6095116] in inflight@1.0.6
+    introduced by asciidoctor@3.0.4 > @asciidoctor/core@3.0.4 > @asciidoctor/opal-runtime@3.0.1 > glob@8.1.0 > inflight@1.0.6
+  No upgrade or patch available
+  ✗ Allocation of Resources Without Limits or Throttling [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-ISAACSBRACEEXPANSION-15208653] in @isaacs/brace-expansion@5.0.0
+    introduced by glob@13.0.0 > minimatch@10.1.1 > @isaacs/brace-expansion@5.0.0
+  This issue was fixed in versions: 5.0.1
+  ✗ Prototype Pollution [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-JSYAML-13961110] in js-yaml@4.1.0
+    introduced by @docusaurus/core@3.9.2 > @docusaurus/babel@3.9.2 > @docusaurus/utils@3.9.2 > gray-matter@4.0.3 > js-yaml@3.14.1 and 8 other path(s)
+  This issue was fixed in versions: 3.14.2, 4.1.1
+  ✗ Prototype Pollution [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-LODASH-15053838] in lodash@4.17.21
+    introduced by @docusaurus/core@3.9.2 > lodash@4.17.21 and 15 other path(s)
+  This issue was fixed in versions: 4.17.23
+  ✗ Improperly Controlled Modification of Dynamically-Determined Object Attributes [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-MDASTUTILTOHAST-14157221] in mdast-util-to-hast@13.2.0
+    introduced by @docusaurus/types@3.9.2 > @mdx-js/mdx@3.1.0 > remark-rehype@11.1.1 > mdast-util-to-hast@13.2.0 and 5 other path(s)
+  This issue was fixed in versions: 13.2.1
+  ✗ Interpretation Conflict [Critical Severity][https://security.snyk.io/vuln/SNYK-JS-NODEFORGE-14114940] in node-forge@1.3.1
+    introduced by @docusaurus/core@3.9.2 > webpack-dev-server@5.2.2 > selfsigned@2.4.1 > node-forge@1.3.1 and 1 other path(s)
+  This issue was fixed in versions: 1.3.2
+  ✗ Integer Overflow or Wraparound [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-NODEFORGE-14125097] in node-forge@1.3.1
+    introduced by @docusaurus/core@3.9.2 > webpack-dev-server@5.2.2 > selfsigned@2.4.1 > node-forge@1.3.1 and 1 other path(s)
+  This issue was fixed in versions: 1.3.2
+  ✗ Uncontrolled Recursion [High Severity][https://security.snyk.io/vuln/SNYK-JS-NODEFORGE-14125745] in node-forge@1.3.1
+    introduced by @docusaurus/core@3.9.2 > webpack-dev-server@5.2.2 > selfsigned@2.4.1 > node-forge@1.3.1 and 1 other path(s)
+  This issue was fixed in versions: 1.3.2
+  ✗ Improper Handling of Unexpected Data Type [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-ONHEADERS-10773729] in on-headers@1.0.2
+    introduced by @docusaurus/core@3.9.2 > webpack-dev-server@5.2.2 > compression@1.7.4 > on-headers@1.0.2 and 1 other path(s)
+  This issue was fixed in versions: 1.1.0
+  ✗ Command Injection [High Severity][https://security.snyk.io/vuln/SNYK-JS-PNPMNPMCONF-14897556] in @pnpm/npm-conf@2.2.2
+    introduced by @docusaurus/core@3.9.2 > update-notifier@6.0.2 > latest-version@7.0.0 > package-json@8.1.1 > registry-auth-token@5.0.2 > @pnpm/npm-conf@2.2.2 and 1 other path(s)
+  This issue was fixed in versions: 3.0.2
+  ✗ Arbitrary Code Injection [Low Severity][https://security.snyk.io/vuln/SNYK-JS-PRISMJS-9055448] in prismjs@1.29.0
+    introduced by @docusaurus/preset-classic@3.9.2 > @docusaurus/theme-classic@3.9.2 > prismjs@1.29.0
+  This issue was fixed in versions: 1.30.0
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JS-QS-14724253] in qs@6.13.0
+    introduced by @docusaurus/core@3.9.2 > webpack-dev-server@5.2.2 > express@4.21.2 > qs@6.13.0 and 3 other path(s)
+  This issue was fixed in versions: 6.14.1
+  ✗ Directory Traversal [Low Severity][https://security.snyk.io/vuln/SNYK-JS-SIRV-12558119] in sirv@2.0.4
+    introduced by @docusaurus/core@3.9.2 > webpack-bundle-analyzer@4.10.2 > sirv@2.0.4 and 1 other path(s)
+  This issue was fixed in versions: 3.0.2
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15032660] in tar@6.2.1
+    introduced by react-multi-carousel@2.8.6 > npm@10.9.2 > @npmcli/arborist@8.0.0 > @npmcli/metavuln-calculator@8.0.1 > cacache@19.0.1 > tar@7.4.3 and 5 other path(s)
+  This issue was fixed in versions: 7.5.3
+  ✗ Improper Handling of Unicode Encoding [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15038581] in tar@6.2.1
+    introduced by react-multi-carousel@2.8.6 > npm@10.9.2 > @npmcli/arborist@8.0.0 > @npmcli/metavuln-calculator@8.0.1 > cacache@19.0.1 > tar@7.4.3 and 5 other path(s)
+  This issue was fixed in versions: 7.5.4
+  ✗ Directory Traversal [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-TAR-15127355] in tar@6.2.1
+    introduced by react-multi-carousel@2.8.6 > npm@10.9.2 > @npmcli/arborist@8.0.0 > @npmcli/metavuln-calculator@8.0.1 > cacache@19.0.1 > tar@7.4.3 and 5 other path(s)
+  This issue was fixed in versions: 7.5.7
+
+
+
+Organization:      alex.baker
+Package manager:   npm
+Target file:       spring-boot-admin-docs/src/site/package-lock.json
+Project name:      site
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/pom.xml
+Project name:      de.codecentric:spring-boot-admin-samples
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested /home/ubuntu/repos/spring-boot-admin for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-consul/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-consul
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 110 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   npm
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/package-lock.json
+Project name:      spring-boot-admin-sample-custom-ui
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 23 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-custom-ui
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested /home/ubuntu/repos/spring-boot-admin for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Tested 117 dependencies for known issues, found 7 issues, 7 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 to org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1 to fix
+  ✗ Deserialization of Untrusted Data [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-8352924] in com.thoughtworks.xstream:xstream@1.4.20
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.thoughtworks.xstream:xstream@1.4.20
+
+
+Issues with no direct upgrade or patch:
+  ✗ Information Disclosure [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-1015415] in com.google.guava:guava@14.0.1
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.netflix.netflix-commons:netflix-eventbus@0.3.0 > com.netflix.netflix-commons:netflix-infix@0.3.0 > com.google.guava:guava@14.0.1
+  This issue was fixed in versions: 30.0-android, 30.0-jre
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-32236] in com.google.guava:guava@14.0.1
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.netflix.netflix-commons:netflix-eventbus@0.3.0 > com.netflix.netflix-commons:netflix-infix@0.3.0 > com.google.guava:guava@14.0.1
+  This issue was fixed in versions: 24.1.1, 24.1.1-jre
+  ✗ Creation of Temporary File in Directory with Insecure Permissions [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-5710356] in com.google.guava:guava@14.0.1
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.netflix.netflix-commons:netflix-eventbus@0.3.0 > com.netflix.netflix-commons:netflix-infix@0.3.0 > com.google.guava:guava@14.0.1
+  This issue was fixed in versions: 32.0.0-android, 32.0.0-jre
+  ✗ Allocation of Resources Without Limits or Throttling [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMMONSCONFIGURATION-10116124] in commons-configuration:commons-configuration@1.10
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > commons-configuration:commons-configuration@1.10
+  No upgrade or patch available
+  ✗ Uncontrolled Recursion [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMMONSLANG-10734077] in commons-lang:commons-lang@2.6
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > commons-configuration:commons-configuration@1.10 > commons-lang:commons-lang@2.6
+  No upgrade or patch available
+  ✗ Improper Input Validation [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHEHTTPCOMPONENTS-1048058] in org.apache.httpcomponents:httpclient@4.5.3
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > org.apache.httpcomponents:httpclient@4.5.3
+  This issue was fixed in versions: 4.5.13
+
+
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-eureka/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-eureka
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-hazelcast
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 88 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-reactive/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-reactive
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 82 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-servlet/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-servlet
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 117 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-servlet-graalvm/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-servlet-graalvm
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 78 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-war/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-war
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 83 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Tested 115 dependencies for known issues, found 3 issues, 3 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@4.3.0 to org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@5.0.0 to fix
+  ✗ Uncontrolled Resource Consumption ('Resource Exhaustion') [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMMONSIO-8161190] in commons-io:commons-io@2.11.0
+    introduced by org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@4.3.0 > org.apache.curator:curator-x-discovery@5.8.0 > org.apache.curator:curator-recipes@5.8.0 > org.apache.curator:curator-framework@5.8.0 > org.apache.curator:curator-client@5.8.0 > org.apache.zookeeper:zookeeper@3.9.2 > commons-io:commons-io@2.11.0
+  ✗ Authentication Bypass by Spoofing [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHEZOOKEEPER-8350343] in org.apache.zookeeper:zookeeper@3.9.2
+    introduced by org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@4.3.0 > org.apache.curator:curator-x-discovery@5.8.0 > org.apache.curator:curator-recipes@5.8.0 > org.apache.curator:curator-framework@5.8.0 > org.apache.curator:curator-client@5.8.0 > org.apache.zookeeper:zookeeper@3.9.2
+
+
+Issues with no direct upgrade or patch:
+  ✗ Improper Handling of Insufficient Permissions or Privileges [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHEZOOKEEPER-13045609] in org.apache.zookeeper:zookeeper@3.9.2
+    introduced by org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@4.3.0 > org.apache.curator:curator-x-discovery@5.8.0 > org.apache.curator:curator-recipes@5.8.0 > org.apache.curator:curator-framework@5.8.0 > org.apache.curator:curator-client@5.8.0 > org.apache.zookeeper:zookeeper@3.9.2
+  This issue was fixed in versions: 3.9.4
+
+
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/pom.xml
+Project name:      de.codecentric:spring-boot-admin-sample-zookeeper
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-server/pom.xml
+Project name:      de.codecentric:spring-boot-admin-server
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 85 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Tested 189 dependencies for known issues, found 15 issues, 15 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.0 to org.springframework.cloud:spring-cloud-starter-kubernetes-client@5.0.0 to fix
+  ✗ Allocation of Resources Without Limits or Throttling [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGBOUNCYCASTLE-11789688] in org.bouncycastle:bcpkix-jdk18on@1.76
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.0 > io.kubernetes:client-java@19.0.2 > org.bouncycastle:bcpkix-jdk18on@1.76
+  ✗ Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGBITBUCKETBC-14465261] in org.bitbucket.b_c:jose4j@0.9.3
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.0 > io.kubernetes:client-java@19.0.2 > org.bitbucket.b_c:jose4j@0.9.3
+  ✗ Stack-based Buffer Overflow [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEPROTOBUF-8055227] in com.google.protobuf:protobuf-java@3.24.3
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.0 > io.kubernetes:client-java@19.0.2 > com.google.protobuf:protobuf-java@3.24.3
+  ✗ Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGBITBUCKETBC-6139942] in org.bitbucket.b_c:jose4j@0.9.3
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.0 > io.kubernetes:client-java@19.0.2 > org.bitbucket.b_c:jose4j@0.9.3
+
+  Upgrade org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 to org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1 to fix
+  ✗ Deserialization of Untrusted Data [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-8352924] in com.thoughtworks.xstream:xstream@1.4.20
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.thoughtworks.xstream:xstream@1.4.20
+
+
+Issues with no direct upgrade or patch:
+  ✗ Information Disclosure [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-1015415] in com.google.guava:guava@14.0.1
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.netflix.netflix-commons:netflix-eventbus@0.3.0 > com.netflix.netflix-commons:netflix-infix@0.3.0 > com.google.guava:guava@14.0.1
+  This issue was fixed in versions: 30.0-android, 30.0-jre
+  ✗ Deserialization of Untrusted Data [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-32236] in com.google.guava:guava@14.0.1
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.netflix.netflix-commons:netflix-eventbus@0.3.0 > com.netflix.netflix-commons:netflix-infix@0.3.0 > com.google.guava:guava@14.0.1
+  This issue was fixed in versions: 24.1.1, 24.1.1-jre
+  ✗ Creation of Temporary File in Directory with Insecure Permissions [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-5710356] in com.google.guava:guava@14.0.1
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > com.netflix.netflix-commons:netflix-eventbus@0.3.0 > com.netflix.netflix-commons:netflix-infix@0.3.0 > com.google.guava:guava@14.0.1
+  This issue was fixed in versions: 32.0.0-android, 32.0.0-jre
+  ✗ Allocation of Resources Without Limits or Throttling [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMMONSCONFIGURATION-10116124] in commons-configuration:commons-configuration@1.10
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > commons-configuration:commons-configuration@1.10
+  No upgrade or patch available
+  ✗ Uncontrolled Recursion [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMMONSLANG-10734077] in commons-lang:commons-lang@2.6
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > commons-configuration:commons-configuration@1.10 > commons-lang:commons-lang@2.6
+  No upgrade or patch available
+  ✗ Exposure of Resource to Wrong Sphere [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-IOVERTX-10495500] in io.vertx:vertx-core@4.5.14
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-fabric8@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-fabric8-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-fabric8-autoconfig@3.3.0 > io.fabric8:kubernetes-client@7.3.1 > io.fabric8:kubernetes-httpclient-vertx@7.3.1 > io.vertx:vertx-core@4.5.14
+  This issue was fixed in versions: 4.5.16
+  ✗ HTTP Request Smuggling [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-IOVERTX-14988768] in io.vertx:vertx-core@4.5.14
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-fabric8@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-fabric8-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-fabric8-autoconfig@3.3.0 > io.fabric8:kubernetes-client@7.3.1 > io.fabric8:kubernetes-httpclient-vertx@7.3.1 > io.vertx:vertx-core@4.5.14
+  This issue was fixed in versions: 4.5.24
+  ✗ Uncontrolled Recursion [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHECOMMONS-10734078] in org.apache.commons:commons-lang3@3.17.0
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.0 > io.kubernetes:client-java@19.0.2 > org.apache.commons:commons-lang3@3.17.0
+  This issue was fixed in versions: 3.18.0
+  ✗ Improper Input Validation [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHEHTTPCOMPONENTS-1048058] in org.apache.httpcomponents:httpclient@4.5.3
+    introduced by org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.0 > com.netflix.eureka:eureka-client@2.0.4 > org.apache.httpcomponents:httpclient@4.5.3
+  This issue was fixed in versions: 4.5.13
+  ✗ Information Exposure [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744] in org.jetbrains.kotlin:kotlin-stdlib@1.9.25
+    introduced by org.springframework.cloud:spring-cloud-starter-kubernetes-fabric8@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-fabric8-discovery@3.3.0 > org.springframework.cloud:spring-cloud-kubernetes-fabric8-autoconfig@3.3.0 > com.squareup.okhttp3:okhttp@4.12.0 > org.jetbrains.kotlin:kotlin-stdlib-jdk8@1.9.25 > org.jetbrains.kotlin:kotlin-stdlib@1.9.25
+  This issue was fixed in versions: 2.1.0
+
+
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-server-cloud/pom.xml
+Project name:      de.codecentric:spring-boot-admin-server-cloud
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   npm
+Target file:       spring-boot-admin-server-ui/package-lock.json
+Project name:      spring-boot-admin-server-ui
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 163 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-server-ui/pom.xml
+Project name:      de.codecentric:spring-boot-admin-server-ui
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 81 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-starter-client/pom.xml
+Project name:      de.codecentric:spring-boot-admin-starter-client
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 33 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing /home/ubuntu/repos/spring-boot-admin...
+
+Organization:      alex.baker
+Package manager:   maven
+Target file:       spring-boot-admin-starter-server/pom.xml
+Project name:      de.codecentric:spring-boot-admin-starter-server
+Open source:       no
+Project path:      /home/ubuntu/repos/spring-boot-admin
+Licenses:          enabled
+
+✔ Tested 71 dependencies for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+
+Tested 23 projects, 4 contained vulnerable paths.
+
+
+
+
+You have reached your monthly limit of 200 private tests for your alex.baker org.
+To learn more about our plans and increase your tests limit visit https://snyk.io/plans.
