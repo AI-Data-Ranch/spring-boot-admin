@@ -25,11 +25,11 @@ import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.autoconfigure.web.reactive.WebFluxProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -167,22 +167,21 @@ public class AdminServerUiAutoConfiguration {
 
 			private final AdminServerProperties adminServer;
 
-			private final WebFluxProperties webFluxProperties;
+			@Value("${spring.webflux.base-path:}")
+			private String webFluxBasePath;
 
 			private final ApplicationContext applicationContext;
 
 			public AdminUiWebfluxConfig(AdminServerUiProperties adminUi, AdminServerProperties adminServer,
-					WebFluxProperties webFluxProperties, ApplicationContext applicationContext) {
+					ApplicationContext applicationContext) {
 				this.adminUi = adminUi;
 				this.adminServer = adminServer;
-				this.webFluxProperties = webFluxProperties;
 				this.applicationContext = applicationContext;
 			}
 
 			@Bean
 			public HomepageForwardingFilterConfig homepageForwardingFilterConfig() throws IOException {
-				String webFluxBasePath = webFluxProperties.getBasePath();
-				boolean webfluxBasePathSet = webFluxBasePath != null;
+				boolean webfluxBasePathSet = webFluxBasePath != null && !webFluxBasePath.isEmpty();
 				String homepage = normalizeHomepageUrl(
 						webfluxBasePathSet ? webFluxBasePath + "/" : this.adminServer.path("/"));
 

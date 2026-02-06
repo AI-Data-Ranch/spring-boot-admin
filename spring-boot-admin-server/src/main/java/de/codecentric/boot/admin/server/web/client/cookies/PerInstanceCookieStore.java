@@ -18,6 +18,7 @@ package de.codecentric.boot.admin.server.web.client.cookies;
 
 import java.net.URI;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;
 
 import de.codecentric.boot.admin.server.domain.entities.Instance;
@@ -40,8 +41,7 @@ public interface PerInstanceCookieStore {
 	 * @return an immutable map from cookie names to text representations of cookies to be
 	 * included into a request header
 	 */
-	MultiValueMap<String, String> get(InstanceId instanceId, URI requestUri,
-			MultiValueMap<String, String> requestHeaders);
+	MultiValueMap<String, String> get(InstanceId instanceId, URI requestUri, HttpHeaders requestHeaders);
 
 	/**
 	 * Stores all the applicable cookies (examples are response header fields that are
@@ -51,7 +51,7 @@ public interface PerInstanceCookieStore {
 	 * @param responseHeaders a map from field names to lists of field values representing
 	 * the response header fields
 	 */
-	void put(InstanceId instanceId, URI requestUri, MultiValueMap<String, String> responseHeaders);
+	void put(InstanceId instanceId, URI requestUri, HttpHeaders responseHeaders);
 
 	/**
 	 * Informs the store that the cookies of the given <code>instanceId</code> could be
