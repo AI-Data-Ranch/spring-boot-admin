@@ -1,0 +1,5 @@
+d6f6eb93 (HEAD -> feature/java21-upgrade_20260205_230249908, origin/feature/java21-upgrade_20260205_230249908) ci: fix typo in build-main workflow step name
+6e15ed84 build(java): upgrade Java from 17 to 21\n\n- Update root pom.xml java.version to 21\n- Update GitHub Actions workflows to use Temurin 21\n- No code changes required; verified checkstyle and format
+f6312024 (origin/master, origin/HEAD, master) chore(deps): update dependency autoprefixer to v10.4.24 (#5042)
+c427e7cc chore(deps): update storybook monorepo to v10.2.3 (#5041)
+bc2192f3 chore(deps): update storybook monorepo to v10.2.2 (#5039)

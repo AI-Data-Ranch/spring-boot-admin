@@ -1,0 +1,5 @@
+M	.github/workflows/build-feature.yml
+M	.github/workflows/build-main.yml
+M	.github/workflows/deploy-documentation.yml
+M	.github/workflows/release-to-maven-central.yml
+M	pom.xml
