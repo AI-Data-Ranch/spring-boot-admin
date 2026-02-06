@@ -20,6 +20,8 @@ import java.net.URI;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicReference;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsonorg.JsonOrgModule;
 import lombok.Getter;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
@@ -30,8 +32,6 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
-import tools.jackson.databind.ObjectMapper;
-import tools.jackson.datatype.jsonorg.JsonOrgModule;
 
 import de.codecentric.boot.admin.server.domain.values.Registration;
 
