@@ -1,0 +1,45 @@
+=== HIGH/CRITICAL Java Vulnerabilities ===
+
+com.google.protobuf:protobuf-java@3.24.3:
+  Severity: high
+  Title: Stack-based Buffer Overflow
+  File: spring-boot-admin-server-cloud/pom.xml
+  Upgrade: [False, 'org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.1', 'io.kubernetes:client-java@19.0.3', 'com.google.protobuf:protobuf-java@3.25.5']
+
+com.thoughtworks.xstream:xstream@1.4.20:
+  Severity: high
+  Title: Deserialization of Untrusted Data
+  File: spring-boot-admin-samples/spring-boot-admin-sample-eureka/pom.xml
+  Upgrade: [False, 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1', 'com.netflix.eureka:eureka-client@2.0.5', 'com.thoughtworks.xstream:xstream@1.4.21']
+  Severity: high
+  Title: Deserialization of Untrusted Data
+  File: spring-boot-admin-server-cloud/pom.xml
+  Upgrade: [False, 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1', 'com.netflix.eureka:eureka-client@2.0.5', 'com.thoughtworks.xstream:xstream@1.4.21']
+
+commons-lang:commons-lang@2.6:
+  Severity: high
+  Title: Uncontrolled Recursion
+  File: spring-boot-admin-samples/spring-boot-admin-sample-eureka/pom.xml
+  Severity: high
+  Title: Uncontrolled Recursion
+  File: spring-boot-admin-server-cloud/pom.xml
+
+io.vertx:vertx-core@4.5.14:
+  Severity: high
+  Title: Exposure of Resource to Wrong Sphere
+  File: spring-boot-admin-server-cloud/pom.xml
+
+org.apache.commons:commons-lang3@3.17.0:
+  Severity: high
+  Title: Uncontrolled Recursion
+  File: spring-boot-admin-server-cloud/pom.xml
+
+org.bitbucket.b_c:jose4j@0.9.3:
+  Severity: high
+  Title: Allocation of Resources Without Limits or Throttling
+  File: spring-boot-admin-server-cloud/pom.xml
+  Upgrade: [False, 'org.springframework.cloud:spring-cloud-starter-kubernetes-client@5.0.0', 'org.springframework.cloud:spring-cloud-kubernetes-client-discovery@5.0.0', 'org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@5.0.0', 'io.kubernetes:client-java@24.0.0', 'org.bitbucket.b_c:jose4j@0.9.6']
+  Severity: high
+  Title: Denial of Service (DoS)
+  File: spring-boot-admin-server-cloud/pom.xml
+  Upgrade: [False, 'org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.1', 'org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.1', 'io.kubernetes:client-java@19.0.3', 'org.bitbucket.b_c:jose4j@0.9.4']
