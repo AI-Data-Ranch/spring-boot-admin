@@ -16,15 +16,14 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.io.Serial;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.databind.SerializationContext;
+import tools.jackson.databind.ser.std.StdSerializer;
 import org.springframework.lang.Nullable;
 
 public class SanitizingMapSerializer extends StdSerializer<Map<String, String>> {
@@ -45,11 +44,10 @@ public class SanitizingMapSerializer extends StdSerializer<Map<String, String>> 
 	}
 
 	@Override
-	public void serialize(Map<String, String> value, JsonGenerator gen, SerializerProvider provider)
-			throws IOException {
+	public void serialize(Map<String, String> value, JsonGenerator gen, SerializationContext provider) {
 		gen.writeStartObject();
 		for (Map.Entry<String, String> entry : value.entrySet()) {
-			gen.writeStringField(entry.getKey(), sanitize(entry.getKey(), entry.getValue()));
+			gen.writeStringProperty(entry.getKey(), sanitize(entry.getKey(), entry.getValue()));
 		}
 		gen.writeEndObject();
 	}

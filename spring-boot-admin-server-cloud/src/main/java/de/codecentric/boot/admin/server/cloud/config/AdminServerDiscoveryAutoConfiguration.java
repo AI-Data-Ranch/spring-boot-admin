@@ -25,9 +25,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnSingleCandidate;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.kubernetes.client.discovery.KubernetesInformerDiscoveryClient;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.cloud.kubernetes.commons.discovery.KubernetesDiscoveryProperties;
-import org.springframework.cloud.kubernetes.fabric8.discovery.KubernetesDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
@@ -101,12 +100,13 @@ public class AdminServerDiscoveryAutoConfiguration {
 			super(ConfigurationPhase.REGISTER_BEAN);
 		}
 
-		@ConditionalOnBean(KubernetesInformerDiscoveryClient.class)
+		@ConditionalOnClass(
+				name = "org.springframework.cloud.kubernetes.client.discovery.KubernetesClientInformerDiscoveryClient")
 		static class OfficialKubernetesCondition {
 
 		}
 
-		@ConditionalOnBean(KubernetesDiscoveryClient.class)
+		@ConditionalOnClass(name = "org.springframework.cloud.kubernetes.fabric8.discovery.Fabric8DiscoveryClient")
 		static class Fabric8KubernetesCondition {
 
 		}
