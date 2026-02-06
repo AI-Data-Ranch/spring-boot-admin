@@ -21,7 +21,6 @@ import org.springframework.http.HttpHeaders;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
-import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CompositeHttpHeadersProviderTest {
@@ -41,16 +40,16 @@ class CompositeHttpHeadersProviderTest {
 		}));
 
 		HttpHeaders headers = provider.getHeaders(null);
-		assertThat(headers).containsEntry("a", singletonList("1"))
-			.containsEntry("b", asList("2-a", "2-b"))
-			.containsEntry("c", singletonList("3"));
+		assertThat(headers.get("a")).containsExactly("1");
+		assertThat(headers.get("b")).containsExactly("2-a", "2-b");
+		assertThat(headers.get("c")).containsExactly("3");
 	}
 
 	@Test
 	void should_return_empty_headers() {
 		HttpHeadersProvider provider = new CompositeHttpHeadersProvider(emptyList());
 		HttpHeaders headers = provider.getHeaders(null);
-		assertThat(headers).isEmpty();
+		assertThat(headers.isEmpty()).isTrue();
 	}
 
 }
