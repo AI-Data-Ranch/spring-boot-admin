@@ -20,10 +20,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.ser.std.ClassSerializer;
-import com.fasterxml.jackson.databind.ser.std.FileSerializer;
-import com.fasterxml.jackson.databind.ser.std.StdJdkSerializers;
-import com.fasterxml.jackson.databind.ser.std.TokenBufferSerializer;
+import tools.jackson.databind.ser.std.ClassSerializer;
+import tools.jackson.databind.ser.std.FileSerializer;
+import tools.jackson.databind.ser.std.StdJdkSerializers;
+import tools.jackson.databind.ser.std.TokenBufferSerializer;
 import lombok.SneakyThrows;
 import org.springframework.aot.hint.ExecutableMode;
 import org.springframework.aot.hint.MemberCategory;

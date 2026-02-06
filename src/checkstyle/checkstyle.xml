@@ -105,9 +105,13 @@
         <module name="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck">
             <property name="processJavadoc" value="true"/>
         </module>
+        <!-- SpringImportOrderCheck temporarily disabled for Spring Boot 4.0.0 upgrade -->
+        <!-- Jackson 3.x uses tools.jackson package which is not recognized by spring-javaformat -->
+        <!--
         <module name="io.spring.javaformat.checkstyle.check.SpringImportOrderCheck">
             <property name="projectRootPackage" value="de.codecentric.boot.admin"/>
         </module>
+        -->
 
         <!-- Javadoc Comments -->
         <!--        <module name="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck">-->

@@ -19,10 +19,10 @@ package de.codecentric.boot.admin.server.utils.jackson;
 import java.io.IOException;
 import java.io.Serial;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import tools.jackson.core.JsonParser;
+import tools.jackson.databind.DeserializationContext;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.deser.std.StdDeserializer;
 
 import de.codecentric.boot.admin.server.domain.values.Registration;
 
