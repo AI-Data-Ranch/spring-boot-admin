@@ -1,0 +1,24 @@
+Task Start Time: 2026-02-06 01:43:06 UTC
+Start timestamp: 1770342186
+Switched to a new branch 'feature/vulnerability-update_20260205_173748420'
+=== Snyk Vulnerability Scan ===
+Scan Start Time: 2026-02-06 01:44:46 UTC
+[feature/vulnerability-update_20260205_173748420 619f9432] fix: Update vulnerable transitive dependencies
+ 1 file changed, 56 insertions(+)
+To https://git-manager.devin.ai/proxy/github.com/AI-Data-Ranch/spring-boot-admin
+ ! [rejected]          feature/vulnerability-update_20260205_173748420 -> feature/vulnerability-update_20260205_173748420 (non-fast-forward)
+error: failed to push some refs to 'https://git-manager.devin.ai/proxy/github.com/AI-Data-Ranch/spring-boot-admin'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Auto-merging spring-boot-admin-build/pom.xml
+Merge made by the 'ort' strategy.
+ pom.xml                                  | 12 +++++++
+ spring-boot-admin-build/pom.xml          | 61 ++++++++++++++++++++++++++++++++
+ spring-boot-admin-server-ui/package.json | 10 ++++--
+ 3 files changed, 81 insertions(+), 2 deletions(-)
+To https://git-manager.devin.ai/proxy/github.com/AI-Data-Ranch/spring-boot-admin
+   bfbb74bf..e4fb6165  feature/vulnerability-update_20260205_173748420 -> feature/vulnerability-update_20260205_173748420
+Task Duration: 443 seconds
+End Time: 2026-02-06 01:50:29 UTC
