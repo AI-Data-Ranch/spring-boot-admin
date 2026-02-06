@@ -21,9 +21,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsonorg.JsonOrgModule;
-import org.json.JSONObject;
+import java.util.Map;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,25 +29,21 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.client.DefaultServiceInstance;
 import org.springframework.cloud.client.discovery.event.InstanceRegisteredEvent;
+import org.springframework.cloud.client.discovery.simple.InstanceProperties;
 import org.springframework.cloud.client.discovery.simple.SimpleDiscoveryProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
-import org.springframework.http.codec.json.Jackson2JsonDecoder;
-import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
-import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class AdminApplicationDiscoveryTest {
@@ -85,16 +79,16 @@ class AdminApplicationDiscoveryTest {
 			listEmptyInstances();
 			location.set(registerInstance());
 		})
-			.assertNext((event) -> assertThat(event.opt("type")).isEqualTo("REGISTERED"))
-			.assertNext((event) -> assertThat(event.opt("type")).isEqualTo("STATUS_CHANGED"))
-			.assertNext((event) -> assertThat(event.opt("type")).isEqualTo("ENDPOINTS_DETECTED"))
-			.assertNext((event) -> assertThat(event.opt("type")).isEqualTo("INFO_CHANGED"))
+			.assertNext((event) -> assertThat(event.get("type")).isEqualTo("REGISTERED"))
+			.assertNext((event) -> assertThat(event.get("type")).isEqualTo("STATUS_CHANGED"))
+			.assertNext((event) -> assertThat(event.get("type")).isEqualTo("ENDPOINTS_DETECTED"))
+			.assertNext((event) -> assertThat(event.get("type")).isEqualTo("INFO_CHANGED"))
 			.then(() -> {
 				getInstance(location.get());
 				listInstances();
 				deregisterInstance();
 			})
-			.assertNext((event) -> assertThat(event.opt("type")).isEqualTo("DEREGISTERED"))
+			.assertNext((event) -> assertThat(event.get("type")).isEqualTo("DEREGISTERED"))
 			.then(this::listEmptyInstances)
 			.thenCancel()
 			.verify(Duration.ofSeconds(60));
@@ -104,28 +98,31 @@ class AdminApplicationDiscoveryTest {
 		// We register the instance by setting static values for the SimpleDiscoveryClient
 		// and issuing a
 		// InstanceRegisteredEvent that makes sure the instance gets registered.
-		DefaultServiceInstance serviceInstance = new DefaultServiceInstance();
-		serviceInstance.setServiceId("Test-Instance");
-		serviceInstance.setUri(URI.create("http://localhost:" + this.port));
-		serviceInstance.getMetadata().put("management.context-path", "/mgmt");
-		this.simpleDiscovery.getInstances().put("Test-Application", singletonList(serviceInstance));
+		InstanceProperties instanceProps = new InstanceProperties();
+		instanceProps.setUri(URI.create("http://localhost:" + this.port));
+		instanceProps.setServiceId("Test-Instance");
+		instanceProps.setInstanceId("test-instance-id");
+		instanceProps.getMetadata().put("management.context-path", "/mgmt");
+		this.simpleDiscovery.getInstances().put("Test-Application", List.of(instanceProps));
 
 		this.instance.publishEvent(new InstanceRegisteredEvent<>(new Object(), null));
 
 		// To get the location of the registered instances we fetch the instance with the
 		// name.
-		List<JSONObject> applications = this.webClient.get()
+		@SuppressWarnings("unchecked")
+		List<Map<String, Object>> applications = this.webClient.get()
 			.uri("/instances?name=Test-Instance")
 			.accept(MediaType.APPLICATION_JSON)
 			.exchange()
 			.expectStatus()
 			.isOk()
-			.returnResult(JSONObject.class)
+			.returnResult(Map.class)
 			.getResponseBody()
+			.map((m) -> (Map<String, Object>) m)
 			.collectList()
 			.block();
 		assertThat(applications).hasSize(1);
-		return URI.create("http://localhost:" + this.port + "/instances/" + applications.get(0).optString("id"));
+		return URI.create("http://localhost:" + this.port + "/instances/" + applications.get(0).get("id"));
 	}
 
 	private void deregisterInstance() {
@@ -133,13 +130,14 @@ class AdminApplicationDiscoveryTest {
 		this.instance.publishEvent(new InstanceRegisteredEvent<>(new Object(), null));
 	}
 
-	private Flux<JSONObject> getEventStream() {
+	@SuppressWarnings("unchecked")
+	private Flux<Map<String, Object>> getEventStream() {
 		//@formatter:off
 		return this.webClient.get().uri("/instances/events").accept(MediaType.TEXT_EVENT_STREAM)
 						.exchange()
 						.expectStatus().isOk()
 						.expectHeader().contentTypeCompatibleWith(MediaType.TEXT_EVENT_STREAM)
-						.returnResult(JSONObject.class).getResponseBody();
+						.returnResult(Map.class).getResponseBody().map((m) -> (Map<String, Object>) m);
 		//@formatter:on
 	}
 
@@ -177,14 +175,7 @@ class AdminApplicationDiscoveryTest {
 	}
 
 	private WebTestClient createWebClient(int port) {
-		ObjectMapper mapper = new ObjectMapper().registerModule(new JsonOrgModule());
-		return WebTestClient.bindToServer()
-			.baseUrl("http://localhost:" + port)
-			.exchangeStrategies(ExchangeStrategies.builder().codecs((configurer) -> {
-				configurer.defaultCodecs().jackson2JsonDecoder(new Jackson2JsonDecoder(mapper));
-				configurer.defaultCodecs().jackson2JsonEncoder(new Jackson2JsonEncoder(mapper));
-			}).build())
-			.build();
+		return WebTestClient.bindToServer().baseUrl("http://localhost:" + port).build();
 	}
 
 	@AfterEach

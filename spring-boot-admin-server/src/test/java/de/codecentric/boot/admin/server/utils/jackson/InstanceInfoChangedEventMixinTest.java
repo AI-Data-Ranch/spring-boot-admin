@@ -23,16 +23,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.DeserializationFeature;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceInfoChangedEvent;
 import de.codecentric.boot.admin.server.domain.values.Info;
@@ -43,23 +43,25 @@ import static org.assertj.core.api.Assertions.entry;
 
 class InstanceInfoChangedEventMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper jsonMapper;
 
 	private JacksonTester<InstanceInfoChangedEvent> jsonTester;
 
 	protected InstanceInfoChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		jsonMapper = JsonMapper.builder()
+			.addModule(adminServerModule)
+			.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+			.build();
 	}
 
 	@BeforeEach
 	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		JacksonTester.initFields(this, jsonMapper);
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -67,7 +69,7 @@ class InstanceInfoChangedEventMixinTest {
 			.put("info", new JSONObject().put("build", new JSONObject().put("version", "1.0.0")).put("foo", "bar"))
 			.toString();
 
-		InstanceInfoChangedEvent event = objectMapper.readValue(json, InstanceInfoChangedEvent.class);
+		InstanceInfoChangedEvent event = jsonMapper.readValue(json, InstanceInfoChangedEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isEqualTo(12345678L);
@@ -80,13 +82,13 @@ class InstanceInfoChangedEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("timestamp", 1587751031.000000000)
 			.put("type", "INFO_CHANGED")
 			.toString();
 
-		InstanceInfoChangedEvent event = objectMapper.readValue(json, InstanceInfoChangedEvent.class);
+		InstanceInfoChangedEvent event = jsonMapper.readValue(json, InstanceInfoChangedEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isZero();
@@ -95,7 +97,7 @@ class InstanceInfoChangedEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithEmptyInfo() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithEmptyInfo() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -103,7 +105,7 @@ class InstanceInfoChangedEventMixinTest {
 			.put("info", new JSONObject())
 			.toString();
 
-		InstanceInfoChangedEvent event = objectMapper.readValue(json, InstanceInfoChangedEvent.class);
+		InstanceInfoChangedEvent event = jsonMapper.readValue(json, InstanceInfoChangedEvent.class);
 		assertThat(event).isNotNull();
 		assertThat(event.getInstance()).isEqualTo(InstanceId.of("test123"));
 		assertThat(event.getVersion()).isEqualTo(12345678L);

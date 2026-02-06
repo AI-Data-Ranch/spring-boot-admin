@@ -20,14 +20,13 @@ import java.net.URI;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicReference;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsonorg.JsonOrgModule;
+import tools.jackson.databind.json.JsonMapper;
 import lombok.Getter;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
-import org.springframework.http.codec.json.Jackson2JsonDecoder;
-import org.springframework.http.codec.json.Jackson2JsonEncoder;
+import org.springframework.http.codec.json.JacksonJsonDecoder;
+import org.springframework.http.codec.json.JacksonJsonEncoder;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import reactor.core.publisher.Flux;
@@ -75,11 +74,20 @@ public abstract class AbstractAdminApplicationTest {
 	protected Flux<JSONObject> getEventStream() {
 		//@formatter:off
 		return this.webClient.get().uri("/instances/events")
-							.accept(MediaType.TEXT_EVENT_STREAM)
-							.exchange()
-							.expectStatus().isOk()
-							.expectHeader().contentTypeCompatibleWith(MediaType.TEXT_EVENT_STREAM)
-							.returnResult(JSONObject.class).getResponseBody();
+						.accept(MediaType.TEXT_EVENT_STREAM)
+						.exchange()
+						.expectStatus().isOk()
+						.expectHeader().contentTypeCompatibleWith(MediaType.TEXT_EVENT_STREAM)
+						.returnResult(String.class)
+						.getResponseBody()
+						.map((str) -> {
+							try {
+								return new JSONObject(str);
+							}
+							catch (org.json.JSONException ex) {
+								throw new RuntimeException(ex);
+							}
+						});
 		//@formatter:on
 	}
 
@@ -145,12 +153,12 @@ public abstract class AbstractAdminApplicationTest {
 	}
 
 	protected WebTestClient createWebClient(int port) {
-		ObjectMapper mapper = new ObjectMapper().registerModule(new JsonOrgModule());
+		JsonMapper mapper = JsonMapper.builder().build();
 		return WebTestClient.bindToServer()
 			.baseUrl("http://localhost:" + port)
 			.exchangeStrategies(ExchangeStrategies.builder().codecs((configurer) -> {
-				configurer.defaultCodecs().jackson2JsonDecoder(new Jackson2JsonDecoder(mapper));
-				configurer.defaultCodecs().jackson2JsonEncoder(new Jackson2JsonEncoder(mapper));
+				configurer.defaultCodecs().jackson2JsonDecoder(new JacksonJsonDecoder(mapper));
+				configurer.defaultCodecs().jackson2JsonEncoder(new JacksonJsonEncoder(mapper));
 			}).build())
 			.build();
 	}

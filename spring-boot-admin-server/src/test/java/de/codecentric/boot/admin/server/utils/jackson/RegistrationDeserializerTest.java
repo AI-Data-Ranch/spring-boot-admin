@@ -16,11 +16,11 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
+
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.Registration;
 
@@ -30,17 +30,17 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class RegistrationDeserializerTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper jsonMapper;
 
 	protected RegistrationDeserializerTest() {
 		AdminServerModule module = new AdminServerModule(new String[] { ".*password$" });
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(module).build();
+		jsonMapper = JsonMapper.builder().addModule(module).build();
 	}
 
 	@Test
 	void test_1_2_json_format() throws Exception {
 		String json = new JSONObject().put("name", "test").put("url", "https://test").toString();
-		Registration value = objectMapper.readValue(json, Registration.class);
+		Registration value = jsonMapper.readValue(json, Registration.class);
 		assertThat(value.getName()).isEqualTo("test");
 		assertThat(value.getManagementUrl()).isEqualTo("https://test");
 		assertThat(value.getHealthUrl()).isEqualTo("https://test/health");
@@ -55,7 +55,7 @@ class RegistrationDeserializerTest {
 			.put("serviceUrl", "https://service")
 			.put("statusInfo", new JSONObject().put("status", "UNKNOWN"))
 			.toString();
-		Registration value = objectMapper.readValue(json, Registration.class);
+		Registration value = jsonMapper.readValue(json, Registration.class);
 		assertThat(value.getName()).isEqualTo("test");
 		assertThat(value.getManagementUrl()).isEqualTo("https://test");
 		assertThat(value.getHealthUrl()).isEqualTo("https://health");
@@ -70,7 +70,7 @@ class RegistrationDeserializerTest {
 			.put("serviceUrl", "https://service")
 			.put("metadata", new JSONObject().put("labels", "foo,bar"))
 			.toString();
-		Registration value = objectMapper.readValue(json, Registration.class);
+		Registration value = jsonMapper.readValue(json, Registration.class);
 		assertThat(value.getName()).isEqualTo("test");
 		assertThat(value.getManagementUrl()).isEqualTo("https://test");
 		assertThat(value.getHealthUrl()).isEqualTo("https://health");
@@ -81,7 +81,7 @@ class RegistrationDeserializerTest {
 	@Test
 	void test_onlyHealthUrl() throws Exception {
 		String json = new JSONObject().put("name", "test").put("healthUrl", "https://test").toString();
-		Registration value = objectMapper.readValue(json, Registration.class);
+		Registration value = jsonMapper.readValue(json, Registration.class);
 		assertThat(value.getName()).isEqualTo("test");
 		assertThat(value.getHealthUrl()).isEqualTo("https://test");
 		assertThat(value.getManagementUrl()).isNull();
@@ -96,7 +96,7 @@ class RegistrationDeserializerTest {
 			.put("serviceUrl", "https://service")
 			.toString();
 
-		assertThatThrownBy(() -> objectMapper.readValue(json, Registration.class))
+		assertThatThrownBy(() -> jsonMapper.readValue(json, Registration.class))
 			.isInstanceOf(IllegalArgumentException.class);
 	}
 
@@ -107,17 +107,17 @@ class RegistrationDeserializerTest {
 			.put("healthUrl", "")
 			.put("serviceUrl", "https://service")
 			.toString();
-		assertThatThrownBy(() -> objectMapper.readValue(json, Registration.class))
+		assertThatThrownBy(() -> jsonMapper.readValue(json, Registration.class))
 			.isInstanceOf(IllegalArgumentException.class);
 	}
 
 	@Test
-	void test_sanitize_metadata() throws JsonProcessingException {
+	void test_sanitize_metadata() throws JacksonException {
 		Registration app = Registration.create("test", "https://health")
 			.metadata("PASSWORD", "qwertz123")
 			.metadata("user", "humptydumpty")
 			.build();
-		String json = objectMapper.writeValueAsString(app);
+		String json = jsonMapper.writeValueAsString(app);
 
 		assertThat(json).doesNotContain("qwertz123").contains("humptydumpty");
 	}
@@ -130,7 +130,7 @@ class RegistrationDeserializerTest {
 			.put("service_url", "https://service")
 			.put("metadata", new JSONObject().put("labels", "foo,bar"))
 			.toString();
-		Registration value = objectMapper.readValue(json, Registration.class);
+		Registration value = jsonMapper.readValue(json, Registration.class);
 		assertThat(value.getName()).isEqualTo("test");
 		assertThat(value.getManagementUrl()).isEqualTo("https://test");
 		assertThat(value.getHealthUrl()).isEqualTo("https://health");
