@@ -19,7 +19,6 @@ package de.codecentric.boot.admin.server.utils.jackson;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.core.JsonProcessingException;
 import tools.jackson.databind.ObjectMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Registration;
@@ -112,7 +111,7 @@ class RegistrationDeserializerTest {
 	}
 
 	@Test
-	void test_sanitize_metadata() throws JsonProcessingException {
+	void test_sanitize_metadata() {
 		Registration app = Registration.create("test", "https://health")
 			.metadata("PASSWORD", "qwertz123")
 			.metadata("user", "humptydumpty")

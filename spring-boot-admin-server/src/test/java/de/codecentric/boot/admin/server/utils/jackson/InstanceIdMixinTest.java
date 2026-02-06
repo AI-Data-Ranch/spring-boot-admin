@@ -18,10 +18,8 @@ package de.codecentric.boot.admin.server.utils.jackson;
 
 import java.io.IOException;
 
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.core.JsonProcessingException;
 import tools.jackson.databind.ObjectMapper;
 
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
@@ -39,7 +37,7 @@ class InstanceIdMixinTest {
 	}
 
 	@Test
-	void verifyDeserialize() throws JsonProcessingException {
+	void verifyDeserialize() {
 		InstanceId id = objectMapper.readValue("\"abc\"", InstanceId.class);
 		assertThat(id).isEqualTo(InstanceId.of("abc"));
 	}

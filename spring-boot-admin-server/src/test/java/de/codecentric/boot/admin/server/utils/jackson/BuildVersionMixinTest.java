@@ -16,10 +16,8 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.core.JsonProcessingException;
 import tools.jackson.databind.ObjectMapper;
 
 import de.codecentric.boot.admin.server.domain.values.BuildVersion;
@@ -38,13 +36,13 @@ class BuildVersionMixinTest {
 	}
 
 	@Test
-	void verifyDeserialize() throws JsonProcessingException {
+	void verifyDeserialize() {
 		BuildVersion buildVersion = objectMapper.readValue("\"1.0.0\"", BuildVersion.class);
 		assertThat(buildVersion).isEqualTo(BuildVersion.valueOf("1.0.0"));
 	}
 
 	@Test
-	void verifySerialize() throws JsonProcessingException {
+	void verifySerialize() {
 		BuildVersion buildVersion = BuildVersion.valueOf("1.0.0");
 
 		String result = objectMapper.writeValueAsString(buildVersion);
@@ -52,7 +50,7 @@ class BuildVersionMixinTest {
 	}
 
 	@Test
-	void verifySerializeWithMapEntryVersion() throws JsonProcessingException {
+	void verifySerializeWithMapEntryVersion() {
 		BuildVersion buildVersion = BuildVersion.from(singletonMap("version", "1.0.0"));
 
 		String result = objectMapper.writeValueAsString(buildVersion);
@@ -60,7 +58,7 @@ class BuildVersionMixinTest {
 	}
 
 	@Test
-	void verifySerializeWithNestedMapEntryVersion() throws JsonProcessingException {
+	void verifySerializeWithNestedMapEntryVersion() {
 		BuildVersion buildVersion = BuildVersion.from(singletonMap("build", singletonMap("version", "1.0.0")));
 
 		String result = objectMapper.writeValueAsString(buildVersion);
