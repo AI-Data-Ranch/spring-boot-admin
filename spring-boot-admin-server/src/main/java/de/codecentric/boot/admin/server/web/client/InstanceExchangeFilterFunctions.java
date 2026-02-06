@@ -160,8 +160,7 @@ public final class InstanceExchangeFilterFunctions {
 
 	private static ClientResponse convertLegacyResponse(LegacyEndpointConverter converter, ClientResponse response) {
 		return response.mutate().headers((headers) -> {
-			headers.replace(HttpHeaders.CONTENT_TYPE,
-					singletonList(ApiVersion.LATEST.getProducedMimeType().toString()));
+			headers.set(HttpHeaders.CONTENT_TYPE, ApiVersion.LATEST.getProducedMimeType().toString());
 			headers.remove(HttpHeaders.CONTENT_LENGTH);
 		}).body(converter::convert).build();
 	}

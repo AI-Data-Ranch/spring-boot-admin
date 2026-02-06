@@ -24,7 +24,6 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
@@ -59,7 +58,8 @@ import de.codecentric.boot.admin.server.web.client.InstanceWebClient;
 @ConditionalOnBean(AdminServerMarkerConfiguration.Marker.class)
 @EnableConfigurationProperties(AdminServerProperties.class)
 @ImportAutoConfiguration({ AdminServerInstanceWebClientConfiguration.class, AdminServerWebConfiguration.class })
-@AutoConfigureAfter({ WebClientAutoConfiguration.class })
+@AutoConfigureAfter(
+		name = "org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration")
 @Slf4j
 @Lazy(false)
 public class AdminServerAutoConfiguration {

@@ -22,11 +22,13 @@ import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.CookieStore;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.util.Assert;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -83,9 +85,11 @@ public class JdkPerInstanceCookieStore implements PerInstanceCookieStore {
 
 	@Override
 	public MultiValueMap<String, String> get(final InstanceId instanceId, final URI requestUri,
-			final MultiValueMap<String, String> requestHeaders) {
+			final HttpHeaders requestHeaders) {
 		try {
-			final List<String> rawCookies = getCookieHandler(instanceId).get(requestUri, requestHeaders)
+			Map<String, List<String>> headersMap = new HashMap<>();
+			requestHeaders.forEach(headersMap::put);
+			final List<String> rawCookies = getCookieHandler(instanceId).get(requestUri, headersMap)
 				.get(REQ_COOKIE_HEADER_KEY);
 
 			// split each rawCookie at first '=' into name/cookieValue and
@@ -103,9 +107,11 @@ public class JdkPerInstanceCookieStore implements PerInstanceCookieStore {
 	}
 
 	@Override
-	public void put(final InstanceId instanceId, final URI requestUrl, final MultiValueMap<String, String> headers) {
+	public void put(final InstanceId instanceId, final URI requestUrl, final HttpHeaders headers) {
 		try {
-			getCookieHandler(instanceId).put(requestUrl, headers);
+			Map<String, List<String>> headersMap = new HashMap<>();
+			headers.forEach(headersMap::put);
+			getCookieHandler(instanceId).put(requestUrl, headersMap);
 		}
 		catch (IOException ioe) {
 			throw new InstanceWebClientException("Could not set cookies to store.", ioe);
