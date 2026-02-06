@@ -61,6 +61,18 @@
         <testcontainers.version>2.0.3</testcontainers.version>
         <jetty.version>12.1.6</jetty.version>
 
+        <!-- Vulnerability fix versions for transitive dependencies -->
+        <guava.version>33.4.0-jre</guava.version>
+        <httpclient.version>4.5.14</httpclient.version>
+        <vertx.version>4.5.14</vertx.version>
+        <commons-lang3.version>3.18.0</commons-lang3.version>
+        <zookeeper.version>3.9.4</zookeeper.version>
+        <commons-io.version>2.18.0</commons-io.version>
+        <xstream.version>1.4.21</xstream.version>
+        <bouncycastle.version>1.80</bouncycastle.version>
+        <jose4j.version>0.9.6</jose4j.version>
+        <protobuf.version>4.29.3</protobuf.version>
+
         <!-- plugin versions -->
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
