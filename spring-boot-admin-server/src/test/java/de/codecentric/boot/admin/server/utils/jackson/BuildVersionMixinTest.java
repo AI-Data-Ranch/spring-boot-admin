@@ -16,10 +16,9 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.core.JsonProcessingException;
+import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
 
 import de.codecentric.boot.admin.server.domain.values.BuildVersion;
@@ -33,18 +32,17 @@ class BuildVersionMixinTest {
 
 	protected BuildVersionMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule).build();
 	}
 
 	@Test
-	void verifyDeserialize() throws JsonProcessingException {
+	void verifyDeserialize() throws JacksonException {
 		BuildVersion buildVersion = objectMapper.readValue("\"1.0.0\"", BuildVersion.class);
 		assertThat(buildVersion).isEqualTo(BuildVersion.valueOf("1.0.0"));
 	}
 
 	@Test
-	void verifySerialize() throws JsonProcessingException {
+	void verifySerialize() throws JacksonException {
 		BuildVersion buildVersion = BuildVersion.valueOf("1.0.0");
 
 		String result = objectMapper.writeValueAsString(buildVersion);
@@ -52,7 +50,7 @@ class BuildVersionMixinTest {
 	}
 
 	@Test
-	void verifySerializeWithMapEntryVersion() throws JsonProcessingException {
+	void verifySerializeWithMapEntryVersion() throws JacksonException {
 		BuildVersion buildVersion = BuildVersion.from(singletonMap("version", "1.0.0"));
 
 		String result = objectMapper.writeValueAsString(buildVersion);
@@ -60,7 +58,7 @@ class BuildVersionMixinTest {
 	}
 
 	@Test
-	void verifySerializeWithNestedMapEntryVersion() throws JsonProcessingException {
+	void verifySerializeWithNestedMapEntryVersion() throws JacksonException {
 		BuildVersion buildVersion = BuildVersion.from(singletonMap("build", singletonMap("version", "1.0.0")));
 
 		String result = objectMapper.writeValueAsString(buildVersion);

@@ -40,7 +40,7 @@ import de.codecentric.boot.admin.server.domain.values.Tags;
  * configuration. <pre>
  *     ObjectMapper mapper = new ObjectMapper();
  *     mapper.registerModule(new AdminServerModule());
- *     mapper.registerModule(new JavaTimeModule());
+ *     mapper.registerModule(new DateTimeModule());
  * </pre>
  *
  * @author Stefan Rempfer
