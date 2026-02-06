@@ -31,6 +31,7 @@ import de.codecentric.boot.admin.server.eventstore.InstanceEventStore;
 import de.codecentric.boot.admin.server.services.ApplicationRegistry;
 import de.codecentric.boot.admin.server.services.InstanceRegistry;
 import de.codecentric.boot.admin.server.utils.jackson.AdminServerModule;
+import de.codecentric.boot.admin.server.utils.jackson.AdminServerModuleJackson3;
 import de.codecentric.boot.admin.server.web.ApplicationsController;
 import de.codecentric.boot.admin.server.web.InstancesController;
 import de.codecentric.boot.admin.server.web.client.InstanceWebClient;
@@ -47,6 +48,11 @@ public class AdminServerWebConfiguration {
 	@Bean
 	public SimpleModule adminJacksonModule() {
 		return new AdminServerModule(this.adminServerProperties.getMetadataKeysToSanitize());
+	}
+
+	@Bean
+	public tools.jackson.databind.JacksonModule adminJacksonModule3() {
+		return new AdminServerModuleJackson3(this.adminServerProperties.getMetadataKeysToSanitize());
 	}
 
 	@Bean
