@@ -1,0 +1,14 @@
+Git status:
+ M .github/workflows/build-feature.yml
+ M .github/workflows/build-main.yml
+ M .github/workflows/deploy-documentation.yml
+ M .github/workflows/release-to-maven-central.yml
+ M pom.xml
+?? devin-logs/
+
+Changed files:
+.github/workflows/build-feature.yml
+.github/workflows/build-main.yml
+.github/workflows/deploy-documentation.yml
+.github/workflows/release-to-maven-central.yml
+pom.xml

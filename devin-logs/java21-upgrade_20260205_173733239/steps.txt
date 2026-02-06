@@ -1,0 +1,4 @@
+Steps executed so far:
+- Checked out master and created branch feature/java21-upgrade_20260205_173733239
+- Updated root pom.xml java.version to 21
+- Updated GitHub Actions to Java 21 (build-main, build-feature, deploy-documentation, release-to-maven-central)
