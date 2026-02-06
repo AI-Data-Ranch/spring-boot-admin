@@ -1,0 +1,8 @@
+- Task: Upgrade Java 17 -> 21
+- Branch: feature/java21-upgrade_20260205_173733239
+- PR: https://github.com/AI-Data-Ranch/spring-boot-admin/pull/8
+- Result: success (CI passed)
+- Duration (s): 1754
+- Files changed: 13 (modified: 5, added: 8)
+- Lint: passed (see lint.log, exit code 0)
+- Input tokens (est.): 6000; Output tokens (est.): 800; Cached in/out (est.): 0/0; Cost (USD est.): 0.08

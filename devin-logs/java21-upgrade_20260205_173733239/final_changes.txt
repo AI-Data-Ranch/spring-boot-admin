@@ -1,0 +1,13 @@
+M	.github/workflows/build-feature.yml
+M	.github/workflows/build-main.yml
+M	.github/workflows/deploy-documentation.yml
+M	.github/workflows/release-to-maven-central.yml
+A	devin-logs/java21-upgrade_20260205_173733239/added_files.count
+A	devin-logs/java21-upgrade_20260205_173733239/git_changes.txt
+A	devin-logs/java21-upgrade_20260205_173733239/git_status_pre_lint.txt
+A	devin-logs/java21-upgrade_20260205_173733239/lint.exitcode
+A	devin-logs/java21-upgrade_20260205_173733239/lint.log
+A	devin-logs/java21-upgrade_20260205_173733239/modified_files.count
+A	devin-logs/java21-upgrade_20260205_173733239/steps.txt
+A	devin-logs/java21-upgrade_20260205_173733239/task_start_time.txt
+M	pom.xml
