@@ -72,7 +72,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - name: Publish SNAPSHOTversion to GitHub Packages (we can skip tests, since we only deploy, if the build workflow succeeded)
+      - name: Publish SNAPSHOT version to GitHub Packages (we can skip tests, since we only deploy, if the build workflow succeeded)
         run: ./mvnw -B --no-transfer-progress deploy -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
