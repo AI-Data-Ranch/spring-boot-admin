@@ -1,0 +1,5 @@
+Upgrade Java 17 -> 21
+PR: https://github.com/AI-Data-Ranch/spring-boot-admin/pull/31
+Duration: 958 seconds
+Changed files: 11 (added: 6, modified: 5)
+CI: PENDING
