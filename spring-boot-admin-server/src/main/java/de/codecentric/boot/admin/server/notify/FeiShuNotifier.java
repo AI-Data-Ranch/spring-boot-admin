@@ -29,13 +29,11 @@ import java.util.UUID;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 import reactor.core.publisher.Mono;
@@ -200,7 +198,7 @@ public class FeiShuNotifier extends AbstractContentNotifier {
 
 	private String toJsonString(Object o) {
 		try {
-			ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json().build();
+			tools.jackson.databind.ObjectMapper objectMapper = tools.jackson.databind.json.JsonMapper.builder().build();
 			return objectMapper.writeValueAsString(o);
 		}
 		catch (Exception ex) {

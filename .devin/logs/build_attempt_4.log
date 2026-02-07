@@ -1,0 +1,168 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Spring Boot Admin                                                  [pom]
+[INFO] Spring Boot Admin Dependencies                                     [pom]
+[INFO] Spring Boot Admin Build                                            [pom]
+[INFO] Spring Boot Admin Server                                           [jar]
+[INFO] Spring Boot Admin Server UI                                        [jar]
+[INFO] Spring Boot Admin Client                                           [jar]
+[INFO] Spring Boot Admin Docs                                             [pom]
+[INFO] Spring Boot Admin Server Cloud                                     [jar]
+[INFO] Spring Boot Admin Server Starter                                   [jar]
+[INFO] Spring Boot Admin Client Starter                                   [jar]
+[INFO] Spring Boot Admin Samples                                          [pom]
+[INFO] Spring Boot Admin Server custom UI                                 [jar]
+[INFO] Spring Boot Admin Sample Servlet                                   [jar]
+[INFO] Spring Boot Admin Sample Reactive                                  [jar]
+[INFO] Spring Boot Admin Sample War                                       [war]
+[INFO] Spring Boot Admin Sample Hazelcast                                 [jar]
+[INFO] Spring Boot Admin Sample Eureka                                    [jar]
+[INFO] Spring Boot Admin Sample Consul                                    [jar]
+[INFO] Spring Boot Admin Sample Zookeeper                                 [jar]
+[INFO] 
+[INFO] ------------------< de.codecentric:spring-boot-admin >------------------
+[INFO] Building Spring Boot Admin 4.0.0-SNAPSHOT                         [1/19]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin:pom:4.0.0-SNAPSHOT...
+[INFO] 
+[INFO] -----------< de.codecentric:spring-boot-admin-dependencies >------------
+[INFO] Building Spring Boot Admin Dependencies 4.0.0-SNAPSHOT            [2/19]
+[INFO]   from spring-boot-admin-dependencies/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-dependencies ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-dependencies ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-dependencies:pom:4.0.0-SNAPSHOT...
+[INFO] 
+[INFO] ---------------< de.codecentric:spring-boot-admin-build >---------------
+[INFO] Building Spring Boot Admin Build 4.0.0-SNAPSHOT                   [3/19]
+[INFO]   from spring-boot-admin-build/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-build ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-build ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-build ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-build:pom:4.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-server >---------------
+[INFO] Building Spring Boot Admin Server 4.0.0-SNAPSHOT                  [4/19]
+[INFO]   from spring-boot-admin-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for org.testcontainers:junit-jupiter:jar:2.0.3 is missing, no dependency information available
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server ---
+[INFO] Starting audit...
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/endpoints/QueryIndexEndpointStrategy.java:27:1: Wrong order for 'lombok.Data' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerNotifierAutoConfiguration.java:37:1: Wrong order for 'org.springframework.boot.context.properties.ConfigurationProperties' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerWebConfiguration.java:20:1: Wrong order for 'org.springframework.boot.autoconfigure.AutoConfigureAfter' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:25:8: Unused import - org.springframework.boot.autoconfigure.AutoConfigureAfter. [UnusedImports]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:28:1: Wrong order for 'org.springframework.boot.context.properties.EnableConfigurationProperties' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/InfoMixin.java:23:1: Wrong order for 'org.springframework.lang.Nullable' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/StatusInfoMixin.java:24:1: Wrong order for 'org.springframework.lang.Nullable' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/EndpointsMixin.java:22:1: Wrong order for 'org.springframework.lang.Nullable' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:28:1: Wrong order for 'org.springframework.lang.Nullable' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/FeiShuNotifier.java:33:1: Wrong order for 'lombok.extern.slf4j.Slf4j' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/InstanceWebProxy.java:26:1: Wrong order for 'io.netty.handler.timeout.ReadTimeoutException' import. [SpringImportOrder]
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:35:1: Wrong order for 'org.springframework.core.ParameterizedTypeReference' import. [SpringImportOrder]
+Audit done.
+[INFO] There are 12 errors reported by Checkstyle 12.3.1 with src/checkstyle/checkstyle.xml ruleset.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/services/endpoints/QueryIndexEndpointStrategy.java:[27,1] (extension) SpringImportOrder: Wrong order for 'lombok.Data' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/config/AdminServerNotifierAutoConfiguration.java:[37,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.context.properties.ConfigurationProperties' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/config/AdminServerWebConfiguration.java:[20,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.autoconfigure.AutoConfigureAfter' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:[25,8] (imports) UnusedImports: Unused import - org.springframework.boot.autoconfigure.AutoConfigureAfter.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:[28,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.boot.context.properties.EnableConfigurationProperties' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/utils/jackson/InfoMixin.java:[23,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.lang.Nullable' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/utils/jackson/StatusInfoMixin.java:[24,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.lang.Nullable' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/utils/jackson/EndpointsMixin.java:[22,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.lang.Nullable' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/utils/jackson/SanitizingMapSerializer.java:[28,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.lang.Nullable' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/notify/FeiShuNotifier.java:[33,1] (extension) SpringImportOrder: Wrong order for 'lombok.extern.slf4j.Slf4j' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/web/InstanceWebProxy.java:[26,1] (extension) SpringImportOrder: Wrong order for 'io.netty.handler.timeout.ReadTimeoutException' import.
+[ERROR] src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[35,1] (extension) SpringImportOrder: Wrong order for 'org.springframework.core.ParameterizedTypeReference' import.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Spring Boot Admin 4.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Spring Boot Admin .................................. SUCCESS [  1.443 s]
+[INFO] Spring Boot Admin Dependencies ..................... SUCCESS [  0.095 s]
+[INFO] Spring Boot Admin Build ............................ SUCCESS [  0.153 s]
+[INFO] Spring Boot Admin Server ........................... FAILURE [  3.270 s]
+[INFO] Spring Boot Admin Server UI ........................ SKIPPED
+[INFO] Spring Boot Admin Client ........................... SKIPPED
+[INFO] Spring Boot Admin Docs ............................. SKIPPED
+[INFO] Spring Boot Admin Server Cloud ..................... SKIPPED
+[INFO] Spring Boot Admin Server Starter ................... SKIPPED
+[INFO] Spring Boot Admin Client Starter ................... SKIPPED
+[INFO] Spring Boot Admin Samples .......................... SKIPPED
+[INFO] Spring Boot Admin Server custom UI ................. SKIPPED
+[INFO] Spring Boot Admin Sample Servlet ................... SKIPPED
+[INFO] Spring Boot Admin Sample Reactive .................. SKIPPED
+[INFO] Spring Boot Admin Sample War ....................... SKIPPED
+[INFO] Spring Boot Admin Sample Hazelcast ................. SKIPPED
+[INFO] Spring Boot Admin Sample Eureka .................... SKIPPED
+[INFO] Spring Boot Admin Sample Consul .................... SKIPPED
+[INFO] Spring Boot Admin Sample Zookeeper ................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.345 s
+[INFO] Finished at: 2026-02-07T02:39:12Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:3.6.0:check (checkstyle-validation) on project spring-boot-admin-server: You have 12 Checkstyle violations. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-server

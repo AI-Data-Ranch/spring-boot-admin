@@ -30,15 +30,12 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.ResolvableType;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DefaultDataBufferFactory;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.lang.Nullable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -73,11 +70,8 @@ public final class LegacyEndpointConverters {
 		.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
 	static {
-		ObjectMapper om = Jackson2ObjectMapperBuilder.json()
-			.featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
-			.build();
-		DECODER = new Jackson2JsonDecoder(om);
-		ENCODER = new Jackson2JsonEncoder(om);
+		DECODER = new Jackson2JsonDecoder();
+		ENCODER = new Jackson2JsonEncoder();
 	}
 
 	private LegacyEndpointConverters() {

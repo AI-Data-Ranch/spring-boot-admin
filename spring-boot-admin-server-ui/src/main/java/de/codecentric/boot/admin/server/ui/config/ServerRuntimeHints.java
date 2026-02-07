@@ -20,17 +20,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.ser.std.ClassSerializer;
-import com.fasterxml.jackson.databind.ser.std.FileSerializer;
-import com.fasterxml.jackson.databind.ser.std.StdJdkSerializers;
-import com.fasterxml.jackson.databind.ser.std.TokenBufferSerializer;
 import lombok.SneakyThrows;
 import org.springframework.aot.hint.ExecutableMode;
 import org.springframework.aot.hint.MemberCategory;
 import org.springframework.aot.hint.RuntimeHints;
 import org.springframework.aot.hint.RuntimeHintsRegistrar;
-import org.springframework.aot.hint.TypeHint;
-import org.springframework.aot.hint.TypeReference;
 import org.springframework.context.annotation.Configuration;
 
 import de.codecentric.boot.admin.server.domain.entities.Instance;
@@ -193,11 +187,7 @@ public class ServerRuntimeHints implements RuntimeHintsRegistrar {
 					String.class, String.class, Map.class), ExecutableMode.INVOKE)
 			.registerConstructor(Registration.Builder.class.getDeclaredConstructor(), ExecutableMode.INVOKE)
 			.registerMethod(Registration.Builder.class.getMethod("build"), ExecutableMode.INVOKE)
-			.registerMethod(Registration.class.getMethod("toBuilder"), ExecutableMode.INVOKE)
-			.registerTypes(TypeReference.listOf(StdJdkSerializers.AtomicBooleanSerializer.class,
-					StdJdkSerializers.AtomicIntegerSerializer.class, StdJdkSerializers.AtomicLongSerializer.class,
-					FileSerializer.class, ClassSerializer.class, TokenBufferSerializer.class),
-					TypeHint.builtWith(MemberCategory.INVOKE_PUBLIC_CONSTRUCTORS));
+			.registerMethod(Registration.class.getMethod("toBuilder"), ExecutableMode.INVOKE);
 	}
 
 }

@@ -1,0 +1,553 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Spring Boot Admin                                                  [pom]
+[INFO] Spring Boot Admin Dependencies                                     [pom]
+[INFO] Spring Boot Admin Build                                            [pom]
+[INFO] Spring Boot Admin Server                                           [jar]
+[INFO] Spring Boot Admin Server UI                                        [jar]
+[INFO] Spring Boot Admin Client                                           [jar]
+[INFO] Spring Boot Admin Docs                                             [pom]
+[INFO] Spring Boot Admin Server Cloud                                     [jar]
+[INFO] Spring Boot Admin Server Starter                                   [jar]
+[INFO] Spring Boot Admin Client Starter                                   [jar]
+[INFO] Spring Boot Admin Samples                                          [pom]
+[INFO] Spring Boot Admin Server custom UI                                 [jar]
+[INFO] Spring Boot Admin Sample Servlet                                   [jar]
+[INFO] Spring Boot Admin Sample Reactive                                  [jar]
+[INFO] Spring Boot Admin Sample War                                       [war]
+[INFO] Spring Boot Admin Sample Hazelcast                                 [jar]
+[INFO] Spring Boot Admin Sample Eureka                                    [jar]
+[INFO] Spring Boot Admin Sample Consul                                    [jar]
+[INFO] Spring Boot Admin Sample Zookeeper                                 [jar]
+[INFO] 
+[INFO] ------------------< de.codecentric:spring-boot-admin >------------------
+[INFO] Building Spring Boot Admin 4.0.0-SNAPSHOT                         [1/19]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin:pom:4.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin/4.0.0-SNAPSHOT/spring-boot-admin-4.0.0-SNAPSHOT.pom
+[INFO] 
+[INFO] -----------< de.codecentric:spring-boot-admin-dependencies >------------
+[INFO] Building Spring Boot Admin Dependencies 4.0.0-SNAPSHOT            [2/19]
+[INFO]   from spring-boot-admin-dependencies/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/target
+[INFO] 
+[INFO] --- flatten:1.7.3:clean (flatten-clean) @ spring-boot-admin-dependencies ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-dependencies ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-dependencies ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-dependencies:pom:4.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-dependencies ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-dependencies ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-dependencies ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-dependencies/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-dependencies/4.0.0-SNAPSHOT/spring-boot-admin-dependencies-4.0.0-SNAPSHOT.pom
+[INFO] 
+[INFO] ---------------< de.codecentric:spring-boot-admin-build >---------------
+[INFO] Building Spring Boot Admin Build 4.0.0-SNAPSHOT                   [3/19]
+[INFO]   from spring-boot-admin-build/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-build ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-build ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-build ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-build:pom:4.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-build ---
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-build ---
+[INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-build ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-build/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-build/4.0.0-SNAPSHOT/spring-boot-admin-build-4.0.0-SNAPSHOT.pom
+[INFO] 
+[INFO] --------------< de.codecentric:spring-boot-admin-server >---------------
+[INFO] Building Spring Boot Admin Server 4.0.0-SNAPSHOT                  [4/19]
+[INFO]   from spring-boot-admin-server/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- build-helper:3.6.1:regex-property (generate-automatic-module-name) @ spring-boot-admin-server ---
+[INFO] 
+[INFO] --- resources:3.4.0:resources (default-resources) @ spring-boot-admin-server ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ spring-boot-admin-server ---
+[INFO] Generating flattened POM of project de.codecentric:spring-boot-admin-server:jar:4.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ spring-boot-admin-server ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 150 source files with javac [debug parameters target 21] to target/classes
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractContentNotifier.java:[105,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/PagerdutyNotifier.java:[136,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/OpsGenieNotifier.java:[176,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/MicrosoftTeamsNotifier.java:[231,100] org.springframework.context.expression.MapAccessor in org.springframework.context.expression has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[65,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[65,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[65,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[65,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[65,30] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[67,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[67,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[67,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[67,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[67,30] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[73,31] org.springframework.http.codec.json.Jackson2JsonDecoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[74,31] org.springframework.http.codec.json.Jackson2JsonEncoder in org.springframework.http.codec.json has been deprecated and marked for removal
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java:[469,69] non-varargs call of varargs method with inexact argument type for last parameter;
+  cast to java.lang.Object for a varargs call
+  cast to java.lang.Object[] for a non-varargs call and to suppress this warning
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Some input files use or override a deprecated API.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java uses unchecked or unsafe operations.
+[INFO] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverters.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.4.0:testResources (default-testResources) @ spring-boot-admin-server ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ spring-boot-admin-server ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ spring-boot-admin-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.0:jar (default-jar) @ spring-boot-admin-server ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-4.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- source:3.4.0:jar-no-fork (attach-sources) @ spring-boot-admin-server ---
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-4.0.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- javadoc:3.12.0:jar (attach-javadocs) @ spring-boot-admin-server ---
+[WARNING] Javadoc Warnings
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/EndpointDetector.java:30: warning: no main description
+[WARNING] * @author Johannes Edmeier
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/EnableAdminServer.java:28: warning: no main description
+[WARNING] * @author Dennis Schulte
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/LegacyEndpointConverter.java:25: warning: no main description
+[WARNING] * @author Johannes Edmeier
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/package-info.java:20: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.config;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/entities/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.domain.entities;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/events/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.domain.events;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/domain/values/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.domain.values;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/eventstore/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.eventstore;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.notify;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.notify.filter;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/web/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.notify.filter.web;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.services;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/endpoints/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.services.endpoints;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/utils/jackson/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.utils.jackson;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.web;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.web.client;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/cookies/package-info.java:19: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.web.client.cookies;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/client/exception/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.web.client.exception;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/reactive/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.web.reactive;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/servlet/package-info.java:21: warning: no comment
+[WARNING] package de.codecentric.boot.admin.server.web.servlet;
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractContentNotifier.java:78: warning: no comment
+[WARNING] public AbstractContentNotifier(InstanceRepository repository) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractContentNotifier.java:84: warning: no comment
+[WARNING] public String getMessage() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractContentNotifier.java:88: warning: no comment
+[WARNING] public void setMessage(String message) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/AbstractEventHandler.java:32: warning: no comment
+[WARNING] public abstract class AbstractEventHandler<T extends InstanceEvent> {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/AbstractEventHandler.java:46: warning: no comment
+[WARNING] protected AbstractEventHandler(Publisher<InstanceEvent> publisher, Class<T> eventType) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/AbstractEventHandler.java:66: warning: no comment
+[WARNING] protected Scheduler createScheduler() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/AbstractEventHandler.java:64: warning: no comment
+[WARNING] protected abstract Publisher<Void> handle(Flux<T> publisher);
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/AbstractEventHandler.java:51: warning: no comment
+[WARNING] public void start() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/services/AbstractEventHandler.java:70: warning: no comment
+[WARNING] public void stop() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractEventNotifier.java:41: warning: no comment
+[WARNING] protected AbstractEventNotifier(InstanceRepository repository) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractEventNotifier.java:62: warning: no comment
+[WARNING] protected abstract Mono<Void> doNotify(InstanceEvent event, Instance instance);
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractEventNotifier.java:72: warning: no comment
+[WARNING] public boolean isEnabled() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/Notifier.java:30: warning: no comment
+[WARNING] Mono<Void> notify(InstanceEvent event);
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractEventNotifier.java:68: warning: no comment
+[WARNING] public void setEnabled(boolean enabled) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractEventNotifier.java:58: warning: no comment
+[WARNING] protected boolean shouldNotify(InstanceEvent event, Instance instance) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractNotificationFilter.java:21: warning: no comment
+[WARNING] public abstract class AbstractNotificationFilter implements NotificationFilter {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/AbstractNotificationFilter.java:27: warning: no comment
+[WARNING] public AbstractNotificationFilter() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/filter/NotificationFilter.java:24: warning: no comment
+[WARNING] String getId();
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractStatusChangeNotifier.java:47: warning: no comment
+[WARNING] public AbstractStatusChangeNotifier(InstanceRepository repository) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractStatusChangeNotifier.java:87: warning: no comment
+[WARNING] public String[] getIgnoreChanges() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractStatusChangeNotifier.java:68: warning: no comment
+[WARNING] protected final String getLastStatus(InstanceId instanceId) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractStatusChangeNotifier.java:81: warning: no comment
+[WARNING] public void setIgnoreChanges(String[] ignoreChanges) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/notify/AbstractStatusChangeNotifier.java:72: warning: no comment
+[WARNING] protected void updateLastStatus(InstanceEvent event) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/reactive/AdminControllerHandlerMapping.java:30: warning: no comment
+[WARNING] public class AdminControllerHandlerMapping extends RequestMappingHandlerMapping {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/reactive/AdminControllerHandlerMapping.java:34: warning: no comment
+[WARNING] public AdminControllerHandlerMapping(String adminContextPath) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/servlet/AdminControllerHandlerMapping.java:31: warning: no comment
+[WARNING] public class AdminControllerHandlerMapping extends RequestMappingHandlerMapping {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/web/servlet/AdminControllerHandlerMapping.java:35: warning: no comment
+[WARNING] public AdminControllerHandlerMapping(String adminContextPath) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:65: warning: no comment
+[WARNING] public class AdminServerAutoConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:69: warning: no comment
+[WARNING] public AdminServerAutoConfiguration(AdminServerProperties adminServerProperties) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:88: warning: no comment
+[WARNING] public ApplicationRegistry applicationRegistry(InstanceRegistry instanceRegistry,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:137: warning: no comment
+[WARNING] public EndpointDetectionTrigger endpointDetectionTrigger(EndpointDetector endpointDetector,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:126: warning: no comment
+[WARNING] public EndpointDetector endpointDetector(InstanceRepository instanceRepository,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:159: warning: no comment
+[WARNING] public InMemoryEventStore eventStore() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:144: warning: no comment
+[WARNING] public InfoUpdater infoUpdater(InstanceRepository instanceRepository,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:151: warning: no comment
+[WARNING] public InfoUpdateTrigger infoUpdateTrigger(InfoUpdater infoUpdater, Publisher<InstanceEvent> events) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:75: warning: no comment
+[WARNING] public InstanceFilter instanceFilter() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:95: warning: no comment
+[WARNING] public InstanceIdGenerator instanceIdGenerator() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:81: warning: no comment
+[WARNING] public InstanceRegistry instanceRegistry(InstanceRepository instanceRepository,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:165: warning: no comment
+[WARNING] public SnapshottingInstanceRepository instanceRepository(InstanceEventStore eventStore) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:101: warning: no comment
+[WARNING] public StatusUpdater statusUpdater(InstanceRepository instanceRepository,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerAutoConfiguration.java:108: warning: no comment
+[WARNING] public StatusUpdateTrigger statusUpdateTrigger(StatusUpdater statusUpdater, Publisher<InstanceEvent> events) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerCloudFoundryAutoConfiguration.java:36: warning: no comment
+[WARNING] public class AdminServerCloudFoundryAutoConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerCloudFoundryAutoConfiguration.java:36: warning: use of default constructor, which does not provide a comment
+[WARNING] public class AdminServerCloudFoundryAutoConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerCloudFoundryAutoConfiguration.java:46: warning: no comment
+[WARNING] public CloudFoundryHttpHeaderProvider cloudFoundryHttpHeaderProvider() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerCloudFoundryAutoConfiguration.java:40: warning: no comment
+[WARNING] public InstanceIdGenerator instanceIdGenerator() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:48: warning: no comment
+[WARNING] public class AdminServerHazelcastAutoConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:66: warning: no comment
+[WARNING] public static class NotifierTriggerConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:50: warning: no comment
+[WARNING] public static final String DEFAULT_NAME_EVENT_STORE_MAP = "spring-boot-admin-event-store";
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:52: warning: no comment
+[WARNING] public static final String DEFAULT_NAME_SENT_NOTIFICATIONS_MAP = "spring-boot-admin-sent-notifications";
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:48: warning: use of default constructor, which does not provide a comment
+[WARNING] public class AdminServerHazelcastAutoConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:59: warning: no comment
+[WARNING] public HazelcastEventStore eventStore(HazelcastInstance hazelcastInstance) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:66: warning: use of default constructor, which does not provide a comment
+[WARNING] public static class NotifierTriggerConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerHazelcastAutoConfiguration.java:73: warning: no comment
+[WARNING] public NotificationTrigger notificationTrigger(HazelcastInstance hazelcastInstance, Notifier notifier,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:51: warning: no comment
+[WARNING] public class AdminServerInstanceWebClientConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:252: warning: no comment
+[WARNING] protected static class CookieStoreConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:162: warning: no comment
+[WARNING] protected static class HttpHeadersProviderConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:69: warning: no comment
+[WARNING] protected static class InstanceExchangeFiltersConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:181: warning: no comment
+[WARNING] protected static class LegacyEndpointConvertersConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:55: warning: no comment
+[WARNING] public AdminServerInstanceWebClientConfiguration(ObjectProvider<InstanceWebClientCustomizer> customizers,
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:64: warning: no comment
+[WARNING] public InstanceWebClient.Builder instanceWebClientBuilder() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:252: warning: use of default constructor, which does not provide a comment
+[WARNING] protected static class CookieStoreConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:162: warning: use of default constructor, which does not provide a comment
+[WARNING] protected static class HttpHeadersProviderConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:166: warning: no comment
+[WARNING] public BasicAuthHttpHeaderProvider basicAuthHttpHeadersProvider(AdminServerProperties adminServerProperties) {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:80: warning: no comment
+[WARNING] protected static class DefaultInstanceExchangeFiltersConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:69: warning: use of default constructor, which does not provide a comment
+[WARNING] protected static class InstanceExchangeFiltersConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:74: warning: no comment
+[WARNING] public InstanceWebClientCustomizer filterInstanceWebClientCustomizer(
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:80: warning: use of default constructor, which does not provide a comment
+[WARNING] protected static class DefaultInstanceExchangeFiltersConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:86: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction addHeadersInstanceExchangeFilter(
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:95: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction addReactiveHeadersInstanceExchangeFilter(
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:134: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction cookieHandlingInstanceExchangeFilter(
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:119: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction legacyEndpointConverterInstanceExchangeFilter(
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:127: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction logfileAcceptWorkaround() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:142: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction retryInstanceExchangeFilter(
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:104: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction rewriteEndpointUrlInstanceExchangeFilter() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:111: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction setDefaultAcceptHeaderInstanceExchangeFilter() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:151: warning: no comment
+[WARNING] public InstanceExchangeFilterFunction timeoutInstanceExchangeFilter(
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:181: warning: use of default constructor, which does not provide a comment
+[WARNING] protected static class LegacyEndpointConvertersConfiguration {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:227: warning: no comment
+[WARNING] public LegacyEndpointConverter beansLegacyEndpointConverter() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:233: warning: no comment
+[WARNING] public LegacyEndpointConverter configpropsLegacyEndpointConverter() {
+[WARNING] ^
+[WARNING] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/src/main/java/de/codecentric/boot/admin/server/config/AdminServerInstanceWebClientConfiguration.java:197: warning: no comment
+[WARNING] public LegacyEndpointConverter envLegacyEndpointConverter() {
+[WARNING] ^
+[WARNING] 100 warnings
+[INFO] Building jar: /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-4.0.0-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ spring-boot-admin-server ---
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/.flattened-pom.xml to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server/4.0.0-SNAPSHOT/spring-boot-admin-server-4.0.0-SNAPSHOT.pom
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-4.0.0-SNAPSHOT.jar to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server/4.0.0-SNAPSHOT/spring-boot-admin-server-4.0.0-SNAPSHOT.jar
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-4.0.0-SNAPSHOT-sources.jar to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server/4.0.0-SNAPSHOT/spring-boot-admin-server-4.0.0-SNAPSHOT-sources.jar
+[INFO] Installing /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server/target/spring-boot-admin-server-4.0.0-SNAPSHOT-javadoc.jar to /home/ubuntu/.m2/repository/de/codecentric/spring-boot-admin-server/4.0.0-SNAPSHOT/spring-boot-admin-server-4.0.0-SNAPSHOT-javadoc.jar
+[INFO] 
+[INFO] -------------< de.codecentric:spring-boot-admin-server-ui >-------------
+[INFO] Building Spring Boot Admin Server UI 4.0.0-SNAPSHOT               [5/19]
+[INFO]   from spring-boot-admin-server-ui/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ spring-boot-admin-server-ui ---
+[INFO] Deleting /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/target
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ spring-boot-admin-server-ui ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven) @ spring-boot-admin-server-ui ---
+[INFO] 
+[INFO] --- spring-javaformat:0.0.47:validate (default) @ spring-boot-admin-server-ui ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Spring Boot Admin 4.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Spring Boot Admin .................................. SUCCESS [  1.803 s]
+[INFO] Spring Boot Admin Dependencies ..................... SUCCESS [  0.087 s]
+[INFO] Spring Boot Admin Build ............................ SUCCESS [  0.182 s]
+[INFO] Spring Boot Admin Server ........................... SUCCESS [ 12.055 s]
+[INFO] Spring Boot Admin Server UI ........................ FAILURE [  0.308 s]
+[INFO] Spring Boot Admin Client ........................... SKIPPED
+[INFO] Spring Boot Admin Docs ............................. SKIPPED
+[INFO] Spring Boot Admin Server Cloud ..................... SKIPPED
+[INFO] Spring Boot Admin Server Starter ................... SKIPPED
+[INFO] Spring Boot Admin Client Starter ................... SKIPPED
+[INFO] Spring Boot Admin Samples .......................... SKIPPED
+[INFO] Spring Boot Admin Server custom UI ................. SKIPPED
+[INFO] Spring Boot Admin Sample Servlet ................... SKIPPED
+[INFO] Spring Boot Admin Sample Reactive .................. SKIPPED
+[INFO] Spring Boot Admin Sample War ....................... SKIPPED
+[INFO] Spring Boot Admin Sample Hazelcast ................. SKIPPED
+[INFO] Spring Boot Admin Sample Eureka .................... SKIPPED
+[INFO] Spring Boot Admin Sample Consul .................... SKIPPED
+[INFO] Spring Boot Admin Sample Zookeeper ................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  14.812 s
+[INFO] Finished at: 2026-02-07T03:11:14Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal io.spring.javaformat:spring-javaformat-maven-plugin:0.0.47:validate (default) on project spring-boot-admin-server-ui: Formatting violations found in the following files:
+[ERROR]  * /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-server-ui/src/main/java/de/codecentric/boot/admin/server/ui/config/ServerRuntimeHints.java
+[ERROR] 
+[ERROR] Run `spring-javaformat:apply` to fix.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-server-ui
