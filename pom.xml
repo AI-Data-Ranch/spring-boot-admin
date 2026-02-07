@@ -58,8 +58,21 @@
         <wiremock.version>3.13.2</wiremock.version>
         <hazelcast.version>5.6.0</hazelcast.version>
         <awaitility.version>4.3.0</awaitility.version>
-        <testcontainers.version>2.0.3</testcontainers.version>
-        <jetty.version>12.1.6</jetty.version>
+                <testcontainers.version>2.0.3</testcontainers.version>
+                <jetty.version>12.1.6</jetty.version>
+
+                <!-- Vulnerability fix versions -->
+                <xstream.version>1.4.21</xstream.version>
+                <httpclient-legacy.version>4.5.14</httpclient-legacy.version>
+                <guava.version>33.4.0-jre</guava.version>
+                <commons-io.version>2.18.0</commons-io.version>
+                <zookeeper.version>3.9.4</zookeeper.version>
+                <protobuf-java.version>4.29.3</protobuf-java.version>
+                <vertx.version>4.5.24</vertx.version>
+                <commons-lang3.version>3.18.0</commons-lang3.version>
+                <jose4j.version>0.9.6</jose4j.version>
+                <bcpkix-jdk18on.version>1.79</bcpkix-jdk18on.version>
+                <kotlin.version>2.1.0</kotlin.version>
 
         <!-- plugin versions -->
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
