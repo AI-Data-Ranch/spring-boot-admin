@@ -81,8 +81,8 @@ public class FeiShuNotifierTest {
 				.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), StatusInfo.ofUp())))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
-				Collections.singletonList("application/json"));
+		assertThat(httpRequest.getValue().getHeaders().getValuesAsList("Content-Type"))
+			.isEqualTo(Collections.singletonList("application/json"));
 
 		Map<String, Object> body = httpRequest.getValue().getBody();
 		assertThat(body).containsEntry("card",
@@ -109,8 +109,8 @@ public class FeiShuNotifierTest {
 			.create(notifier.notify(new InstanceStatusChangedEvent(instance.getId(), instance.getVersion(), infoDown)))
 			.verifyComplete();
 
-		assertThat(httpRequest.getValue().getHeaders()).containsEntry("Content-Type",
-				Collections.singletonList("application/json"));
+		assertThat(httpRequest.getValue().getHeaders().getValuesAsList("Content-Type"))
+			.isEqualTo(Collections.singletonList("application/json"));
 		Map<String, Object> body = httpRequest.getValue().getBody();
 		assertThat(body).containsEntry("card",
 				"{\"elements\":[{\"tag\":\"div\",\"text\":{\"tag\":\"plain_text\",\"content\":\"ServiceName: App(-id-) \\nServiceUrl:  \\nStatus: changed status from [UP] to [DOWN]\"}},{\"tag\":\"div\",\"text\":{\"tag\":\"lark_md\",\"content\":\"<at id=all></at>\"}}],\"header\":{\"template\":\"red\",\"title\":{\"tag\":\"plain_text\",\"content\":\"Codecentric's Spring Boot Admin notice\"}}}");

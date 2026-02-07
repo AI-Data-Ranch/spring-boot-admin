@@ -16,18 +16,15 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.util.Collections;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.StatusInfo;
@@ -39,17 +36,10 @@ class StatusInfoMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<StatusInfo> jsonTester;
-
 	protected StatusInfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -65,16 +55,17 @@ class StatusInfoMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JsonProcessingException {
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE", Collections.singletonMap("foo", "bar"));
 
-		JsonContent<StatusInfo> jsonContent = jsonTester.write(statusInfo);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.details").containsOnly(entry("foo", "bar"));
-		assertThat(jsonContent).doesNotHaveJsonPath("$.up")
-			.doesNotHaveJsonPath("$.offline")
-			.doesNotHaveJsonPath("$.down")
-			.doesNotHaveJsonPath("$.unknown");
+		String json = objectMapper.writeValueAsString(statusInfo);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("status").asText()).isEqualTo("OFFLINE");
+		assertThat(jsonNode.get("details").get("foo").asText()).isEqualTo("bar");
+		assertThat(jsonNode.has("up")).isFalse();
+		assertThat(jsonNode.has("offline")).isFalse();
+		assertThat(jsonNode.has("down")).isFalse();
+		assertThat(jsonNode.has("unknown")).isFalse();
 	}
 
 }
