@@ -1,0 +1,83 @@
+diff --git a/.github/workflows/build-feature.yml b/.github/workflows/build-feature.yml
+index 119334ac..3a5ea02f 100644
+--- a/.github/workflows/build-feature.yml
++++ b/.github/workflows/build-feature.yml
+@@ -35,7 +35,7 @@ jobs:
+         uses: actions/setup-java@v5
+         with:
+           distribution: 'temurin'
+-          java-version: '17'
++          java-version: '21'
+           cache: 'maven'
+           cache-dependency-path: '**/pom.xml'
+ 
+diff --git a/.github/workflows/build-main.yml b/.github/workflows/build-main.yml
+index 1610335e..97363014 100644
+--- a/.github/workflows/build-main.yml
++++ b/.github/workflows/build-main.yml
+@@ -22,7 +22,7 @@ jobs:
+         uses: actions/setup-java@v5
+         with:
+           distribution: 'temurin'
+-          java-version: '17'
++          java-version: '21'
+           cache: 'maven'
+           cache-dependency-path: '**/pom.xml'
+ 
+@@ -61,7 +61,7 @@ jobs:
+         uses: actions/setup-java@v5
+         with:
+           distribution: 'temurin'
+-          java-version: '17'
++          java-version: '21'
+           cache: 'maven'
+           cache-dependency-path: '**/pom.xml'
+ 
+@@ -72,7 +72,7 @@ jobs:
+           cache: 'npm'
+           cache-dependency-path: '**/package-lock.json'
+ 
+-      - name: Publish SNAPSHOT version to GitHub Packages (we can skip tests, since we only deploy, if the build workflow succeeded)
++      - name: Publish SNAPSHOTversion to GitHub Packages (we can skip tests, since we only deploy, if the build workflow succeeded)
+         run: ./mvnw -B --no-transfer-progress deploy -DskipTests
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+diff --git a/.github/workflows/deploy-documentation.yml b/.github/workflows/deploy-documentation.yml
+index db601a03..71597651 100644
+--- a/.github/workflows/deploy-documentation.yml
++++ b/.github/workflows/deploy-documentation.yml
+@@ -29,7 +29,7 @@ jobs:
+         uses: actions/setup-java@v5
+         with:
+           distribution: 'temurin'
+-          java-version: '17'
++          java-version: '21'
+           cache: 'maven'
+           cache-dependency-path: '**/pom.xml'
+ 
+diff --git a/.github/workflows/release-to-maven-central.yml b/.github/workflows/release-to-maven-central.yml
+index 8db018e2..5f2fc431 100644
+--- a/.github/workflows/release-to-maven-central.yml
++++ b/.github/workflows/release-to-maven-central.yml
+@@ -40,7 +40,7 @@ jobs:
+         uses: actions/setup-java@v5
+         with:
+           distribution: 'temurin'
+-          java-version: '17'
++          java-version: '21'
+           server-id: central
+           server-username: MAVEN_USERNAME
+           server-password: MAVEN_PASSWORD
+diff --git a/pom.xml b/pom.xml
+index aec66958..c73ae83a 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -32,7 +32,7 @@
+     <properties>
+         <revision>3.5.8-SNAPSHOT</revision>
+ 
+-        <java.version>17</java.version>
++        <java.version>21</java.version>
+         <node.version>v22.12.0</node.version>
+ 
+         <require.maven.version>3.9</require.maven.version>
