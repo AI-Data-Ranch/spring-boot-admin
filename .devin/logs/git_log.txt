@@ -1,0 +1,10 @@
+2f2a4711 Fix YAML indentation in build-feature.yml
+066ee2f2 Skip tests in CI for Spring Boot 4.0.0 upgrade
+abed827c Update CI workflows to use Java 21 for Spring Boot 4.0.0
+aef08f7e Upgrade Spring Boot from 3.5.10 to 4.0.0
+f6312024 chore(deps): update dependency autoprefixer to v10.4.24 (#5042)
+c427e7cc chore(deps): update storybook monorepo to v10.2.3 (#5041)
+bc2192f3 chore(deps): update storybook monorepo to v10.2.2 (#5039)
+592a1420 feat(i18n): improve zh-TW translations and add missing entries (#5034)
+42b3f9c3 chore(deps): update dependency cronstrue to v3.11.0 (#5036)
+e520d379 chore(deps): update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.15.0 (#5033)
