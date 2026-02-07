@@ -72,7 +72,6 @@
                 <commons-lang3.version>3.18.0</commons-lang3.version>
                 <jose4j.version>0.9.6</jose4j.version>
                 <bcpkix-jdk18on.version>1.79</bcpkix-jdk18on.version>
-                <kotlin.version>2.1.0</kotlin.version>
 
         <!-- plugin versions -->
         <build-helper-maven-plugin.version>3.6.1</build-helper-maven-plugin.version>
