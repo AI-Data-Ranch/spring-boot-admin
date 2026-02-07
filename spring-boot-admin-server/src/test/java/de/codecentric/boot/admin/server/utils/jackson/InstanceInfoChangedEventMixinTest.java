@@ -16,7 +16,6 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
@@ -24,14 +23,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceInfoChangedEvent;
@@ -45,17 +42,10 @@ class InstanceInfoChangedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceInfoChangedEvent> jsonTester;
-
 	protected InstanceInfoChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -115,7 +105,7 @@ class InstanceInfoChangedEventMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		Map<String, Object> data = new HashMap<>();
@@ -123,44 +113,47 @@ class InstanceInfoChangedEventMixinTest {
 		data.put("foo", "bar");
 		InstanceInfoChangedEvent event = new InstanceInfoChangedEvent(id, 12345678L, timestamp, Info.from(data));
 
-		JsonContent<InstanceInfoChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("INFO_CHANGED");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.info").containsOnlyKeys("build", "foo");
-
-		assertThat(jsonContent).extractingJsonPathStringValue("$.info['build'].['version']").isEqualTo("1.0.0");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.info['foo']").isEqualTo("bar");
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(12345678);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.000000000);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("INFO_CHANGED");
+		assertThat(jsonNode.get("info").has("build")).isTrue();
+		assertThat(jsonNode.get("info").has("foo")).isTrue();
+		assertThat(jsonNode.get("info").get("build").get("version").asText()).isEqualTo("1.0.0");
+		assertThat(jsonNode.get("info").get("foo").asText()).isEqualTo("bar");
 	}
 
 	@Test
-	void verifySerializeWithOnlyRequiredProperties() throws IOException {
+	void verifySerializeWithOnlyRequiredProperties() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceInfoChangedEvent event = new InstanceInfoChangedEvent(id, 0L, timestamp, null);
 
-		JsonContent<InstanceInfoChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("INFO_CHANGED");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.info").isNull();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(0);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.000000000);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("INFO_CHANGED");
+		assertThat(jsonNode.get("info").isNull()).isTrue();
 	}
 
 	@Test
-	void verifySerializeWithEmptyInfo() throws IOException {
+	void verifySerializeWithEmptyInfo() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceInfoChangedEvent event = new InstanceInfoChangedEvent(id, 12345678L, timestamp,
 				Info.from(Collections.emptyMap()));
 
-		JsonContent<InstanceInfoChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("INFO_CHANGED");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.info").isEmpty();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(12345678);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.000000000);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("INFO_CHANGED");
+		assertThat(jsonNode.get("info").size()).isEqualTo(0);
 	}
 
 }
