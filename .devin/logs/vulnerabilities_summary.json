@@ -1,0 +1,2896 @@
+[
+  {
+    "projectName": "de.codecentric:spring-boot-admin",
+    "displayTargetFile": "pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-build",
+    "displayTargetFile": "spring-boot-admin-build/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-client",
+    "displayTargetFile": "spring-boot-admin-client/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-dependencies",
+    "displayTargetFile": "spring-boot-admin-dependencies/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-docs",
+    "displayTargetFile": "spring-boot-admin-docs/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "site",
+    "displayTargetFile": "spring-boot-admin-docs/src/site/package-lock.json",
+    "vulnerabilities": [
+      {
+        "id": "SNYK-JS-BABELHELPERS-9397697",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/helpers",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/core@7.29.0",
+          "@babel/helpers@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELHELPERS-9397697",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/helpers",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/core@7.29.0",
+          "@babel/helpers@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/types@3.9.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "react-loadable-ssr-addon-v5-slorber@1.0.1",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "react-router@5.3.4",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "react-router-config@5.1.1",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "react-router-dom@5.3.4",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/module-type-aliases@3.9.2",
+          "@docusaurus/types@3.9.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "react-loadable-ssr-addon-v5-slorber@1.0.1",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "react-router@5.3.4",
+          "history@4.10.1",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "react-router@5.3.4",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "react-router-config@5.1.1",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "react-router-dom@5.3.4",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "react-router@5.3.4",
+          "history@4.10.1",
+          "@babel/runtime@7.28.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/preset-env@7.29.0",
+          "@babel/plugin-transform-regenerator@7.29.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/preset-env@7.29.0",
+          "@babel/plugin-transform-regenerator@7.29.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIME-10044504",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIMECOREJS3-9397696",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime-corejs3",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/runtime-corejs3@7.29.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BABELRUNTIMECOREJS3-9397696",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "@babel/runtime-corejs3",
+        "version": "7.26.0",
+        "fixedIn": [
+          "7.26.10",
+          "8.0.0-alpha.17"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@babel/runtime-corejs3@7.29.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BRACEEXPANSION-9789073",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "low",
+        "packageName": "brace-expansion",
+        "version": "1.1.11",
+        "fixedIn": [
+          "1.1.12",
+          "2.0.2",
+          "3.0.1",
+          "4.0.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "serve-handler@6.1.6",
+          "minimatch@3.1.2",
+          "brace-expansion@1.1.12"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BRACEEXPANSION-9789073",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "low",
+        "packageName": "brace-expansion",
+        "version": "1.1.11",
+        "fixedIn": [
+          "1.1.12",
+          "2.0.2",
+          "3.0.1",
+          "4.0.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "serve-handler@6.1.6",
+          "minimatch@3.1.2",
+          "brace-expansion@1.1.12"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BRACEEXPANSION-9789073",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "low",
+        "packageName": "brace-expansion",
+        "version": "1.1.11",
+        "fixedIn": [
+          "1.1.12",
+          "2.0.2",
+          "3.0.1",
+          "4.0.1"
+        ],
+        "upgradePath": [
+          false,
+          "asciidoctor@3.0.4",
+          "ejs@3.1.10",
+          "jake@10.9.4"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-BRACEEXPANSION-9789073",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "low",
+        "packageName": "brace-expansion",
+        "version": "2.0.1",
+        "fixedIn": [
+          "1.1.12",
+          "2.0.2",
+          "3.0.1",
+          "4.0.1"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-BRACEEXPANSION-9789073",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "low",
+        "packageName": "brace-expansion",
+        "version": "2.0.1",
+        "fixedIn": [
+          "1.1.12",
+          "2.0.2",
+          "3.0.1",
+          "4.0.1"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-DIFF-14917201",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "diff",
+        "version": "5.2.0",
+        "fixedIn": [
+          "3.5.1",
+          "4.0.4",
+          "5.2.2",
+          "8.0.3"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "libnpmdiff@7.0.1",
+          "diff@5.2.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-DIFF-14917201",
+        "title": "Regular Expression Denial of Service (ReDoS)",
+        "severity": "medium",
+        "packageName": "diff",
+        "version": "5.2.0",
+        "fixedIn": [
+          "3.5.1",
+          "4.0.4",
+          "5.2.2",
+          "8.0.3"
+        ],
+        "upgradePath": [
+          false,
+          "remark-deflist@1.0.0",
+          "mdast-util-from-markdown@1.3.1",
+          "micromark@3.2.0",
+          "micromark-core-commonmark@1.1.0",
+          "micromark-factory-label@1.1.0",
+          "uvu@0.5.6",
+          "diff@5.2.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-ESTREEUTILVALUETOESTREE-9734388",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "estree-util-value-to-estree",
+        "version": "3.2.1",
+        "fixedIn": [
+          "3.3.3"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "estree-util-value-to-estree@3.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-ESTREEUTILVALUETOESTREE-9734388",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "estree-util-value-to-estree",
+        "version": "3.2.1",
+        "fixedIn": [
+          "3.3.3"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "estree-util-value-to-estree@3.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-GLOB-14040952",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "glob",
+        "version": "10.4.5",
+        "fixedIn": [
+          "10.5.0",
+          "11.1.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-GLOB-14040952",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "glob",
+        "version": "10.4.5",
+        "fixedIn": [
+          "10.5.0",
+          "11.1.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-GLOB-14040952",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "glob",
+        "version": "10.4.5",
+        "fixedIn": [
+          "10.5.0",
+          "11.1.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-GLOB-14040952",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "glob",
+        "version": "10.4.5",
+        "fixedIn": [
+          "10.5.0",
+          "11.1.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-GLOB-14040952",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "glob",
+        "version": "10.4.5",
+        "fixedIn": [
+          "10.5.0",
+          "11.1.0"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "pacote@20.0.0",
+          "@npmcli/run-script@9.1.0",
+          "node-gyp@11.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-GLOB-14040952",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "glob",
+        "version": "10.4.5",
+        "fixedIn": [
+          "10.5.0",
+          "11.1.0"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "cacache@19.0.1",
+          "tar@7.5.7",
+          "minizlib@3.1.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-INFLIGHT-6095116",
+        "title": "Missing Release of Resource after Effective Lifetime",
+        "severity": "medium",
+        "packageName": "inflight",
+        "version": "1.0.6",
+        "fixedIn": [],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-ISAACSBRACEEXPANSION-15208653",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "critical",
+        "packageName": "@isaacs/brace-expansion",
+        "version": "5.0.0",
+        "fixedIn": [
+          "5.0.1"
+        ],
+        "upgradePath": [
+          false,
+          "glob@13.0.0",
+          "minimatch@10.1.2",
+          "@isaacs/brace-expansion@5.0.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "3.14.1",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "gray-matter@4.0.3",
+          "js-yaml@3.14.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "3.14.1",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "gray-matter@4.0.3",
+          "js-yaml@3.14.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "4.1.0",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-docs@3.9.2",
+          "js-yaml@4.1.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "4.1.0",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "js-yaml@4.1.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "4.1.0",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "@docusaurus/utils-validation@3.9.2",
+          "js-yaml@4.1.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "4.1.0",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "js-yaml@4.1.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "4.1.0",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/bundler@3.9.2",
+          "postcss-loader@7.3.4",
+          "cosmiconfig@8.3.6",
+          "js-yaml@4.1.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "4.1.0",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "@docusaurus/utils-validation@3.9.2",
+          "js-yaml@4.1.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-JSYAML-13961110",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "js-yaml",
+        "version": "4.1.0",
+        "fixedIn": [
+          "3.14.2",
+          "4.1.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/bundler@3.9.2",
+          "postcss-loader@7.3.4",
+          "cosmiconfig@8.3.6",
+          "js-yaml@4.1.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "html-webpack-plugin@5.6.6",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-blog@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-docs@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/theme-classic@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/theme-search-algolia@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "@docusaurus/utils-validation@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "html-webpack-plugin@5.6.6",
+          "pretty-error@4.0.0",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "html-webpack-plugin@5.6.6",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "@docusaurus/utils-validation@3.9.2",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "html-webpack-plugin@5.6.6",
+          "pretty-error@4.0.0",
+          "renderkid@3.0.0",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "html-webpack-plugin@5.6.6",
+          "pretty-error@4.0.0",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-LODASH-15053838",
+        "title": "Prototype Pollution",
+        "severity": "medium",
+        "packageName": "lodash",
+        "version": "4.17.21",
+        "fixedIn": [
+          "4.17.23"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "html-webpack-plugin@5.6.6",
+          "pretty-error@4.0.0",
+          "renderkid@3.0.0",
+          "lodash@4.17.23"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-MDASTUTILTOHAST-14157221",
+        "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+        "severity": "medium",
+        "packageName": "mdast-util-to-hast",
+        "version": "13.2.0",
+        "fixedIn": [
+          "13.2.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/types@3.9.2",
+          "@mdx-js/mdx@3.1.1",
+          "remark-rehype@11.1.2",
+          "mdast-util-to-hast@13.2.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-MDASTUTILTOHAST-14157221",
+        "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+        "severity": "medium",
+        "packageName": "mdast-util-to-hast",
+        "version": "13.2.0",
+        "fixedIn": [
+          "13.2.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/module-type-aliases@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "@mdx-js/mdx@3.1.1",
+          "remark-rehype@11.1.2",
+          "mdast-util-to-hast@13.2.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-MDASTUTILTOHAST-14157221",
+        "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+        "severity": "medium",
+        "packageName": "mdast-util-to-hast",
+        "version": "13.2.0",
+        "fixedIn": [
+          "13.2.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "rehype-raw@7.0.0",
+          "hast-util-raw@9.1.0",
+          "mdast-util-to-hast@13.2.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-MDASTUTILTOHAST-14157221",
+        "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+        "severity": "medium",
+        "packageName": "mdast-util-to-hast",
+        "version": "13.2.0",
+        "fixedIn": [
+          "13.2.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "rehype-raw@7.0.0",
+          "hast-util-raw@9.1.0",
+          "mdast-util-to-hast@13.2.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-MDASTUTILTOHAST-14157221",
+        "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+        "severity": "medium",
+        "packageName": "mdast-util-to-hast",
+        "version": "13.2.0",
+        "fixedIn": [
+          "13.2.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "@mdx-js/mdx@3.1.1",
+          "remark-rehype@11.1.2",
+          "mdast-util-to-hast@13.2.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-MDASTUTILTOHAST-14157221",
+        "title": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+        "severity": "medium",
+        "packageName": "mdast-util-to-hast",
+        "version": "13.2.0",
+        "fixedIn": [
+          "13.2.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "@mdx-js/mdx@3.1.1",
+          "remark-rehype@11.1.2",
+          "mdast-util-to-hast@13.2.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-NODEFORGE-14114940",
+        "title": "Interpretation Conflict",
+        "severity": "critical",
+        "packageName": "node-forge",
+        "version": "1.3.1",
+        "fixedIn": [
+          "1.3.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "selfsigned@5.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-NODEFORGE-14125097",
+        "title": "Integer Overflow or Wraparound",
+        "severity": "medium",
+        "packageName": "node-forge",
+        "version": "1.3.1",
+        "fixedIn": [
+          "1.3.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "selfsigned@5.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-NODEFORGE-14125745",
+        "title": "Uncontrolled Recursion",
+        "severity": "high",
+        "packageName": "node-forge",
+        "version": "1.3.1",
+        "fixedIn": [
+          "1.3.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "selfsigned@5.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-NODEFORGE-14114940",
+        "title": "Interpretation Conflict",
+        "severity": "critical",
+        "packageName": "node-forge",
+        "version": "1.3.1",
+        "fixedIn": [
+          "1.3.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "selfsigned@5.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-NODEFORGE-14125097",
+        "title": "Integer Overflow or Wraparound",
+        "severity": "medium",
+        "packageName": "node-forge",
+        "version": "1.3.1",
+        "fixedIn": [
+          "1.3.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "selfsigned@5.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-NODEFORGE-14125745",
+        "title": "Uncontrolled Recursion",
+        "severity": "high",
+        "packageName": "node-forge",
+        "version": "1.3.1",
+        "fixedIn": [
+          "1.3.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "selfsigned@5.5.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-ONHEADERS-10773729",
+        "title": "Improper Handling of Unexpected Data Type",
+        "severity": "medium",
+        "packageName": "on-headers",
+        "version": "1.0.2",
+        "fixedIn": [
+          "1.1.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "compression@1.8.1",
+          "on-headers@1.1.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-ONHEADERS-10773729",
+        "title": "Improper Handling of Unexpected Data Type",
+        "severity": "medium",
+        "packageName": "on-headers",
+        "version": "1.0.2",
+        "fixedIn": [
+          "1.1.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "compression@1.8.1",
+          "on-headers@1.1.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-PNPMNPMCONF-14897556",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "@pnpm/npm-conf",
+        "version": "2.2.2",
+        "fixedIn": [
+          "3.0.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "update-notifier@6.0.2",
+          "latest-version@7.0.0",
+          "package-json@8.1.1",
+          "registry-auth-token@5.1.1",
+          "@pnpm/npm-conf@3.0.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-PNPMNPMCONF-14897556",
+        "title": "Command Injection",
+        "severity": "high",
+        "packageName": "@pnpm/npm-conf",
+        "version": "2.2.2",
+        "fixedIn": [
+          "3.0.2"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "update-notifier@6.0.2",
+          "latest-version@7.0.0",
+          "package-json@8.1.1",
+          "registry-auth-token@5.1.1",
+          "@pnpm/npm-conf@3.0.2"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-PRISMJS-9055448",
+        "title": "Arbitrary Code Injection",
+        "severity": "low",
+        "packageName": "prismjs",
+        "version": "1.29.0",
+        "fixedIn": [
+          "1.30.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/theme-classic@3.9.2",
+          "prismjs@1.30.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-QS-14724253",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "high",
+        "packageName": "qs",
+        "version": "6.13.0",
+        "fixedIn": [
+          "6.14.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "express@4.22.1",
+          "qs@6.14.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-QS-14724253",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "high",
+        "packageName": "qs",
+        "version": "6.13.0",
+        "fixedIn": [
+          "6.14.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "express@4.22.1",
+          "body-parser@1.20.4",
+          "qs@6.14.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-QS-14724253",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "high",
+        "packageName": "qs",
+        "version": "6.13.0",
+        "fixedIn": [
+          "6.14.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "express@4.22.1",
+          "qs@6.14.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-QS-14724253",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "high",
+        "packageName": "qs",
+        "version": "6.13.0",
+        "fixedIn": [
+          "6.14.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack-dev-server@5.2.3",
+          "express@4.22.1",
+          "body-parser@1.20.4",
+          "qs@6.14.1"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-SIRV-12558119",
+        "title": "Directory Traversal",
+        "severity": "low",
+        "packageName": "sirv",
+        "version": "2.0.4",
+        "fixedIn": [
+          "3.0.2"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-SIRV-12558119",
+        "title": "Directory Traversal",
+        "severity": "low",
+        "packageName": "sirv",
+        "version": "2.0.4",
+        "fixedIn": [
+          "3.0.2"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15032660",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "7.4.3",
+        "fixedIn": [
+          "7.5.3"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "cacache@19.0.1",
+          "tar@7.5.7"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-TAR-15038581",
+        "title": "Improper Handling of Unicode Encoding",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "7.4.3",
+        "fixedIn": [
+          "7.5.4"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "cacache@19.0.1",
+          "tar@7.5.7"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-TAR-15127355",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "7.4.3",
+        "fixedIn": [
+          "7.5.7"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "cacache@19.0.1",
+          "tar@7.5.7"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-TAR-15032660",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "7.4.3",
+        "fixedIn": [
+          "7.5.3"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "pacote@20.0.0",
+          "@npmcli/run-script@9.1.0",
+          "node-gyp@11.5.0",
+          "tar@7.5.7"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-TAR-15038581",
+        "title": "Improper Handling of Unicode Encoding",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "7.4.3",
+        "fixedIn": [
+          "7.5.4"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "pacote@20.0.0",
+          "@npmcli/run-script@9.1.0",
+          "node-gyp@11.5.0",
+          "tar@7.5.7"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-TAR-15127355",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "7.4.3",
+        "fixedIn": [
+          "7.5.7"
+        ],
+        "upgradePath": [
+          false,
+          "react-multi-carousel@2.8.6",
+          "npm@10.9.4",
+          "@npmcli/arborist@8.0.1",
+          "@npmcli/metavuln-calculator@8.0.1",
+          "pacote@20.0.0",
+          "@npmcli/run-script@9.1.0",
+          "node-gyp@11.5.0",
+          "tar@7.5.7"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-TAR-15032660",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.3"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15038581",
+        "title": "Improper Handling of Unicode Encoding",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.4"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15127355",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.7"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15032660",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.3"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15038581",
+        "title": "Improper Handling of Unicode Encoding",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.4"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15127355",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.7"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15032660",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.3"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15038581",
+        "title": "Improper Handling of Unicode Encoding",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.4"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15127355",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.7"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15032660",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.3"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15038581",
+        "title": "Improper Handling of Unicode Encoding",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.4"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-TAR-15127355",
+        "title": "Directory Traversal",
+        "severity": "medium",
+        "packageName": "tar",
+        "version": "6.2.1",
+        "fixedIn": [
+          "7.5.7"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/bundler@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/bundler@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-blog@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-blog@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-docs@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-docs@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-pages@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-content-pages@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-svgr@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/plugin-svgr@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/module-type-aliases@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/module-type-aliases@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/bundler@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/bundler@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/mdx-loader@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235959",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.1"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JS-WEBPACK-15235969",
+        "title": "Server-side Request Forgery (SSRF)",
+        "severity": "low",
+        "packageName": "webpack",
+        "version": "5.97.1",
+        "fixedIn": [
+          "5.104.0"
+        ],
+        "upgradePath": [
+          false,
+          "@docusaurus/preset-classic@3.9.2",
+          "@docusaurus/core@3.9.2",
+          "@docusaurus/babel@3.9.2",
+          "@docusaurus/utils@3.9.2",
+          "@docusaurus/types@3.9.2",
+          "webpack@5.105.0"
+        ],
+        "isUpgradable": true
+      }
+    ]
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-samples",
+    "displayTargetFile": "spring-boot-admin-samples/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-consul",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-consul/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "spring-boot-admin-sample-custom-ui",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/package-lock.json",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-custom-ui",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-custom-ui/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-eureka",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-eureka/pom.xml",
+    "vulnerabilities": [
+      {
+        "id": "SNYK-JAVA-COMGOOGLEGUAVA-1015415",
+        "title": "Information Disclosure",
+        "severity": "low",
+        "packageName": "com.google.guava:guava",
+        "version": "14.0.1",
+        "fixedIn": [
+          "30.0-android",
+          "30.0-jre"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMGOOGLEGUAVA-32236",
+        "title": "Deserialization of Untrusted Data",
+        "severity": "medium",
+        "packageName": "com.google.guava:guava",
+        "version": "14.0.1",
+        "fixedIn": [
+          "24.1.1",
+          "24.1.1-jre"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMGOOGLEGUAVA-5710356",
+        "title": "Creation of Temporary File in Directory with Insecure Permissions",
+        "severity": "low",
+        "packageName": "com.google.guava:guava",
+        "version": "14.0.1",
+        "fixedIn": [
+          "32.0.0-android",
+          "32.0.0-jre"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMMONSCONFIGURATION-10116124",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "medium",
+        "packageName": "commons-configuration:commons-configuration",
+        "version": "1.10",
+        "fixedIn": [],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMMONSLANG-10734077",
+        "title": "Uncontrolled Recursion",
+        "severity": "high",
+        "packageName": "commons-lang:commons-lang",
+        "version": "2.6",
+        "fixedIn": [],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-8352924",
+        "title": "Deserialization of Untrusted Data",
+        "severity": "high",
+        "packageName": "com.thoughtworks.xstream:xstream",
+        "version": "1.4.20",
+        "fixedIn": [
+          "1.4.21"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1",
+          "com.netflix.eureka:eureka-client@2.0.5",
+          "com.thoughtworks.xstream:xstream@1.4.21"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JAVA-ORGAPACHEHTTPCOMPONENTS-1048058",
+        "title": "Improper Input Validation",
+        "severity": "medium",
+        "packageName": "org.apache.httpcomponents:httpclient",
+        "version": "4.5.3",
+        "fixedIn": [
+          "4.5.13"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      }
+    ]
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-hazelcast",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-hazelcast/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-reactive",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-reactive/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-servlet",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-servlet/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-servlet-graalvm",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-servlet-graalvm/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-war",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-war/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-sample-zookeeper",
+    "displayTargetFile": "spring-boot-admin-samples/spring-boot-admin-sample-zookeeper/pom.xml",
+    "vulnerabilities": [
+      {
+        "id": "SNYK-JAVA-COMMONSIO-8161190",
+        "title": "Uncontrolled Resource Consumption ('Resource Exhaustion')",
+        "severity": "medium",
+        "packageName": "commons-io:commons-io",
+        "version": "2.11.0",
+        "fixedIn": [
+          "2.14.0"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@5.0.0",
+          "org.apache.curator:curator-x-discovery@5.9.0",
+          "org.apache.curator:curator-recipes@5.9.0",
+          "org.apache.curator:curator-framework@5.9.0",
+          "org.apache.curator:curator-client@5.9.0",
+          "org.apache.zookeeper:zookeeper@3.9.3",
+          "commons-io:commons-io@2.17.0"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JAVA-ORGAPACHEZOOKEEPER-13045609",
+        "title": "Improper Handling of Insufficient Permissions or Privileges",
+        "severity": "medium",
+        "packageName": "org.apache.zookeeper:zookeeper",
+        "version": "3.9.2",
+        "fixedIn": [
+          "3.9.4"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-ORGAPACHEZOOKEEPER-8350343",
+        "title": "Authentication Bypass by Spoofing",
+        "severity": "medium",
+        "packageName": "org.apache.zookeeper:zookeeper",
+        "version": "3.9.2",
+        "fixedIn": [
+          "3.9.3"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-zookeeper-discovery@5.0.0",
+          "org.apache.curator:curator-x-discovery@5.9.0",
+          "org.apache.curator:curator-recipes@5.9.0",
+          "org.apache.curator:curator-framework@5.9.0",
+          "org.apache.curator:curator-client@5.9.0",
+          "org.apache.zookeeper:zookeeper@3.9.3"
+        ],
+        "isUpgradable": true
+      }
+    ]
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-server",
+    "displayTargetFile": "spring-boot-admin-server/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-server-cloud",
+    "displayTargetFile": "spring-boot-admin-server-cloud/pom.xml",
+    "vulnerabilities": [
+      {
+        "id": "SNYK-JAVA-COMGOOGLEGUAVA-1015415",
+        "title": "Information Disclosure",
+        "severity": "low",
+        "packageName": "com.google.guava:guava",
+        "version": "14.0.1",
+        "fixedIn": [
+          "30.0-android",
+          "30.0-jre"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMGOOGLEGUAVA-32236",
+        "title": "Deserialization of Untrusted Data",
+        "severity": "medium",
+        "packageName": "com.google.guava:guava",
+        "version": "14.0.1",
+        "fixedIn": [
+          "24.1.1",
+          "24.1.1-jre"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMGOOGLEGUAVA-5710356",
+        "title": "Creation of Temporary File in Directory with Insecure Permissions",
+        "severity": "low",
+        "packageName": "com.google.guava:guava",
+        "version": "14.0.1",
+        "fixedIn": [
+          "32.0.0-android",
+          "32.0.0-jre"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMGOOGLEPROTOBUF-8055227",
+        "title": "Stack-based Buffer Overflow",
+        "severity": "high",
+        "packageName": "com.google.protobuf:protobuf-java",
+        "version": "3.24.3",
+        "fixedIn": [
+          "3.25.5",
+          "4.27.5",
+          "4.28.2"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.1",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.1",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.1",
+          "io.kubernetes:client-java@19.0.3",
+          "com.google.protobuf:protobuf-java@3.25.5"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JAVA-COMMONSCONFIGURATION-10116124",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "medium",
+        "packageName": "commons-configuration:commons-configuration",
+        "version": "1.10",
+        "fixedIn": [],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMMONSLANG-10734077",
+        "title": "Uncontrolled Recursion",
+        "severity": "high",
+        "packageName": "commons-lang:commons-lang",
+        "version": "2.6",
+        "fixedIn": [],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-COMTHOUGHTWORKSXSTREAM-8352924",
+        "title": "Deserialization of Untrusted Data",
+        "severity": "high",
+        "packageName": "com.thoughtworks.xstream:xstream",
+        "version": "1.4.20",
+        "fixedIn": [
+          "1.4.21"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client@4.3.1",
+          "com.netflix.eureka:eureka-client@2.0.5",
+          "com.thoughtworks.xstream:xstream@1.4.21"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JAVA-IOVERTX-10495500",
+        "title": "Exposure of Resource to Wrong Sphere",
+        "severity": "high",
+        "packageName": "io.vertx:vertx-core",
+        "version": "4.5.14",
+        "fixedIn": [
+          "4.5.16"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-IOVERTX-14988768",
+        "title": "HTTP Request Smuggling",
+        "severity": "medium",
+        "packageName": "io.vertx:vertx-core",
+        "version": "4.5.14",
+        "fixedIn": [
+          "4.5.24"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-ORGAPACHECOMMONS-10734078",
+        "title": "Uncontrolled Recursion",
+        "severity": "high",
+        "packageName": "org.apache.commons:commons-lang3",
+        "version": "3.17.0",
+        "fixedIn": [
+          "3.18.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-ORGAPACHEHTTPCOMPONENTS-1048058",
+        "title": "Improper Input Validation",
+        "severity": "medium",
+        "packageName": "org.apache.httpcomponents:httpclient",
+        "version": "4.5.3",
+        "fixedIn": [
+          "4.5.13"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      },
+      {
+        "id": "SNYK-JAVA-ORGBITBUCKETBC-14465261",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "high",
+        "packageName": "org.bitbucket.b_c:jose4j",
+        "version": "0.9.3",
+        "fixedIn": [
+          "0.9.6"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-kubernetes-client@5.0.0",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-discovery@5.0.0",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@5.0.0",
+          "io.kubernetes:client-java@24.0.0",
+          "org.bitbucket.b_c:jose4j@0.9.6"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JAVA-ORGBITBUCKETBC-6139942",
+        "title": "Denial of Service (DoS)",
+        "severity": "high",
+        "packageName": "org.bitbucket.b_c:jose4j",
+        "version": "0.9.3",
+        "fixedIn": [
+          "0.9.4"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-kubernetes-client@3.3.1",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-discovery@3.3.1",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@3.3.1",
+          "io.kubernetes:client-java@19.0.3",
+          "org.bitbucket.b_c:jose4j@0.9.4"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JAVA-ORGBOUNCYCASTLE-11789688",
+        "title": "Allocation of Resources Without Limits or Throttling",
+        "severity": "medium",
+        "packageName": "org.bouncycastle:bcpkix-jdk18on",
+        "version": "1.76",
+        "fixedIn": [
+          "1.79"
+        ],
+        "upgradePath": [
+          false,
+          "org.springframework.cloud:spring-cloud-starter-kubernetes-client@5.0.0",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-discovery@5.0.0",
+          "org.springframework.cloud:spring-cloud-kubernetes-client-autoconfig@5.0.0",
+          "io.kubernetes:client-java@24.0.0",
+          "org.bouncycastle:bcpkix-jdk18on@1.80"
+        ],
+        "isUpgradable": true
+      },
+      {
+        "id": "SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744",
+        "title": "Information Exposure",
+        "severity": "low",
+        "packageName": "org.jetbrains.kotlin:kotlin-stdlib",
+        "version": "1.9.25",
+        "fixedIn": [
+          "2.1.0"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false
+      }
+    ]
+  },
+  {
+    "projectName": "spring-boot-admin-server-ui",
+    "displayTargetFile": "spring-boot-admin-server-ui/package-lock.json",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-server-ui",
+    "displayTargetFile": "spring-boot-admin-server-ui/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-starter-client",
+    "displayTargetFile": "spring-boot-admin-starter-client/pom.xml",
+    "vulnerabilities": []
+  },
+  {
+    "projectName": "de.codecentric:spring-boot-admin-starter-server",
+    "displayTargetFile": "spring-boot-admin-starter-server/pom.xml",
+    "vulnerabilities": []
+  }
+]
