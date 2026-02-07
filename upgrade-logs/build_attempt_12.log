@@ -1,0 +1,228 @@
+[ERROR] COMPILATION ERROR : 
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/ClientRuntimeHints.java:[24,44] package org.springframework.boot.web.context does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[32,50] cannot find symbol
+  symbol:   class ServerProperties
+  location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[33,57] package org.springframework.boot.autoconfigure.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[34,57] package org.springframework.boot.autoconfigure.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[35,59] package org.springframework.boot.autoconfigure.web.reactive does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[36,56] package org.springframework.boot.webclient.autoconfigure does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[37,58] package org.springframework.boot.autoconfigure.web.servlet does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[38,58] package org.springframework.boot.autoconfigure.web.servlet does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[40,44] package org.springframework.boot.http.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[41,44] package org.springframework.boot.http.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[42,43] package org.springframework.boot.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[113,33] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ServletConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[115,33] cannot find symbol
+  symbol:   class DispatcherServletPath
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ServletConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[132,33] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ReactiveConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[133,97] cannot find symbol
+  symbol:   class WebFluxProperties
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ReactiveConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[168,33] cannot find symbol
+  symbol:   class ClientHttpRequestFactoryBuilder
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.RestClientRegistrationClientConfig
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:[30,50] cannot find symbol
+  symbol:   class ServerProperties
+  location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:[62,64] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientCloudFoundryAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/CloudFoundryApplicationFactory.java:[22,50] cannot find symbol
+  symbol:   class ServerProperties
+  location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[28,50] cannot find symbol
+  symbol:   class ServerProperties
+  location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[29,44] package org.springframework.boot.web.context does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/CloudFoundryApplicationFactory.java:[36,25] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.registration.CloudFoundryApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[50,23] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.registration.DefaultApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[67,25] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.registration.DefaultApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[247,44] cannot find symbol
+  symbol:   class WebServerInitializedEvent
+  location: class de.codecentric.boot.admin.client.registration.DefaultApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[22,57] package org.springframework.boot.autoconfigure.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[23,56] package org.springframework.boot.webclient.autoconfigure does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[22,50] cannot find symbol
+  symbol:   class ServerProperties
+  location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[23,59] package org.springframework.boot.autoconfigure.web.reactive does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[35,23] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[37,23] cannot find symbol
+  symbol:   class WebFluxProperties
+  location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[42,25] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[43,66] cannot find symbol
+  symbol:   class WebFluxProperties
+  location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[23,50] cannot find symbol
+  symbol:   class ServerProperties
+  location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[24,58] package org.springframework.boot.autoconfigure.web.servlet does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[36,23] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[42,23] cannot find symbol
+  symbol:   class DispatcherServletPath
+  location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[45,25] cannot find symbol
+  symbol:   class ServerProperties
+  location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[47,25] cannot find symbol
+  symbol:   class DispatcherServletPath
+  location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[73,59] cannot find symbol
+  symbol: class RestClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[74,17] cannot find symbol
+  symbol: class RestTemplateAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[74,54] cannot find symbol
+  symbol: class WebClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[75,84] cannot find symbol
+  symbol: class ServerProperties
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[106,29] cannot find symbol
+  symbol:   class DispatcherServletAutoConfiguration
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[142,28] cannot find symbol
+  symbol:   class RestTemplateBuilder
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[162,56] cannot find symbol
+  symbol:   class ClientHttpRequestFactoryBuilder
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[31,59] cannot find symbol
+  symbol: class RestTemplateAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[32,17] cannot find symbol
+  symbol: class WebClientAutoConfiguration
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.15.0:compile (default-compile) on project spring-boot-admin-client: Compilation failure: Compilation failure: 
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/ClientRuntimeHints.java:[24,44] package org.springframework.boot.web.context does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[32,50] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[33,57] package org.springframework.boot.autoconfigure.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[34,57] package org.springframework.boot.autoconfigure.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[35,59] package org.springframework.boot.autoconfigure.web.reactive does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[36,56] package org.springframework.boot.webclient.autoconfigure does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[37,58] package org.springframework.boot.autoconfigure.web.servlet does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[38,58] package org.springframework.boot.autoconfigure.web.servlet does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[40,44] package org.springframework.boot.http.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[41,44] package org.springframework.boot.http.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[42,43] package org.springframework.boot.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[113,33] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ServletConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[115,33] cannot find symbol
+[ERROR]   symbol:   class DispatcherServletPath
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ServletConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[132,33] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ReactiveConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[133,97] cannot find symbol
+[ERROR]   symbol:   class WebFluxProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ReactiveConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[168,33] cannot find symbol
+[ERROR]   symbol:   class ClientHttpRequestFactoryBuilder
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.RestClientRegistrationClientConfig
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:[30,50] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientCloudFoundryAutoConfiguration.java:[62,64] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientCloudFoundryAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/CloudFoundryApplicationFactory.java:[22,50] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[28,50] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[29,44] package org.springframework.boot.web.context does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/CloudFoundryApplicationFactory.java:[36,25] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.CloudFoundryApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[50,23] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.DefaultApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[67,25] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.DefaultApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/DefaultApplicationFactory.java:[247,44] cannot find symbol
+[ERROR]   symbol:   class WebServerInitializedEvent
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.DefaultApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[22,57] package org.springframework.boot.autoconfigure.web.client does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[23,56] package org.springframework.boot.webclient.autoconfigure does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[22,50] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[23,59] package org.springframework.boot.autoconfigure.web.reactive does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[35,23] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[37,23] cannot find symbol
+[ERROR]   symbol:   class WebFluxProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[42,25] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ReactiveApplicationFactory.java:[43,66] cannot find symbol
+[ERROR]   symbol:   class WebFluxProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ReactiveApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[23,50] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: package org.springframework.boot.autoconfigure.web
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[24,58] package org.springframework.boot.autoconfigure.web.servlet does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[36,23] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[42,23] cannot find symbol
+[ERROR]   symbol:   class DispatcherServletPath
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[45,25] cannot find symbol
+[ERROR]   symbol:   class ServerProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/registration/ServletApplicationFactory.java:[47,25] cannot find symbol
+[ERROR]   symbol:   class DispatcherServletPath
+[ERROR]   location: class de.codecentric.boot.admin.client.registration.ServletApplicationFactory
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[73,59] cannot find symbol
+[ERROR]   symbol: class RestClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[74,17] cannot find symbol
+[ERROR]   symbol: class RestTemplateAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[74,54] cannot find symbol
+[ERROR]   symbol: class WebClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[75,84] cannot find symbol
+[ERROR]   symbol: class ServerProperties
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[106,29] cannot find symbol
+[ERROR]   symbol:   class DispatcherServletAutoConfiguration
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[142,28] cannot find symbol
+[ERROR]   symbol:   class RestTemplateBuilder
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[162,56] cannot find symbol
+[ERROR]   symbol:   class ClientHttpRequestFactoryBuilder
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[31,59] cannot find symbol
+[ERROR]   symbol: class RestTemplateAutoConfiguration
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringNativeClientAutoConfiguration.java:[32,17] cannot find symbol
+[ERROR]   symbol: class WebClientAutoConfiguration
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-client

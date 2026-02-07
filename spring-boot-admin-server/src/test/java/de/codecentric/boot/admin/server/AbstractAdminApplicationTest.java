@@ -21,7 +21,7 @@ import java.time.Duration;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsonorg.JsonOrgModule;
+import tools.jackson.datatype.jsonorg.JsonOrgModule;
 import lombok.Getter;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
