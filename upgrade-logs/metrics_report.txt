@@ -7,7 +7,7 @@ Summary:
 - Spring Boot: 4.0.0
 - Java: 21
 - Branch: feature/springboot40-upgrade_20260206_182828033
-- PR: (to be filled after creation)
+- PR: https://github.com/AI-Data-Ranch/spring-boot-admin/pull/38
 
 Metrics (estimated):
 - Task duration: ~1.5–2.5 hours
