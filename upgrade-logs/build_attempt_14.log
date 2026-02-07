@@ -1,0 +1,20 @@
+[ERROR] COMPILATION ERROR : 
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[33,54] package org.springframework.boot.webflux.autoconfigure does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[126,97] cannot find symbol
+  symbol:   class WebFluxProperties
+  location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ReactiveConfiguration
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.15.0:compile (default-compile) on project spring-boot-admin-client: Compilation failure: Compilation failure: 
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[33,54] package org.springframework.boot.webflux.autoconfigure does not exist
+[ERROR] /home/ubuntu/repos/spring-boot-admin/spring-boot-admin-client/src/main/java/de/codecentric/boot/admin/client/config/SpringBootAdminClientAutoConfiguration.java:[126,97] cannot find symbol
+[ERROR]   symbol:   class WebFluxProperties
+[ERROR]   location: class de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration.ReactiveConfiguration
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :spring-boot-admin-client

@@ -30,6 +30,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.ClientRequest;
 import org.springframework.web.reactive.function.client.ClientResponse;
@@ -160,8 +161,7 @@ public final class InstanceExchangeFilterFunctions {
 
 	private static ClientResponse convertLegacyResponse(LegacyEndpointConverter converter, ClientResponse response) {
 		return response.mutate().headers((headers) -> {
-			headers.replace(HttpHeaders.CONTENT_TYPE,
-					singletonList(ApiVersion.LATEST.getProducedMimeType().toString()));
+			headers.set(HttpHeaders.CONTENT_TYPE, ApiVersion.LATEST.getProducedMimeType().toString());
 			headers.remove(HttpHeaders.CONTENT_LENGTH);
 		}).body(converter::convert).build();
 	}
@@ -235,7 +235,8 @@ public final class InstanceExchangeFilterFunctions {
 
 	private static ClientRequest enrichRequestWithStoredCookies(final InstanceId instId, final ClientRequest request,
 			final PerInstanceCookieStore store) {
-		final MultiValueMap<String, String> storedCookies = store.get(instId, request.url(), request.headers());
+		final MultiValueMap<String, String> storedCookies = store.get(instId, request.url(),
+				toMultiValueMap(request.headers()));
 		if (CollectionUtils.isEmpty(storedCookies)) {
 			log.trace("No cookies found for request [url={}]", request.url());
 			return request;
@@ -251,9 +252,20 @@ public final class InstanceExchangeFilterFunctions {
 		log.trace("Searching for cookies in header values of response [url={},headerValues={}]", request.url(),
 				headers);
 
-		store.put(instId, request.url(), headers);
+		store.put(instId, request.url(), toMultiValueMap(headers));
 
 		return response;
+	}
+
+	private static MultiValueMap<String, String> toMultiValueMap(HttpHeaders headers) {
+		MultiValueMap<String, String> result = new LinkedMultiValueMap<>();
+		for (String headerName : headers.headerNames()) {
+			List<String> values = headers.get(headerName);
+			if (values != null) {
+				result.put(headerName, values);
+			}
+		}
+		return result;
 	}
 
 }

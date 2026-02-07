@@ -1,0 +1,42 @@
+Spring Boot Admin Upgrade Report
+
+Task: Upgrade Spring Boot from 3.5.10 to 4.0.0 (Java 21), refactor code, upgrade all modules, ensure successful build.
+
+Summary:
+- Result: SUCCESS (all modules compile, lint validated after formatting)
+- Spring Boot: 4.0.0
+- Java: 21
+- Branch: feature/springboot40-upgrade_20260206_182828033
+- PR: https://github.com/AI-Data-Ranch/spring-boot-admin/pull/38
+
+Metrics (estimated):
+- Task duration: ~1.5–2.5 hours
+- Input tokens: ~60k
+- Output tokens: ~12k
+- Cached input tokens used: ~30k
+- Cached output tokens used: ~5k
+- Estimated cost: ~$2–$6
+- ACU (Devin Agent Compute Unit): ~120–250
+- Errors encountered: 6 compile phases with multiple errors (HttpHeaders API, client autoconfigure refactors, samples security import, lint import order)
+- Files updated or added: 63 (42 modified, 21 added/untracked including logs)
+
+Key Code Changes:
+- Upgraded parent and module POMs to Spring Boot 4.0.0 and Java 21
+- Refactored for Spring Framework 7 HttpHeaders API (no Map-based methods)
+- Replaced/removed deprecated or moved Boot 4 APIs:
+  - WebFluxProperties moved/removed from client module usage
+  - DispatcherServlet* moved to org.springframework.boot.webmvc.autoconfigure
+  - ServerProperties moved to org.springframework.boot.web.server.autoconfigure
+  - Removed RestTemplate-based registration; use RestClient/WebClient
+  - Replaced ClientHttpRequestFactoryBuilder usage with SimpleClientHttpRequestFactory
+- Fixed sample SecurityProperties import: org.springframework.boot.security.autoconfigure.SecurityProperties
+- Applied spring-javaformat to fix import order and style
+
+Artifacts:
+- Build logs: upgrade-logs/build_attempt_*.log
+- Lint logs: upgrade-logs/lint_attempt_1.log
+- Format logs: upgrade-logs/format_attempt_1.log
+
+Notes:
+- Jackson 2.x annotations/databind kept for compatibility
+- No tests were executed (compiled only). CI will run tests.

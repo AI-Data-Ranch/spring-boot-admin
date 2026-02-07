@@ -19,9 +19,8 @@ package de.codecentric.boot.admin.client.registration;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties;
 import org.springframework.boot.actuate.autoconfigure.web.server.ManagementServerProperties;
 import org.springframework.boot.actuate.endpoint.web.PathMappedEndpoints;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
-import org.springframework.boot.autoconfigure.web.reactive.WebFluxProperties;
 import org.springframework.boot.web.server.Ssl;
+import org.springframework.boot.web.server.autoconfigure.ServerProperties;
 import org.springframework.util.StringUtils;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -34,17 +33,14 @@ public class ReactiveApplicationFactory extends DefaultApplicationFactory {
 
 	private final ServerProperties server;
 
-	private final WebFluxProperties webflux;
-
 	private final InstanceProperties instance;
 
 	public ReactiveApplicationFactory(InstanceProperties instance, ManagementServerProperties management,
 			ServerProperties server, PathMappedEndpoints pathMappedEndpoints, WebEndpointProperties webEndpoint,
-			MetadataContributor metadataContributor, WebFluxProperties webFluxProperties) {
+			MetadataContributor metadataContributor) {
 		super(instance, management, server, pathMappedEndpoints, webEndpoint, metadataContributor);
 		this.management = management;
 		this.server = server;
-		this.webflux = webFluxProperties;
 		this.instance = instance;
 	}
 
@@ -54,10 +50,7 @@ public class ReactiveApplicationFactory extends DefaultApplicationFactory {
 			return instance.getServiceUrl();
 		}
 
-		return UriComponentsBuilder.fromUriString(getServiceBaseUrl())
-			.path(getServicePath())
-			.path(getWebfluxBasePath())
-			.toUriString();
+		return UriComponentsBuilder.fromUriString(getServiceBaseUrl()).path(getServicePath()).toUriString();
 	}
 
 	@Override
@@ -83,10 +76,6 @@ public class ReactiveApplicationFactory extends DefaultApplicationFactory {
 
 	protected String getManagementContextPath() {
 		return management.getBasePath();
-	}
-
-	protected String getWebfluxBasePath() {
-		return webflux.getBasePath();
 	}
 
 }
