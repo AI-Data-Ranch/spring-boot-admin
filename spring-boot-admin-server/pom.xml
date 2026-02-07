@@ -66,13 +66,30 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!-- Optional Mail Starter for mail-notifications -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <!-- Optional Hazelcast-Support -->
+                <!-- Optional Mail Starter for mail-notifications -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-mail</artifactId>
+                    <optional>true</optional>
+                </dependency>
+                <!-- Jackson 2.x for Spring HTTP codecs compatibility -->
+                <dependency>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </dependency>
+                <!-- Spring Boot HTTP Client for ReactiveHttpClientAutoConfiguration -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-http-client</artifactId>
+                    <optional>true</optional>
+                </dependency>
+                <!-- Spring Boot Hazelcast for HazelcastAutoConfiguration -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-hazelcast</artifactId>
+                    <optional>true</optional>
+                </dependency>
+                <!-- Optional Hazelcast-Support -->
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast</artifactId>
@@ -142,10 +159,10 @@
             <artifactId>testcontainers</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
+                <dependency>
+                    <groupId>org.testcontainers</groupId>
+                    <artifactId>testcontainers-junit-jupiter</artifactId>
+                    <scope>test</scope>
+                </dependency>
     </dependencies>
 </project>

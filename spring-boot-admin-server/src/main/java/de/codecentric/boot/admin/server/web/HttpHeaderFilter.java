@@ -17,14 +17,12 @@
 package de.codecentric.boot.admin.server.web;
 
 import java.util.Arrays;
-import java.util.Map;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.http.HttpHeaders;
-
-import static java.util.stream.Collectors.toMap;
 
 /**
  * Returns a new HttpHeaders from the given one but omits the hop-by-hop headers and
@@ -48,10 +46,12 @@ public class HttpHeaderFilter {
 
 	public HttpHeaders filterHeaders(HttpHeaders headers) {
 		HttpHeaders filtered = new HttpHeaders();
-		filtered.putAll(headers.entrySet()
-			.stream()
-			.filter((e) -> this.includeHeader(e.getKey()))
-			.collect(toMap(Map.Entry::getKey, Map.Entry::getValue)));
+		headers.headerNames().forEach((headerName) -> {
+			if (this.includeHeader(headerName)) {
+				List<String> values = headers.getValuesAsList(headerName);
+				filtered.addAll(headerName, values);
+			}
+		});
 		return filtered;
 	}
 
