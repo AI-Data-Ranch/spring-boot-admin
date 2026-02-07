@@ -42,13 +42,39 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+                        <dependency>
+                            <groupId>org.springframework.cloud</groupId>
+                            <artifactId>spring-cloud-dependencies</artifactId>
+                            <version>${spring-cloud.version}</version>
+                            <type>pom</type>
+                            <scope>import</scope>
+                        </dependency>
+                        <!-- Spring Boot 4.0.0 modular dependencies -->
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-webclient</artifactId>
+                            <version>${spring-boot.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-hazelcast</artifactId>
+                            <version>${spring-boot.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-mail</artifactId>
+                            <version>${spring-boot.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-webmvc</artifactId>
+                            <version>${spring-boot.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-webflux</artifactId>
+                            <version>${spring-boot.version}</version>
+                        </dependency>
             <dependency>
                 <groupId>org.jolokia</groupId>
                 <artifactId>jolokia-support-spring</artifactId>
@@ -91,12 +117,18 @@
                 <version>${testcontainers.version}</version>
                 <scope>test</scope>
             </dependency>
-            <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>testcontainers-junit-jupiter</artifactId>
-                <version>${testcontainers.version}</version>
-                <scope>test</scope>
-            </dependency>
+                        <dependency>
+                            <groupId>org.testcontainers</groupId>
+                            <artifactId>testcontainers-junit-jupiter</artifactId>
+                            <version>${testcontainers.version}</version>
+                            <scope>test</scope>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.testcontainers</groupId>
+                            <artifactId>junit-jupiter</artifactId>
+                            <version>${testcontainers.version}</version>
+                            <scope>test</scope>
+                        </dependency>
         </dependencies>
     </dependencyManagement>
 
