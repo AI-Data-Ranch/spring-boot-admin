@@ -68,7 +68,7 @@
         <commons-io.version>2.18.0</commons-io.version>
         <zookeeper.version>3.9.4</zookeeper.version>
         <protobuf-java.version>3.25.5</protobuf-java.version>
-        <vertx-core.version>4.5.14</vertx-core.version>
+        <vertx-core.version>4.5.24</vertx-core.version>
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <jose4j.version>0.9.6</jose4j.version>
         <bouncycastle.version>1.79</bouncycastle.version>
