@@ -22,18 +22,18 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: '17'
-          cache: 'maven'
-          cache-dependency-path: '**/pom.xml'
+                java-version: '21'
+                cache: 'maven'
+                cache-dependency-path: '**/pom.xml'
 
-      - name: Set up Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+            - name: Set up Node
+              uses: actions/setup-node@v6
+              with:
+                node-version: 'lts/*'
+                cache: 'npm'
+                cache-dependency-path: '**/package-lock.json'
 
-      - name: Build with Maven
+            - name: Build with Maven
         run: ./mvnw -B --no-transfer-progress install -P coverage
 
       - name: Upload surefire reports
@@ -61,18 +61,18 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: '17'
-          cache: 'maven'
-          cache-dependency-path: '**/pom.xml'
+                java-version: '21'
+                cache: 'maven'
+                cache-dependency-path: '**/pom.xml'
 
-      - name: Set up Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+            - name: Set up Node
+              uses: actions/setup-node@v6
+              with:
+                node-version: 'lts/*'
+                cache: 'npm'
+                cache-dependency-path: '**/package-lock.json'
 
-      - name: Publish SNAPSHOT version to GitHub Packages (we can skip tests, since we only deploy, if the build workflow succeeded)
+            - name: Publish SNAPSHOTversion to GitHub Packages (we can skip tests, since we only deploy, if the build workflow succeeded)
         run: ./mvnw -B --no-transfer-progress deploy -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
