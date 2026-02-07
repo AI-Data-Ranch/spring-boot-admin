@@ -1,0 +1,11 @@
+M	.github/workflows/build-feature.yml
+M	.github/workflows/build-main.yml
+M	.github/workflows/deploy-documentation.yml
+M	.github/workflows/release-to-maven-central.yml
+A	devin-logs/java21-upgrade_20260206_182822290/README.txt
+A	devin-logs/java21-upgrade_20260206_182822290/git-diff.txt
+A	devin-logs/java21-upgrade_20260206_182822290/git-status-before.txt
+A	devin-logs/java21-upgrade_20260206_182822290/mvn-build-skiptests-noJavadoc-noNpm.log
+A	devin-logs/java21-upgrade_20260206_182822290/mvn-build-skiptests-noNpm.log
+A	devin-logs/java21-upgrade_20260206_182822290/mvn-lint.log
+M	pom.xml
