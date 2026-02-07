@@ -16,17 +16,13 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.Endpoint;
@@ -37,17 +33,10 @@ class EndpointMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<Endpoint> jsonTester;
-
 	protected EndpointMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -61,12 +50,13 @@ class EndpointMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JsonProcessingException {
 		Endpoint endpoint = Endpoint.of("info", "http://localhost:8080/info");
 
-		JsonContent<Endpoint> jsonContent = jsonTester.write(endpoint);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.id").isEqualTo("info");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.url").isEqualTo("http://localhost:8080/info");
+		String json = objectMapper.writeValueAsString(endpoint);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("id").asText()).isEqualTo("info");
+		assertThat(jsonNode.get("url").asText()).isEqualTo("http://localhost:8080/info");
 	}
 
 }

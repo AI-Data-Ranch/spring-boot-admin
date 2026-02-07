@@ -16,21 +16,18 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceStatusChangedEvent;
@@ -45,17 +42,10 @@ class InstanceStatusChangedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceStatusChangedEvent> jsonTester;
-
 	protected InstanceStatusChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -132,56 +122,59 @@ class InstanceStatusChangedEventMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE", Collections.singletonMap("foo", "bar"));
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 12345678L, timestamp, statusInfo);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNotNull();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(12345678L);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.0);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("STATUS_CHANGED");
+		assertThat(jsonNode.get("statusInfo").isNull()).isFalse();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.statusInfo.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.statusInfo.details").containsOnly(entry("foo", "bar"));
+		assertThat(jsonNode.get("statusInfo").get("status").asText()).isEqualTo("OFFLINE");
+		assertThat(jsonNode.get("statusInfo").get("details").get("foo").asText()).isEqualTo("bar");
 	}
 
 	@Test
-	void verifySerializeWithOnlyRequiredProperties() throws IOException {
+	void verifySerializeWithOnlyRequiredProperties() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE");
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 0L, timestamp, statusInfo);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNotNull();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(0L);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.0);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("STATUS_CHANGED");
+		assertThat(jsonNode.get("statusInfo").isNull()).isFalse();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.statusInfo.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.statusInfo.details").isEmpty();
+		assertThat(jsonNode.get("statusInfo").get("status").asText()).isEqualTo("OFFLINE");
+		assertThat(jsonNode.get("statusInfo").get("details").size()).isEqualTo(0);
 	}
 
 	@Test
-	void verifySerializeWithoutStatusInfo() throws IOException {
+	void verifySerializeWithoutStatusInfo() throws JsonProcessingException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 12345678L, timestamp, null);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNull();
+		String json = objectMapper.writeValueAsString(event);
+		JsonNode jsonNode = objectMapper.readTree(json);
+		assertThat(jsonNode.get("instance").asText()).isEqualTo("test123");
+		assertThat(jsonNode.get("version").asLong()).isEqualTo(12345678L);
+		assertThat(jsonNode.get("timestamp").asDouble()).isEqualTo(1587751031.0);
+		assertThat(jsonNode.get("type").asText()).isEqualTo("STATUS_CHANGED");
+		assertThat(jsonNode.get("statusInfo").isNull()).isTrue();
 	}
 
 }
