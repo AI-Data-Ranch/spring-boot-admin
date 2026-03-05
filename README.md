@@ -18,6 +18,7 @@ In the Spring Boot Admin Server App, the Spring Boot Admin's version matches the
 | 3.0                 | 3.0.Y             |
 | ...                 | ...               |
 | 3.3                 | 3.3.Y             |
+| 4.0                 | 4.0.Y             |
 
 Nevertheless, it is possible to monitor any version of a Spring Boot service independently of the underlying Spring Boot version in the service.
 Hence, it is possible to run Spring Boot Admin Server version 2.6 and monitor a service that is running on Spring Boot 2.3 using Spring Boot Admin Client version 2.3.

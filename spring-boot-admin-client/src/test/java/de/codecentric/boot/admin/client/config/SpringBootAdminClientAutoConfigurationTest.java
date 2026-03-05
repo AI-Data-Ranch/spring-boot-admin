@@ -16,33 +16,27 @@
 
 package de.codecentric.boot.admin.client.config;
 
-import java.time.Duration;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
-import org.springframework.boot.autoconfigure.http.client.HttpClientAutoConfiguration;
 import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
-import org.springframework.boot.autoconfigure.web.client.RestClientAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.reactive.WebFluxProperties;
-import org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
 import org.springframework.boot.context.annotation.UserConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.boot.test.context.runner.ReactiveWebApplicationContextRunner;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
+import org.springframework.boot.webflux.autoconfigure.WebFluxProperties;
+import org.springframework.boot.webmvc.autoconfigure.DispatcherServletAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.client.ClientHttpRequestFactory;
-import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import de.codecentric.boot.admin.client.registration.ApplicationRegistrator;
 import de.codecentric.boot.admin.client.registration.BlockingRegistrationClient;
 import de.codecentric.boot.admin.client.registration.RegistrationClient;
+import de.codecentric.boot.admin.client.registration.RestClientRegistrationClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -50,8 +44,7 @@ class SpringBootAdminClientAutoConfigurationTest {
 
 	private final WebApplicationContextRunner contextRunner = new WebApplicationContextRunner()
 		.withConfiguration(AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
-				DispatcherServletAutoConfiguration.class, RestTemplateAutoConfiguration.class,
-				SpringBootAdminClientAutoConfiguration.class));
+				DispatcherServletAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
 
 	@Test
 	void not_active() {
@@ -84,62 +77,40 @@ class SpringBootAdminClientAutoConfigurationTest {
 	@Test
 	void reactiveEnvironment() {
 		ReactiveWebApplicationContextRunner reactiveContextRunner = new ReactiveWebApplicationContextRunner()
-			.withConfiguration(
-					AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
-							WebClientAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class))
-			.withBean(WebFluxProperties.class);
+			.withConfiguration(AutoConfigurations.of(EndpointAutoConfiguration.class,
+					WebEndpointAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class))
+			.withBean(WebFluxProperties.class)
+			.withBean(WebClient.Builder.class, WebClient::builder);
 		reactiveContextRunner.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081")
 			.run((context) -> assertThat(context).hasSingleBean(ApplicationRegistrator.class));
 	}
 
 	@Test
 	void blockingClientInBlockingEnvironment() {
-		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner()
-			.withConfiguration(AutoConfigurations.of(EndpointAutoConfiguration.class,
-					WebEndpointAutoConfiguration.class, DispatcherServletAutoConfiguration.class,
-					RestTemplateAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
+		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner().withConfiguration(
+				AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
+						DispatcherServletAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
 
-		webApplicationContextRunner
-			.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081",
-					"spring.boot.admin.client.connectTimeout=1337", "spring.boot.admin.client.readTimeout=42")
+		webApplicationContextRunner.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081")
 			.run((context) -> {
 				RegistrationClient registrationClient = context.getBean(RegistrationClient.class);
-				RestTemplate restTemplate = (RestTemplate) ReflectionTestUtils.getField(registrationClient,
-						"restTemplate");
-				assertThat(restTemplate).isNotNull();
-
-				ClientHttpRequestFactory requestFactory = restTemplate.getRequestFactory();
-
-				Integer connectTimeout = (Integer) ReflectionTestUtils.getField(requestFactory, "connectTimeout");
-				assertThat(connectTimeout).isEqualTo(1337);
-				Duration readTimeout = (Duration) ReflectionTestUtils.getField(requestFactory, "readTimeout");
-				assertThat(readTimeout).isEqualTo(Duration.ofMillis(42));
+				assertThat(registrationClient).isInstanceOf(BlockingRegistrationClient.class);
 			});
 	}
 
 	@Test
 	void restClientRegistrationClientInBlockingEnvironment() {
-		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner().withConfiguration(
-				AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
-						DispatcherServletAutoConfiguration.class, HttpClientAutoConfiguration.class,
-						RestClientAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
+		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner()
+			.withConfiguration(
+					AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
+							DispatcherServletAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class))
+			.withBean(RestClient.Builder.class, RestClient::builder);
 
-		webApplicationContextRunner
-			.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081",
-					"spring.boot.admin.client.connectTimeout=1337", "spring.boot.admin.client.readTimeout=42")
+		webApplicationContextRunner.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081")
 			.withInitializer(new ConditionEvaluationReportLoggingListener())
 			.run((context) -> {
 				RegistrationClient registrationClient = context.getBean(RegistrationClient.class);
-				RestClient restClient = (RestClient) ReflectionTestUtils.getField(registrationClient, "restClient");
-				assertThat(restClient).isNotNull();
-
-				ClientHttpRequestFactory requestFactory = (ClientHttpRequestFactory) ReflectionTestUtils
-					.getField(restClient, "clientRequestFactory");
-
-				Integer connectTimeout = (Integer) ReflectionTestUtils.getField(requestFactory, "connectTimeout");
-				assertThat(connectTimeout).isEqualTo(1337);
-				Duration readTimeout = (Duration) ReflectionTestUtils.getField(requestFactory, "readTimeout");
-				assertThat(readTimeout).isEqualTo(Duration.ofMillis(42));
+				assertThat(registrationClient).isInstanceOf(RestClientRegistrationClient.class);
 			});
 	}
 
@@ -147,10 +118,10 @@ class SpringBootAdminClientAutoConfigurationTest {
 	void customBlockingClientInReactiveEnvironment() {
 		ReactiveWebApplicationContextRunner reactiveContextRunner = new ReactiveWebApplicationContextRunner()
 			.withConfiguration(UserConfigurations.of(CustomBlockingConfiguration.class))
-			.withConfiguration(
-					AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
-							WebClientAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class))
-			.withBean(WebFluxProperties.class);
+			.withConfiguration(AutoConfigurations.of(EndpointAutoConfiguration.class,
+					WebEndpointAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class))
+			.withBean(WebFluxProperties.class)
+			.withBean(WebClient.Builder.class, WebClient::builder);
 
 		reactiveContextRunner.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081")
 			.run((context) -> {
@@ -164,9 +135,9 @@ class SpringBootAdminClientAutoConfigurationTest {
 	void customBlockingClientInBlockingEnvironment() {
 		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner()
 			.withConfiguration(UserConfigurations.of(CustomBlockingConfiguration.class))
-			.withConfiguration(AutoConfigurations.of(EndpointAutoConfiguration.class,
-					WebEndpointAutoConfiguration.class, DispatcherServletAutoConfiguration.class,
-					RestTemplateAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
+			.withConfiguration(
+					AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
+							DispatcherServletAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
 
 		webApplicationContextRunner.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081")
 			.run((context) -> {
