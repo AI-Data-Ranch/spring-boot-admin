@@ -35,6 +35,15 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Jackson BOM override - must be before spring-boot-dependencies to take precedence -->
+            <!-- Fixes SNYK-JAVA-COMFASTERXMLJACKSONCORE-15365924 (jackson-core DoS via async parser) -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -96,6 +105,41 @@
                 <artifactId>testcontainers-junit-jupiter</artifactId>
                 <version>${testcontainers.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <!-- Security overrides for vulnerable transitive dependencies -->
+            <!-- Fixes CVE-2024-47072: XStream Exposure of Resource to Wrong Sphere -->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>1.4.21</version>
+            </dependency>
+            <!-- Fixes CVE-2024-29371, CVE-2023-51775: jose4j JWT vulnerabilities -->
+            <dependency>
+                <groupId>org.bitbucket.b_c</groupId>
+                <artifactId>jose4j</artifactId>
+                <version>0.9.6</version>
+            </dependency>
+            <!-- Fixes CVE-2025-49574, CVE-2026-1002: Vert.x vulnerabilities -->
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-core</artifactId>
+                <version>4.5.25</version>
+            </dependency>
+            <!-- Fixes CVE-2025-8916: BouncyCastle vulnerability -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk18on</artifactId>
+                <version>1.83</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>1.83</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcutil-jdk18on</artifactId>
+                <version>1.83</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
