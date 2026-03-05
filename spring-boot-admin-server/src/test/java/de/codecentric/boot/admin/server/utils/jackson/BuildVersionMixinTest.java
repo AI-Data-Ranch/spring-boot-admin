@@ -18,7 +18,9 @@ package de.codecentric.boot.admin.server.utils.jackson;
 
 import org.junit.jupiter.api.Test;
 import tools.jackson.core.JacksonException;
+import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.cfg.DateTimeFeature;
 import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.BuildVersion;
@@ -32,7 +34,11 @@ class BuildVersionMixinTest {
 
 	protected BuildVersionMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		objectMapper = JsonMapper.builder().addModule(adminServerModule).build();
+		objectMapper = JsonMapper.builder()
+			.addModule(adminServerModule)
+			.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS)
+			.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+			.build();
 	}
 
 	@Test

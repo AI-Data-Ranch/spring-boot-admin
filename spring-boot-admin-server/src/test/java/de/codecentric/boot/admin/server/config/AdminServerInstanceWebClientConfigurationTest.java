@@ -20,6 +20,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
 import org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import de.codecentric.boot.admin.server.web.client.BasicAuthHttpHeaderProvider;
 import de.codecentric.boot.admin.server.web.client.InstanceExchangeFilterFunction;
@@ -33,6 +34,7 @@ class AdminServerInstanceWebClientConfigurationTest {
 	private final WebApplicationContextRunner contextRunner = new WebApplicationContextRunner()
 		.withConfiguration(AutoConfigurations.of(WebMvcAutoConfiguration.class, AdminServerAutoConfiguration.class,
 				AdminServerInstanceWebClientConfiguration.class))
+		.withBean(WebClient.Builder.class, WebClient::builder)
 		.withUserConfiguration(AdminServerMarkerConfiguration.class);
 
 	@Test
