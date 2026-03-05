@@ -6,11 +6,11 @@ Always reference these instructions first and fallback to search or bash command
 ## Working Effectively
 
 ### Prerequisites and Environment Setup
-- Install Java 17 (OpenJDK Temurin 17.0.16+ recommended) - project requires exactly Java 17
+- Install Java 21 (OpenJDK Temurin 21 recommended) - project requires Java 21
 - Install Node.js 22.18.0 exactly (project specifies this in .nvmrc and package.json)
 - Download Node.js 22.18.0: `curl -fsSL https://nodejs.org/dist/v22.18.0/node-v22.18.0-linux-x64.tar.xz -o /tmp/node.tar.xz`
 - Extract and configure PATH: `cd /tmp && tar -xf node.tar.xz && export PATH="/tmp/node-v22.18.0-linux-x64/bin:$PATH"`
-- Verify versions: `java -version` (should show 17.x) and `node --version` (should show v22.18.0)
+- Verify versions: `java -version` (should show 21.x) and `node --version` (should show v22.18.0)
 
 ### Building the Project
 - **NEVER CANCEL builds - they take time but will complete successfully**
@@ -119,7 +119,7 @@ Always reference these instructions first and fallback to search or bash command
 - Application startup: ~3 seconds
 
 ## Technology Stack
-- **Backend**: Spring Boot 3.5, Java 17, Maven multi-module
+- **Backend**: Spring Boot 3.5, Java 21, Maven multi-module
 - **Frontend**: Vue.js 3, Vite, TypeScript, Tailwind CSS
 - **Testing**: JUnit 5 (Java), Vitest (UI), Playwright integration
 - **Build**: Maven 3.9+, Node.js 22.18.0, npm

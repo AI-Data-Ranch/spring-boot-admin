@@ -6,10 +6,10 @@ In order to show basic functionalities, the server itself is registered as a cli
 
 ## Build project
 
-Make sure to use a GraalVM with a v17-BaseJDK to build the project (e.g. GraalVM Oracle 17.0.8).
+Make sure to use a GraalVM with a v21-BaseJDK to build the project (e.g. GraalVM Oracle 21).
 If you're using sdkman:
 ```bash
-sdk install java 17.0.8-graal
+sdk install java 21-graal
 ```
 Build the application with the `native` profile:
 ```bash
