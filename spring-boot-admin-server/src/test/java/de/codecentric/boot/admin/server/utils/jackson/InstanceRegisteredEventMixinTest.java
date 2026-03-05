@@ -20,17 +20,15 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceRegisteredEvent;
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
@@ -42,14 +40,13 @@ import static org.assertj.core.api.Assertions.entry;
 
 class InstanceRegisteredEventMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper objectMapper;
 
 	private JacksonTester<InstanceRegisteredEvent> jsonTester;
 
 	protected InstanceRegisteredEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		objectMapper = JsonMapper.builder().addModule(adminServerModule).build();
 	}
 
 	@BeforeEach
@@ -58,7 +55,7 @@ class InstanceRegisteredEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
@@ -89,7 +86,7 @@ class InstanceRegisteredEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithOnlyRequiredProperties() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("timestamp", 1587751031.000000000)
 			.put("type", "REGISTERED")
@@ -113,7 +110,7 @@ class InstanceRegisteredEventMixinTest {
 	}
 
 	@Test
-	void verifyDeserializeWithoutRegistration() throws JSONException, JsonProcessingException {
+	void verifyDeserializeWithoutRegistration() throws JSONException, JacksonException {
 		String json = new JSONObject().put("instance", "test123")
 			.put("version", 12345678L)
 			.put("timestamp", 1587751031.000000000)
