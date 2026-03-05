@@ -20,6 +20,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
 import org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import de.codecentric.boot.admin.server.services.CloudFoundryInstanceIdGenerator;
 import de.codecentric.boot.admin.server.services.HashingInstanceUrlIdGenerator;
@@ -33,7 +35,7 @@ class AdminServerCloudFoundryAutoConfigurationTest {
 	private final WebApplicationContextRunner contextRunner = new WebApplicationContextRunner()
 		.withConfiguration(AutoConfigurations.of(WebMvcAutoConfiguration.class, AdminServerAutoConfiguration.class,
 				AdminServerCloudFoundryAutoConfiguration.class))
-		.withUserConfiguration(AdminServerMarkerConfiguration.class);
+		.withUserConfiguration(AdminServerMarkerConfiguration.class, WebClientBuilderConfig.class);
 
 	@Test
 	void non_cloud_platform() {
@@ -49,6 +51,15 @@ class AdminServerCloudFoundryAutoConfigurationTest {
 			assertThat(context).hasSingleBean(CloudFoundryHttpHeaderProvider.class);
 			assertThat(context).getBean(InstanceIdGenerator.class).isInstanceOf(CloudFoundryInstanceIdGenerator.class);
 		});
+	}
+
+	public static class WebClientBuilderConfig {
+
+		@Bean
+		public WebClient.Builder webClientBuilder() {
+			return WebClient.builder();
+		}
+
 	}
 
 }

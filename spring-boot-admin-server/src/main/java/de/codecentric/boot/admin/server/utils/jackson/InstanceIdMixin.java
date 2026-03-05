@@ -28,7 +28,7 @@ import de.codecentric.boot.admin.server.domain.values.InstanceId;
  */
 public abstract class InstanceIdMixin {
 
-	@JsonCreator
+	@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
 	public static InstanceId of(String value) {
 		return InstanceId.of(value);
 	}

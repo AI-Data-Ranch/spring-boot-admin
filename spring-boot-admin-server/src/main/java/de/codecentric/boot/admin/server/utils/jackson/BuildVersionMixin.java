@@ -28,7 +28,7 @@ import de.codecentric.boot.admin.server.domain.values.BuildVersion;
  */
 public abstract class BuildVersionMixin {
 
-	@JsonCreator
+	@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
 	public static BuildVersion valueOf(String s) {
 		return BuildVersion.valueOf(s);
 	}

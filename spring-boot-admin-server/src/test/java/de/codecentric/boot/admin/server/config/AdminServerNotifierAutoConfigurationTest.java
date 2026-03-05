@@ -24,6 +24,7 @@ import org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import de.codecentric.boot.admin.server.notify.CompositeNotifier;
 import de.codecentric.boot.admin.server.notify.DiscordNotifier;
@@ -50,7 +51,7 @@ class AdminServerNotifierAutoConfigurationTest {
 	private final WebApplicationContextRunner contextRunner = new WebApplicationContextRunner()
 		.withConfiguration(AutoConfigurations.of(WebMvcAutoConfiguration.class, AdminServerAutoConfiguration.class,
 				AdminServerNotifierAutoConfiguration.class))
-		.withUserConfiguration(AdminServerMarkerConfiguration.class);
+		.withUserConfiguration(AdminServerMarkerConfiguration.class, WebClientBuilderConfig.class);
 
 	@Test
 	void test_notifierListener() {
@@ -210,6 +211,15 @@ class AdminServerNotifierAutoConfigurationTest {
 		@Qualifier("testNotifier3")
 		public TestNotifier testNotifier2() {
 			return new TestNotifier();
+		}
+
+	}
+
+	public static class WebClientBuilderConfig {
+
+		@Bean
+		public WebClient.Builder webClientBuilder() {
+			return WebClient.builder();
 		}
 
 	}

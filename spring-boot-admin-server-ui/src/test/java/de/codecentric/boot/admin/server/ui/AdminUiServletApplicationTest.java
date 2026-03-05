@@ -29,6 +29,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
@@ -61,6 +62,11 @@ class AdminUiServletApplicationTest extends AbstractAdminUiApplicationTest {
 	@EnableAutoConfiguration
 	@SpringBootConfiguration
 	public static class TestAdminApplication {
+
+		@Bean
+		public WebClient.Builder webClientBuilder() {
+			return WebClient.builder();
+		}
 
 		@Configuration(proxyBeanMethods = false)
 		public static class SecurityConfiguration {
