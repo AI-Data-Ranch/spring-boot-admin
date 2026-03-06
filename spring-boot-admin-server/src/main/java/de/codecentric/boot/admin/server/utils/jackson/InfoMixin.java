@@ -31,7 +31,7 @@ import de.codecentric.boot.admin.server.domain.values.Info;
  */
 public abstract class InfoMixin {
 
-	@JsonCreator
+	@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
 	public static Info from(@Nullable Map<String, Object> values) {
 		return Info.from(values);
 	}

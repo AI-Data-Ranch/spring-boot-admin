@@ -16,16 +16,16 @@
 
 package de.codecentric.boot.admin.server.utils.jackson;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.cfg.DateTimeFeature;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceDeregisteredEvent;
 import de.codecentric.boot.admin.server.domain.events.InstanceEndpointsDetectedEvent;
@@ -39,12 +39,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class InstanceEventMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper objectMapper;
 
 	protected InstanceEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		objectMapper = JsonMapper.builder()
+			.addModule(adminServerModule)
+			.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS)
+			.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+			.build();
 	}
 
 	@Nested
@@ -58,7 +61,7 @@ public class InstanceEventMixinTest {
 		}
 
 		@Test
-		void verifyDeserializeOfInstanceDeregisteredEvent() throws JSONException, JsonProcessingException {
+		void verifyDeserializeOfInstanceDeregisteredEvent() throws JSONException, JacksonException {
 			String json = new JSONObject().put("instance", "test123")
 				.put("timestamp", 1587751031.000000000)
 				.put("type", "DEREGISTERED")
@@ -69,7 +72,7 @@ public class InstanceEventMixinTest {
 		}
 
 		@Test
-		void verifyDeserializeOfInstanceEndpointsDetectedEvent() throws JSONException, JsonProcessingException {
+		void verifyDeserializeOfInstanceEndpointsDetectedEvent() throws JSONException, JacksonException {
 			String json = new JSONObject().put("instance", "test123")
 				.put("timestamp", 1587751031.000000000)
 				.put("type", "ENDPOINTS_DETECTED")
@@ -80,7 +83,7 @@ public class InstanceEventMixinTest {
 		}
 
 		@Test
-		void verifyDeserializeOfInstanceInfoChangedEvent() throws JSONException, JsonProcessingException {
+		void verifyDeserializeOfInstanceInfoChangedEvent() throws JSONException, JacksonException {
 			String json = new JSONObject().put("instance", "test123")
 				.put("timestamp", 1587751031.000000000)
 				.put("type", "INFO_CHANGED")
@@ -91,7 +94,7 @@ public class InstanceEventMixinTest {
 		}
 
 		@Test
-		void verifyDeserializeOfInstanceRegisteredEvent() throws JSONException, JsonProcessingException {
+		void verifyDeserializeOfInstanceRegisteredEvent() throws JSONException, JacksonException {
 			String json = new JSONObject().put("instance", "test123")
 				.put("timestamp", 1587751031.000000000)
 				.put("type", "REGISTERED")
@@ -104,7 +107,7 @@ public class InstanceEventMixinTest {
 		}
 
 		@Test
-		void verifyDeserializeOfInstanceRegistrationUpdatedEvent() throws JSONException, JsonProcessingException {
+		void verifyDeserializeOfInstanceRegistrationUpdatedEvent() throws JSONException, JacksonException {
 			String json = new JSONObject().put("instance", "test123")
 				.put("timestamp", 1587751031.000000000)
 				.put("type", "REGISTRATION_UPDATED")
@@ -117,7 +120,7 @@ public class InstanceEventMixinTest {
 		}
 
 		@Test
-		void verifyDeserializeOfInstanceStatusChangedEvent() throws JSONException, JsonProcessingException {
+		void verifyDeserializeOfInstanceStatusChangedEvent() throws JSONException, JacksonException {
 			String json = new JSONObject().put("instance", "test123")
 				.put("timestamp", 1587751031.000000000)
 				.put("type", "STATUS_CHANGED")

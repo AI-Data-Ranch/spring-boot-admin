@@ -31,7 +31,7 @@ import de.codecentric.boot.admin.server.domain.values.Endpoints;
  */
 public abstract class EndpointsMixin {
 
-	@JsonCreator
+	@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
 	public static Endpoints of(@Nullable Collection<Endpoint> endpoints) {
 		return Endpoints.of(endpoints);
 	}

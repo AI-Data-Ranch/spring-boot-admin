@@ -21,16 +21,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.cfg.DateTimeFeature;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Info;
 
@@ -39,14 +39,17 @@ import static org.assertj.core.api.Assertions.entry;
 
 class InfoMixinTest {
 
-	private final ObjectMapper objectMapper;
+	private final JsonMapper objectMapper;
 
 	private JacksonTester<Info> jsonTester;
 
 	protected InfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
-		JavaTimeModule javaTimeModule = new JavaTimeModule();
-		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
+		objectMapper = JsonMapper.builder()
+			.addModule(adminServerModule)
+			.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS)
+			.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
+			.build();
 	}
 
 	@BeforeEach
@@ -55,7 +58,7 @@ class InfoMixinTest {
 	}
 
 	@Test
-	void verifyDeserialize() throws JSONException, JsonProcessingException {
+	void verifyDeserialize() throws JSONException, JacksonException {
 		String json = new JSONObject().put("build", new JSONObject().put("version", "1.0.0"))
 			.put("foo", "bar")
 			.toString();

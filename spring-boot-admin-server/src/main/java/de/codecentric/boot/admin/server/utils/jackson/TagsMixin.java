@@ -30,7 +30,7 @@ import de.codecentric.boot.admin.server.domain.values.Tags;
  */
 public abstract class TagsMixin {
 
-	@JsonCreator
+	@JsonCreator(mode = JsonCreator.Mode.DELEGATING)
 	public static Tags from(Map<String, ?> map) {
 		return Tags.from(map);
 	}

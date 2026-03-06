@@ -26,10 +26,8 @@ import org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfi
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
-import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
-import org.springframework.boot.http.client.ClientHttpRequestFactoryBuilder;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.boot.webmvc.autoconfigure.DispatcherServletAutoConfiguration;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -69,100 +67,29 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 	public static Stream<Arguments> contextRunnerCustomizations() {
 		return Stream.of(//
 				Arguments.of(//
-						"Test case 01", //
+						"Test case 01: RestClient + WebClient -> Reactive wins", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withRestClientBuilder()
-							.withClientHttpRequestFactoryBuilder()
 							.withWebClientBuilder()
 							.build(), //
 						ReactiveRegistrationClient.class),
 				Arguments.of(//
-						"Test case 02", //
+						"Test case 02: RestClient only -> RestClient", //
 						customizer() //
-							.withRestTemplateBuilder()
 							.withRestClientBuilder()
-							.withClientHttpRequestFactoryBuilder()
 							.build(), //
 						RestClientRegistrationClient.class),
 				Arguments.of(//
-						"Test case 03", //
+						"Test case 03: WebClient only -> Reactive", //
 						customizer() //
-							.withRestTemplateBuilder()
-							.withRestClientBuilder()
 							.withWebClientBuilder()
 							.build(), //
 						ReactiveRegistrationClient.class),
 				Arguments.of(//
-						"Test case 04", //
+						"Test case 04: No builders -> Blocking fallback", //
 						customizer() //
-							.withRestTemplateBuilder()
-							.withRestClientBuilder()
 							.build(), //
-						BlockingRegistrationClient.class),
-				Arguments.of(//
-						"Test case 05", //
-						customizer() //
-							.withRestTemplateBuilder()
-							.withClientHttpRequestFactoryBuilder()
-							.withWebClientBuilder()
-							.build(), //
-						ReactiveRegistrationClient.class),
-				Arguments.of(//
-						"Test case 06", //
-						customizer() //
-							.withRestTemplateBuilder()
-							.withClientHttpRequestFactoryBuilder()
-							.build(), //
-						BlockingRegistrationClient.class),
-				Arguments.of(//
-						"Test case 07", //
-						customizer() //
-							.withRestTemplateBuilder()
-							.withWebClientBuilder()
-							.build(), //
-						ReactiveRegistrationClient.class),
-				Arguments.of(//
-						"Test case 08", //
-						customizer() //
-							.withRestTemplateBuilder()
-							.build(), //
-						BlockingRegistrationClient.class),
-				Arguments.of(//
-						"Test case 09", //
-						customizer() //
-							.withRestClientBuilder()
-							.withClientHttpRequestFactoryBuilder()
-							.withWebClientBuilder()
-							.build(), //
-						ReactiveRegistrationClient.class),
-				Arguments.of(//
-						"Test case 10", //
-						customizer() //
-							.withRestClientBuilder()
-							.withClientHttpRequestFactoryBuilder()
-							.build(), //
-						RestClientRegistrationClient.class),
-				Arguments.of(//
-						"Test case 11", //
-						customizer() //
-							.withRestClientBuilder()
-							.withWebClientBuilder()
-							.build(), //
-						ReactiveRegistrationClient.class),
-				Arguments.of(//
-						"Test case 13", //
-						customizer() //
-							.withClientHttpRequestFactoryBuilder()
-							.withWebClientBuilder()
-							.build(), //
-						ReactiveRegistrationClient.class),
-				Arguments.of(//
-						"Test case 15", //
-						customizer() //
-							.withWebClientBuilder()
-							.build(), //
-						ReactiveRegistrationClient.class) //
+						BlockingRegistrationClient.class) //
 		);
 	}
 
@@ -174,20 +101,8 @@ public class SpringBootAdminClientRegistrationClientAutoConfigurationTest {
 
 		private Function<WebApplicationContextRunner, WebApplicationContextRunner> customizer = (runner) -> runner;
 
-		ContextRunnerCustomizerBuilder withRestTemplateBuilder() {
-			customizer = customizer
-				.andThen((runner) -> runner.withBean(RestTemplateBuilder.class, RestTemplateBuilder::new));
-			return this;
-		}
-
 		ContextRunnerCustomizerBuilder withRestClientBuilder() {
 			customizer = customizer.andThen((runner) -> runner.withBean(RestClient.Builder.class, RestClient::builder));
-			return this;
-		}
-
-		ContextRunnerCustomizerBuilder withClientHttpRequestFactoryBuilder() {
-			customizer = customizer.andThen((runner) -> runner.withBean(ClientHttpRequestFactoryBuilder.class,
-					ClientHttpRequestFactoryBuilder::detect));
 			return this;
 		}
 

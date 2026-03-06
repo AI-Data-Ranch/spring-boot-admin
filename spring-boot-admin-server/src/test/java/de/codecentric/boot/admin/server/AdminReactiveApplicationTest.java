@@ -27,6 +27,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
@@ -60,6 +61,11 @@ public class AdminReactiveApplicationTest extends AbstractAdminApplicationTest {
 			return http.authorizeExchange((authorizeExchange) -> authorizeExchange.anyExchange().permitAll())
 				.csrf(ServerHttpSecurity.CsrfSpec::disable)
 				.build();
+		}
+
+		@Bean
+		public WebClient.Builder webClientBuilder() {
+			return WebClient.builder();
 		}
 
 	}

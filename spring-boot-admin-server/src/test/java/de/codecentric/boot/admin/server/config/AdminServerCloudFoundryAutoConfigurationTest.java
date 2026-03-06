@@ -18,12 +18,10 @@ package de.codecentric.boot.admin.server.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
-import org.springframework.boot.autoconfigure.hazelcast.HazelcastAutoConfiguration;
-import org.springframework.boot.autoconfigure.http.client.reactive.ClientHttpConnectorAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
+import org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import de.codecentric.boot.admin.server.services.CloudFoundryInstanceIdGenerator;
 import de.codecentric.boot.admin.server.services.HashingInstanceUrlIdGenerator;
@@ -35,11 +33,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 class AdminServerCloudFoundryAutoConfigurationTest {
 
 	private final WebApplicationContextRunner contextRunner = new WebApplicationContextRunner()
-		.withConfiguration(AutoConfigurations.of(RestTemplateAutoConfiguration.class,
-				ClientHttpConnectorAutoConfiguration.class, WebClientAutoConfiguration.class,
-				HazelcastAutoConfiguration.class, WebMvcAutoConfiguration.class, AdminServerAutoConfiguration.class,
+		.withConfiguration(AutoConfigurations.of(WebMvcAutoConfiguration.class, AdminServerAutoConfiguration.class,
 				AdminServerCloudFoundryAutoConfiguration.class))
-		.withUserConfiguration(AdminServerMarkerConfiguration.class);
+		.withUserConfiguration(AdminServerMarkerConfiguration.class, WebClientBuilderConfig.class);
 
 	@Test
 	void non_cloud_platform() {
@@ -55,6 +51,15 @@ class AdminServerCloudFoundryAutoConfigurationTest {
 			assertThat(context).hasSingleBean(CloudFoundryHttpHeaderProvider.class);
 			assertThat(context).getBean(InstanceIdGenerator.class).isInstanceOf(CloudFoundryInstanceIdGenerator.class);
 		});
+	}
+
+	public static class WebClientBuilderConfig {
+
+		@Bean
+		public WebClient.Builder webClientBuilder() {
+			return WebClient.builder();
+		}
+
 	}
 
 }
