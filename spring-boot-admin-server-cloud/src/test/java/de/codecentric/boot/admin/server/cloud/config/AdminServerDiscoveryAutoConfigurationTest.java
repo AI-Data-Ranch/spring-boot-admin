@@ -20,7 +20,7 @@ import com.netflix.discovery.EurekaClient;
 import io.kubernetes.client.openapi.apis.CoreV1Api;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
-import org.springframework.boot.autoconfigure.http.client.reactive.ClientHttpConnectorAutoConfiguration;
+import org.springframework.boot.http.client.autoconfigure.reactive.ReactiveHttpClientAutoConfiguration;
 import org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
@@ -47,7 +47,7 @@ class AdminServerDiscoveryAutoConfigurationTest {
 
 	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
 		.withConfiguration(AutoConfigurations.of(UtilAutoConfiguration.class,
-				ClientHttpConnectorAutoConfiguration.class, WebClientAutoConfiguration.class,
+				ReactiveHttpClientAutoConfiguration.class, WebClientAutoConfiguration.class,
 				AdminServerAutoConfiguration.class, AdminServerDiscoveryAutoConfiguration.class))
 		.withUserConfiguration(AdminServerMarkerConfiguration.class);
 
