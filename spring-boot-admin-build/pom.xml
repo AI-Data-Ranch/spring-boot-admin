@@ -85,6 +85,12 @@
                 <version>${awaitility.version}</version>
                 <scope>test</scope>
             </dependency>
+            <!-- Jackson 2 backward compatibility for Spring Boot 4.0.0 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-jackson2</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
                 <artifactId>testcontainers</artifactId>
