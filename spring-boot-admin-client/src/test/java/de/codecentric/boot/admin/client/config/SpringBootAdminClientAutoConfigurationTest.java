@@ -25,6 +25,7 @@ import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
 import org.springframework.boot.context.annotation.UserConfigurations;
 import org.springframework.boot.http.client.autoconfigure.HttpClientAutoConfiguration;
+import org.springframework.boot.http.client.autoconfigure.imperative.ImperativeHttpClientAutoConfiguration;
 import org.springframework.boot.restclient.autoconfigure.RestClientAutoConfiguration;
 import org.springframework.boot.restclient.autoconfigure.RestTemplateAutoConfiguration;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
@@ -119,10 +120,11 @@ class SpringBootAdminClientAutoConfigurationTest {
 
 	@Test
 	void restClientRegistrationClientInBlockingEnvironment() {
-		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner().withConfiguration(
-				AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
-						DispatcherServletAutoConfiguration.class, HttpClientAutoConfiguration.class,
-						RestClientAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
+		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner()
+			.withConfiguration(AutoConfigurations.of(EndpointAutoConfiguration.class,
+					WebEndpointAutoConfiguration.class, DispatcherServletAutoConfiguration.class,
+					HttpClientAutoConfiguration.class, ImperativeHttpClientAutoConfiguration.class,
+					RestClientAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
 
 		webApplicationContextRunner
 			.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081",

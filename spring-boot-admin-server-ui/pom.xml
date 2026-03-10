@@ -61,6 +61,11 @@
             <artifactId>spring-boot-webflux</artifactId>
             <optional>true</optional>
         </dependency>
+        <!-- Jackson 2.x backward compatibility for Spring Boot 4.0 (needed for ServerRuntimeHints) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-jackson2</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>

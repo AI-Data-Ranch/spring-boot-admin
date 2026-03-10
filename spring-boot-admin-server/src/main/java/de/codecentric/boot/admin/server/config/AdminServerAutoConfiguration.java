@@ -20,15 +20,13 @@ import java.time.Duration;
 
 import lombok.extern.slf4j.Slf4j;
 import org.reactivestreams.Publisher;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 
 import de.codecentric.boot.admin.server.domain.entities.InstanceRepository;
@@ -54,12 +52,11 @@ import de.codecentric.boot.admin.server.services.endpoints.ProbeEndpointsStrateg
 import de.codecentric.boot.admin.server.services.endpoints.QueryIndexEndpointStrategy;
 import de.codecentric.boot.admin.server.web.client.InstanceWebClient;
 
-@Configuration(proxyBeanMethods = false)
+@AutoConfiguration(afterName = "org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration")
 @Conditional(SpringBootAdminServerEnabledCondition.class)
 @ConditionalOnBean(AdminServerMarkerConfiguration.Marker.class)
 @EnableConfigurationProperties(AdminServerProperties.class)
 @ImportAutoConfiguration({ AdminServerInstanceWebClientConfiguration.class, AdminServerWebConfiguration.class })
-@AutoConfigureAfter({ WebClientAutoConfiguration.class })
 @Slf4j
 @Lazy(false)
 public class AdminServerAutoConfiguration {
