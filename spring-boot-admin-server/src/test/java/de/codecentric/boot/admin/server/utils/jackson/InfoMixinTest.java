@@ -31,6 +31,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Info;
 
@@ -51,7 +52,7 @@ class InfoMixinTest {
 
 	@BeforeEach
 	void setup() {
-		JacksonTester.initFields(this, objectMapper);
+		JacksonTester.initFields(this, JsonMapper.builder().findAndAddModules().build());
 	}
 
 	@Test
