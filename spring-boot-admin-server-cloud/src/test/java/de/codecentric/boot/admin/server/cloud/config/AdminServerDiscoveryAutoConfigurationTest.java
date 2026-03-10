@@ -19,18 +19,20 @@ package de.codecentric.boot.admin.server.cloud.config;
 import com.netflix.discovery.EurekaClient;
 import io.kubernetes.client.openapi.apis.CoreV1Api;
 import org.junit.jupiter.api.Test;
+import java.util.function.Supplier;
+
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
-import org.springframework.boot.http.client.autoconfigure.reactive.ReactiveHttpClientAutoConfiguration;
-import org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.http.client.autoconfigure.reactive.ReactiveHttpClientAutoConfiguration;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
+import org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration;
 import org.springframework.cloud.commons.util.UtilAutoConfiguration;
-import org.springframework.cloud.kubernetes.client.discovery.KubernetesInformerDiscoveryClient;
 import org.springframework.cloud.kubernetes.commons.discovery.KubernetesDiscoveryProperties;
-import org.springframework.cloud.kubernetes.fabric8.discovery.KubernetesDiscoveryClient;
 
 import de.codecentric.boot.admin.server.cloud.discovery.DefaultServiceInstanceConverter;
 import de.codecentric.boot.admin.server.cloud.discovery.EurekaServiceInstanceConverter;
@@ -67,18 +69,34 @@ class AdminServerDiscoveryAutoConfigurationTest {
 	}
 
 	@Test
-	void officialKubernetesServiceInstanceConverter() {
+	void officialKubernetesServiceInstanceConverter() throws Exception {
+		Class<?> k8sClientClass = Class.forName(
+				"org.springframework.cloud.kubernetes.client.discovery.KubernetesClientInformerDiscoveryClient");
 		this.contextRunner.withUserConfiguration(KubernetesDiscoveryPropertiesConfiguration.class)
 			.withBean(CoreV1Api.class, () -> mock(CoreV1Api.class))
-			.withBean(KubernetesInformerDiscoveryClient.class, () -> mock(KubernetesInformerDiscoveryClient.class))
+			.withInitializer((context) -> {
+				GenericApplicationContext ctx = (GenericApplicationContext) context;
+				RootBeanDefinition bd = new RootBeanDefinition();
+				bd.setBeanClass(k8sClientClass);
+				bd.setInstanceSupplier((Supplier<?>) () -> mock(k8sClientClass));
+				ctx.registerBeanDefinition("k8sClientInformerDiscoveryClient", bd);
+			})
 			.run((context) -> assertThat(context).getBean(ServiceInstanceConverter.class)
 				.isInstanceOf(KubernetesServiceInstanceConverter.class));
 	}
 
 	@Test
-	void fabric8KubernetesServiceInstanceConverter() {
+	void fabric8KubernetesServiceInstanceConverter() throws Exception {
+		Class<?> fabric8Class = Class
+			.forName("org.springframework.cloud.kubernetes.fabric8.discovery.Fabric8DiscoveryClient");
 		this.contextRunner.withUserConfiguration(KubernetesDiscoveryPropertiesConfiguration.class)
-			.withBean(KubernetesDiscoveryClient.class, () -> mock(KubernetesDiscoveryClient.class))
+			.withInitializer((context) -> {
+				GenericApplicationContext ctx = (GenericApplicationContext) context;
+				RootBeanDefinition bd = new RootBeanDefinition();
+				bd.setBeanClass(fabric8Class);
+				bd.setInstanceSupplier((Supplier<?>) () -> mock(fabric8Class));
+				ctx.registerBeanDefinition("fabric8DiscoveryClient", bd);
+			})
 			.run((context) -> assertThat(context).getBean(ServiceInstanceConverter.class)
 				.isInstanceOf(KubernetesServiceInstanceConverter.class));
 	}
@@ -104,5 +122,6 @@ class AdminServerDiscoveryAutoConfigurationTest {
 	public static class KubernetesDiscoveryPropertiesConfiguration {
 
 	}
+
 
 }

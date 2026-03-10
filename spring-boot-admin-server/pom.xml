@@ -127,10 +127,11 @@
             <artifactId>spring-boot-http-client</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- SB 4.0.0: JacksonTester.initFields now requires Jackson 3 JsonMapper -->
+        <!-- org.json for test assertions on serialized JSON -->
         <dependency>
-            <groupId>tools.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20250107</version>
             <scope>test</scope>
         </dependency>
         <!-- Test -->

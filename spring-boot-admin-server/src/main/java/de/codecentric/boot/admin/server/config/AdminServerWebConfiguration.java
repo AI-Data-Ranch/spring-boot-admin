@@ -20,7 +20,6 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
-import org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -96,7 +95,7 @@ public class AdminServerWebConfiguration {
 
 	@Configuration(proxyBeanMethods = false)
 	@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
-	@AutoConfigureAfter(WebMvcAutoConfiguration.class)
+	@AutoConfigureAfter(name = "org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration")
 	public static class ServletRestApiConfiguration {
 
 		private final AdminServerProperties adminServerProperties;

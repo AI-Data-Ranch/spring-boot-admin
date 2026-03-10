@@ -22,7 +22,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
-import org.springframework.boot.autoconfigure.http.client.HttpClientAutoConfiguration;
+import org.springframework.boot.http.client.autoconfigure.HttpClientAutoConfiguration;
+import org.springframework.boot.http.client.autoconfigure.imperative.ImperativeHttpClientAutoConfiguration;
 import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
 import org.springframework.boot.restclient.autoconfigure.RestClientAutoConfiguration;
 import org.springframework.boot.restclient.autoconfigure.RestTemplateAutoConfiguration;
@@ -122,7 +123,8 @@ class SpringBootAdminClientAutoConfigurationTest {
 		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner().withConfiguration(
 				AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
 						DispatcherServletAutoConfiguration.class, HttpClientAutoConfiguration.class,
-						RestClientAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
+						ImperativeHttpClientAutoConfiguration.class, RestClientAutoConfiguration.class,
+						SpringBootAdminClientAutoConfiguration.class));
 
 		webApplicationContextRunner
 			.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081",
