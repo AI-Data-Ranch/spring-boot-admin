@@ -27,8 +27,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.Tags;
@@ -40,7 +38,6 @@ class TagsMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<Tags> jsonTester;
 
 	protected TagsMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
@@ -48,10 +45,6 @@ class TagsMixinTest {
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
 
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
-	}
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -63,14 +56,14 @@ class TagsMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws IOException, JSONException {
 		Map<String, Object> data = new HashMap<>();
 		data.put("env", "test");
 		data.put("foo", "bar");
 		Tags tags = Tags.from(data);
 
-		JsonContent<Tags> jsonContent = jsonTester.write(tags);
-		assertThat(jsonContent).extractingJsonPathMapValue("$").containsOnly(entry("env", "test"), entry("foo", "bar"));
+		String jsonContent = objectMapper.writeValueAsString(tags);
+		assertThat(objectMapper.readValue(jsonContent, java.util.Map.class)).containsOnly(entry("env", "test"), entry("foo", "bar"));
 	}
 
 }

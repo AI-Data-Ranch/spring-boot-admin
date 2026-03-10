@@ -28,8 +28,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.Info;
@@ -41,7 +39,6 @@ class InfoMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<Info> jsonTester;
 
 	protected InfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
@@ -49,10 +46,6 @@ class InfoMixinTest {
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
 
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
-	}
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -67,16 +60,16 @@ class InfoMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws IOException, JSONException {
 		Map<String, Object> data = new HashMap<>();
 		data.put("build", Collections.singletonMap("version", "1.0.0"));
 		data.put("foo", "bar");
 		Info info = Info.from(data);
 
-		JsonContent<Info> jsonContent = jsonTester.write(info);
-		assertThat(jsonContent).extractingJsonPathMapValue("$").containsOnlyKeys("build", "foo");
-		assertThat(jsonContent).extractingJsonPathStringValue("$['build'].['version']").isEqualTo("1.0.0");
-		assertThat(jsonContent).extractingJsonPathStringValue("$['foo']").isEqualTo("bar");
+		String jsonContent = objectMapper.writeValueAsString(info);
+		assertThat(objectMapper.readValue(jsonContent, java.util.Map.class)).containsOnlyKeys("build", "foo");
+		assertThat(new JSONObject(jsonContent).getJSONObject("build").getString("version")).isEqualTo("1.0.0");
+		assertThat(new JSONObject(jsonContent).getString("foo")).isEqualTo("bar");
 	}
 
 }

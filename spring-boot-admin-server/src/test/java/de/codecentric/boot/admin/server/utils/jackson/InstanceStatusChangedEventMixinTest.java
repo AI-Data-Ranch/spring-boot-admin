@@ -29,8 +29,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceStatusChangedEvent;
@@ -45,7 +43,6 @@ class InstanceStatusChangedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceStatusChangedEvent> jsonTester;
 
 	protected InstanceStatusChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
@@ -53,10 +50,6 @@ class InstanceStatusChangedEventMixinTest {
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
 
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
-	}
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -132,56 +125,56 @@ class InstanceStatusChangedEventMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE", Collections.singletonMap("foo", "bar"));
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 12345678L, timestamp, statusInfo);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNotNull();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(12345678);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("STATUS_CHANGED");
+		assertThat(new JSONObject(jsonContent).has("statusInfo")).isTrue();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.statusInfo.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.statusInfo.details").containsOnly(entry("foo", "bar"));
+		assertThat(new JSONObject(jsonContent).getJSONObject("statusInfo").getString("status")).isEqualTo("OFFLINE");
+		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("statusInfo").getJSONObject("details").toString(), java.util.Map.class)).containsOnly(entry("foo", "bar"));
 	}
 
 	@Test
-	void verifySerializeWithOnlyRequiredProperties() throws IOException {
+	void verifySerializeWithOnlyRequiredProperties() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE");
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 0L, timestamp, statusInfo);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNotNull();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(0);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("STATUS_CHANGED");
+		assertThat(new JSONObject(jsonContent).has("statusInfo")).isTrue();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.statusInfo.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.statusInfo.details").isEmpty();
+		assertThat(new JSONObject(jsonContent).getJSONObject("statusInfo").getString("status")).isEqualTo("OFFLINE");
+		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("statusInfo").getJSONObject("details").toString(), java.util.Map.class)).isEmpty();
 	}
 
 	@Test
-	void verifySerializeWithoutStatusInfo() throws IOException {
+	void verifySerializeWithoutStatusInfo() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 12345678L, timestamp, null);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNull();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(12345678);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("STATUS_CHANGED");
+		assertThat(new JSONObject(jsonContent).isNull("statusInfo")).isTrue();
 	}
 
 }

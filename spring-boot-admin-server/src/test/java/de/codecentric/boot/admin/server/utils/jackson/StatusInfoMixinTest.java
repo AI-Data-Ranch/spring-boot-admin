@@ -26,8 +26,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.StatusInfo;
@@ -39,7 +37,6 @@ class StatusInfoMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<StatusInfo> jsonTester;
 
 	protected StatusInfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
@@ -47,10 +44,6 @@ class StatusInfoMixinTest {
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
 
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
-	}
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -65,16 +58,18 @@ class StatusInfoMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws IOException, JSONException {
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE", Collections.singletonMap("foo", "bar"));
 
-		JsonContent<StatusInfo> jsonContent = jsonTester.write(statusInfo);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.details").containsOnly(entry("foo", "bar"));
-		assertThat(jsonContent).doesNotHaveJsonPath("$.up")
-			.doesNotHaveJsonPath("$.offline")
-			.doesNotHaveJsonPath("$.down")
-			.doesNotHaveJsonPath("$.unknown");
+		String jsonContent = objectMapper.writeValueAsString(statusInfo);
+		JSONObject json = new JSONObject(jsonContent);
+		assertThat(json.getString("status")).isEqualTo("OFFLINE");
+		assertThat(objectMapper.readValue(json.getJSONObject("details").toString(), java.util.Map.class))
+			.containsOnly(entry("foo", "bar"));
+		assertThat(json.has("up")).isFalse();
+		assertThat(json.has("offline")).isFalse();
+		assertThat(json.has("down")).isFalse();
+		assertThat(json.has("unknown")).isFalse();
 	}
 
 }

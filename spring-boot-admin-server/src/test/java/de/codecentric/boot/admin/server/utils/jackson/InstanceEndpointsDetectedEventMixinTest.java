@@ -28,8 +28,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceEndpointsDetectedEvent;
@@ -43,7 +41,6 @@ class InstanceEndpointsDetectedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceEndpointsDetectedEvent> jsonTester;
 
 	protected InstanceEndpointsDetectedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
@@ -51,10 +48,6 @@ class InstanceEndpointsDetectedEventMixinTest {
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
 
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
-	}
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -109,55 +102,53 @@ class InstanceEndpointsDetectedEventMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		Endpoints endpoints = Endpoints.single("info", "http://localhost:8080/info")
 			.withEndpoint("health", "http://localhost:8080/health");
 		InstanceEndpointsDetectedEvent event = new InstanceEndpointsDetectedEvent(id, 12345678L, timestamp, endpoints);
 
-		JsonContent<InstanceEndpointsDetectedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("ENDPOINTS_DETECTED");
-		assertThat(jsonContent).extractingJsonPathArrayValue("$.endpoints").hasSize(2);
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(12345678);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("ENDPOINTS_DETECTED");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").length()).isEqualTo(2);
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[0].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[0].url")
-			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(0).getString("id")).isIn("info", "health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(0).getString("url")).isIn("http://localhost:8080/info", "http://localhost:8080/health");
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[1].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[1].url")
-			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(1).getString("id")).isIn("info", "health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(1).getString("url")).isIn("http://localhost:8080/info", "http://localhost:8080/health");
 	}
 
 	@Test
-	void verifySerializeWithOnlyRequiredProperties() throws IOException {
+	void verifySerializeWithOnlyRequiredProperties() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceEndpointsDetectedEvent event = new InstanceEndpointsDetectedEvent(id, 0L, timestamp, null);
 
-		JsonContent<InstanceEndpointsDetectedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("ENDPOINTS_DETECTED");
-		assertThat(jsonContent).extractingJsonPathArrayValue("$.endpoints").isNull();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(0);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("ENDPOINTS_DETECTED");
+		assertThat(new JSONObject(jsonContent).isNull("endpoints")).isTrue();
 	}
 
 	@Test
-	void verifySerializeWithEmptyEndpoints() throws IOException {
+	void verifySerializeWithEmptyEndpoints() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceEndpointsDetectedEvent event = new InstanceEndpointsDetectedEvent(id, 0L, timestamp, Endpoints.empty());
 
-		JsonContent<InstanceEndpointsDetectedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("ENDPOINTS_DETECTED");
-		assertThat(jsonContent).extractingJsonPathArrayValue("$.endpoints").isEmpty();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(0);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("ENDPOINTS_DETECTED");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").length()).isEqualTo(0);
 	}
 
 }
