@@ -37,6 +37,9 @@ management:
 
 
 spring:
+  http:
+    converters:
+      preferred-json-mapper: jackson2
   application:
     name: spring-boot-admin-sample-servlet
   cloud:

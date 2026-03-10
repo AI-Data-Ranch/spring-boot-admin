@@ -25,6 +25,9 @@ management:
         include: "*"
 
 spring:
+  http:
+    converters:
+      preferred-json-mapper: jackson2
   application:
     name: spring-boot-admin-3-graalvm
   main:
