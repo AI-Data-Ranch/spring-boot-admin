@@ -24,14 +24,12 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.Info;
 
@@ -42,17 +40,10 @@ class InfoMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<Info> jsonTester;
-
 	protected InfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, JsonMapper.builder().findAndAddModules().build());
 	}
 
 	@Test
@@ -74,10 +65,11 @@ class InfoMixinTest {
 		data.put("foo", "bar");
 		Info info = Info.from(data);
 
-		JsonContent<Info> jsonContent = jsonTester.write(info);
-		assertThat(jsonContent).extractingJsonPathMapValue("$").containsOnlyKeys("build", "foo");
-		assertThat(jsonContent).extractingJsonPathStringValue("$['build'].['version']").isEqualTo("1.0.0");
-		assertThat(jsonContent).extractingJsonPathStringValue("$['foo']").isEqualTo("bar");
+		String json = objectMapper.writeValueAsString(info);
+		DocumentContext jsonContent = JsonPath.parse(json);
+		assertThat(jsonContent.read("$", java.util.Map.class)).containsOnlyKeys("build", "foo");
+		assertThat((String) jsonContent.read("$['build'].['version']")).isEqualTo("1.0.0");
+		assertThat((String) jsonContent.read("$['foo']")).isEqualTo("bar");
 	}
 
 }

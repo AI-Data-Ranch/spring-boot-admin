@@ -23,14 +23,12 @@ import java.time.temporal.ChronoUnit;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceDeregisteredEvent;
 import de.codecentric.boot.admin.server.domain.values.InstanceId;
@@ -41,17 +39,10 @@ class InstanceDeregisteredEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceDeregisteredEvent> jsonTester;
-
 	protected InstanceDeregisteredEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, JsonMapper.builder().findAndAddModules().build());
 	}
 
 	@Test
@@ -89,11 +80,12 @@ class InstanceDeregisteredEventMixinTest {
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceDeregisteredEvent event = new InstanceDeregisteredEvent(id, 12345678L, timestamp);
 
-		JsonContent<InstanceDeregisteredEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("DEREGISTERED");
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(12345678);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("DEREGISTERED");
 	}
 
 	@Test
@@ -102,11 +94,12 @@ class InstanceDeregisteredEventMixinTest {
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceDeregisteredEvent event = new InstanceDeregisteredEvent(id, 0L, timestamp);
 
-		JsonContent<InstanceDeregisteredEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("DEREGISTERED");
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(0);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("DEREGISTERED");
 	}
 
 }

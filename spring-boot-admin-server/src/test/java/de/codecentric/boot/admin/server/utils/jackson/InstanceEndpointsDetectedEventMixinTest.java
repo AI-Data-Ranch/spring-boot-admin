@@ -23,15 +23,15 @@ import java.time.temporal.ChronoUnit;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Option;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceEndpointsDetectedEvent;
 import de.codecentric.boot.admin.server.domain.values.Endpoint;
@@ -44,17 +44,10 @@ class InstanceEndpointsDetectedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceEndpointsDetectedEvent> jsonTester;
-
 	protected InstanceEndpointsDetectedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, JsonMapper.builder().findAndAddModules().build());
 	}
 
 	@Test
@@ -117,20 +110,23 @@ class InstanceEndpointsDetectedEventMixinTest {
 			.withEndpoint("health", "http://localhost:8080/health");
 		InstanceEndpointsDetectedEvent event = new InstanceEndpointsDetectedEvent(id, 12345678L, timestamp, endpoints);
 
-		JsonContent<InstanceEndpointsDetectedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("ENDPOINTS_DETECTED");
-		assertThat(jsonContent).extractingJsonPathArrayValue("$.endpoints").hasSize(2);
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(12345678);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("ENDPOINTS_DETECTED");
+		assertThat(jsonContent.read("$.endpoints", java.util.List.class)).hasSize(2);
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[0].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[0].url")
-			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat((String) jsonContent.read("$.endpoints[0].id")).isIn("info", "health");
+		assertThat((String) jsonContent.read("$.endpoints[0].url")).isIn("http://localhost:8080/info",
+				"http://localhost:8080/health");
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[1].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.endpoints[1].url")
-			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat((String) jsonContent.read("$.endpoints[1].id")).isIn("info", "health");
+		assertThat((String) jsonContent.read("$.endpoints[1].url")).isIn("http://localhost:8080/info",
+				"http://localhost:8080/health");
 	}
 
 	@Test
@@ -139,12 +135,15 @@ class InstanceEndpointsDetectedEventMixinTest {
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceEndpointsDetectedEvent event = new InstanceEndpointsDetectedEvent(id, 0L, timestamp, null);
 
-		JsonContent<InstanceEndpointsDetectedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("ENDPOINTS_DETECTED");
-		assertThat(jsonContent).extractingJsonPathArrayValue("$.endpoints").isNull();
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(0);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("ENDPOINTS_DETECTED");
+		assertThat((Object) jsonContent.read("$.endpoints")).isNull();
 	}
 
 	@Test
@@ -153,12 +152,15 @@ class InstanceEndpointsDetectedEventMixinTest {
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceEndpointsDetectedEvent event = new InstanceEndpointsDetectedEvent(id, 0L, timestamp, Endpoints.empty());
 
-		JsonContent<InstanceEndpointsDetectedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("ENDPOINTS_DETECTED");
-		assertThat(jsonContent).extractingJsonPathArrayValue("$.endpoints").isEmpty();
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(0);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("ENDPOINTS_DETECTED");
+		assertThat(jsonContent.read("$.endpoints", java.util.List.class)).isEmpty();
 	}
 
 }

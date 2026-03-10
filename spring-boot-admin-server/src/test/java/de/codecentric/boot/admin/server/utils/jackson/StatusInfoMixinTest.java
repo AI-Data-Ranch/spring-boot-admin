@@ -22,14 +22,14 @@ import java.util.Collections;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Option;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import tools.jackson.databind.json.JsonMapper;
 
 import de.codecentric.boot.admin.server.domain.values.StatusInfo;
 
@@ -40,17 +40,10 @@ class StatusInfoMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<StatusInfo> jsonTester;
-
 	protected StatusInfoMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, JsonMapper.builder().findAndAddModules().build());
 	}
 
 	@Test
@@ -69,13 +62,16 @@ class StatusInfoMixinTest {
 	void verifySerialize() throws IOException {
 		StatusInfo statusInfo = StatusInfo.valueOf("OFFLINE", Collections.singletonMap("foo", "bar"));
 
-		JsonContent<StatusInfo> jsonContent = jsonTester.write(statusInfo);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.details").containsOnly(entry("foo", "bar"));
-		assertThat(jsonContent).doesNotHaveJsonPath("$.up")
-			.doesNotHaveJsonPath("$.offline")
-			.doesNotHaveJsonPath("$.down")
-			.doesNotHaveJsonPath("$.unknown");
+		String json = objectMapper.writeValueAsString(statusInfo);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.status")).isEqualTo("OFFLINE");
+		assertThat(jsonContent.read("$.details", java.util.Map.class)).containsOnly(entry("foo", "bar"));
+		assertThat(jsonContent.read("$.up", Object.class)).isNull();
+		assertThat(jsonContent.read("$.offline", Object.class)).isNull();
+		assertThat(jsonContent.read("$.down", Object.class)).isNull();
+		assertThat(jsonContent.read("$.unknown", Object.class)).isNull();
 	}
 
 }
