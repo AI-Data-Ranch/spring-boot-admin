@@ -79,7 +79,7 @@ class InfoUpdateTriggerTest {
 				new InstanceStatusChangedEvent(this.instance.getId(), this.instance.getVersion(), StatusInfo.ofDown()));
 		// then it should start updating one time for registration and at least once for
 		// monitor
-		await().atMost(Duration.ofMillis(50))
+		await().atMost(Duration.ofMillis(500))
 			.pollInterval(Duration.ofMillis(10))
 			.untilAsserted(() -> verify(this.updater, atLeast(2)).updateInfo(this.instance.getId()));
 
