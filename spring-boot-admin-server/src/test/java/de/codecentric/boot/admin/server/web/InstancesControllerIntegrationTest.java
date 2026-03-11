@@ -35,6 +35,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.EntityExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 
 import de.codecentric.boot.admin.server.AdminReactiveApplicationTest;
@@ -107,24 +108,28 @@ class InstancesControllerIntegrationTest {
 		AtomicReference<String> id = new AtomicReference<>();
 		CountDownLatch cdl = new CountDownLatch(1);
 
-		StepVerifier.create(this.getEventStream().log()).expectSubscription().then(() -> {
-			id.set(register());
-			cdl.countDown();
-		}).assertNext((body) -> {
-			try {
-				cdl.await();
-			}
-			catch (InterruptedException ex) {
-				Thread.interrupted();
-			}
-			assertThat(body).containsEntry("instance", id.get())
-				.containsEntry("version", 0)
-				.containsEntry("type", "REGISTERED");
-		}).then(() -> {
-			assertInstances(id.get());
-			assertInstancesByName("test", id.get());
-			assertInstanceById(id.get());
-		})
+		StepVerifier.create(this.getEventStream().publishOn(Schedulers.boundedElastic()).log())
+			.expectSubscription()
+			.then(() -> {
+				id.set(register());
+				cdl.countDown();
+			})
+			.assertNext((body) -> {
+				try {
+					cdl.await();
+				}
+				catch (InterruptedException ex) {
+					Thread.interrupted();
+				}
+				assertThat(body).containsEntry("instance", id.get())
+					.containsEntry("version", 0)
+					.containsEntry("type", "REGISTERED");
+			})
+			.then(() -> {
+				assertInstances(id.get());
+				assertInstancesByName("test", id.get());
+				assertInstanceById(id.get());
+			})
 			.assertNext((body) -> assertThat(body).containsEntry("instance", id.get())
 				.containsEntry("version", 1)
 				.containsEntry("type", "STATUS_CHANGED"))
