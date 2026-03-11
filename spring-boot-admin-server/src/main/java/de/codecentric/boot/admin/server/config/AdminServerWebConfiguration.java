@@ -16,13 +16,16 @@
 
 package de.codecentric.boot.admin.server.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.http.codec.CodecCustomizer;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.codec.json.Jackson2JsonDecoder;
+import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.reactive.accept.RequestedContentTypeResolver;
 
@@ -72,6 +75,14 @@ public class AdminServerWebConfiguration {
 		}
 
 		@Bean
+		public CodecCustomizer adminJackson2CodecCustomizer(ObjectMapper objectMapper) {
+			return (configurer) -> {
+				configurer.defaultCodecs().jackson2JsonDecoder(new Jackson2JsonDecoder(objectMapper));
+				configurer.defaultCodecs().jackson2JsonEncoder(new Jackson2JsonEncoder(objectMapper));
+			};
+		}
+
+		@Bean
 		@ConditionalOnMissingBean
 		public de.codecentric.boot.admin.server.web.reactive.InstancesProxyController instancesProxyController(
 				InstanceRegistry instanceRegistry, InstanceWebClient.Builder instanceWebClientBuilder) {
@@ -95,7 +106,6 @@ public class AdminServerWebConfiguration {
 
 	@Configuration(proxyBeanMethods = false)
 	@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
-	@AutoConfigureAfter(name = "org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration")
 	public static class ServletRestApiConfiguration {
 
 		private final AdminServerProperties adminServerProperties;
