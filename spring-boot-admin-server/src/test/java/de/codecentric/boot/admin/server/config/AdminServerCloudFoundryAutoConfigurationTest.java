@@ -21,9 +21,9 @@ import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.hazelcast.autoconfigure.HazelcastAutoConfiguration;
 import org.springframework.boot.http.client.autoconfigure.reactive.ReactiveHttpClientAutoConfiguration;
 import org.springframework.boot.restclient.autoconfigure.RestTemplateAutoConfiguration;
+import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
 import org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration;
 import org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration;
-import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
 
 import de.codecentric.boot.admin.server.services.CloudFoundryInstanceIdGenerator;
 import de.codecentric.boot.admin.server.services.HashingInstanceUrlIdGenerator;

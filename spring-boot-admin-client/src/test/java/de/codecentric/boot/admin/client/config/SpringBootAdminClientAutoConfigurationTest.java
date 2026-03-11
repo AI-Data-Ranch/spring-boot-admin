@@ -22,18 +22,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
+import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
+import org.springframework.boot.context.annotation.UserConfigurations;
 import org.springframework.boot.http.client.autoconfigure.HttpClientAutoConfiguration;
 import org.springframework.boot.http.client.autoconfigure.imperative.ImperativeHttpClientAutoConfiguration;
-import org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener;
 import org.springframework.boot.restclient.autoconfigure.RestClientAutoConfiguration;
 import org.springframework.boot.restclient.autoconfigure.RestTemplateAutoConfiguration;
-import org.springframework.boot.webflux.autoconfigure.WebFluxProperties;
-import org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration;
-import org.springframework.boot.webmvc.autoconfigure.DispatcherServletAutoConfiguration;
-import org.springframework.boot.context.annotation.UserConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.boot.test.context.runner.ReactiveWebApplicationContextRunner;
 import org.springframework.boot.test.context.runner.WebApplicationContextRunner;
+import org.springframework.boot.webclient.autoconfigure.WebClientAutoConfiguration;
+import org.springframework.boot.webflux.autoconfigure.WebFluxProperties;
+import org.springframework.boot.webmvc.autoconfigure.DispatcherServletAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
@@ -120,11 +120,11 @@ class SpringBootAdminClientAutoConfigurationTest {
 
 	@Test
 	void restClientRegistrationClientInBlockingEnvironment() {
-		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner().withConfiguration(
-				AutoConfigurations.of(EndpointAutoConfiguration.class, WebEndpointAutoConfiguration.class,
-						DispatcherServletAutoConfiguration.class, HttpClientAutoConfiguration.class,
-						ImperativeHttpClientAutoConfiguration.class, RestClientAutoConfiguration.class,
-						SpringBootAdminClientAutoConfiguration.class));
+		WebApplicationContextRunner webApplicationContextRunner = new WebApplicationContextRunner()
+			.withConfiguration(AutoConfigurations.of(EndpointAutoConfiguration.class,
+					WebEndpointAutoConfiguration.class, DispatcherServletAutoConfiguration.class,
+					HttpClientAutoConfiguration.class, ImperativeHttpClientAutoConfiguration.class,
+					RestClientAutoConfiguration.class, SpringBootAdminClientAutoConfiguration.class));
 
 		webApplicationContextRunner
 			.withPropertyValues("spring.boot.admin.client.url:http://localhost:8081",

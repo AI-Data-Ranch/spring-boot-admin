@@ -16,13 +16,12 @@
 
 package de.codecentric.boot.admin.server.cloud.config;
 
+import java.util.function.Supplier;
+
 import com.netflix.discovery.EurekaClient;
 import io.kubernetes.client.openapi.apis.CoreV1Api;
 import org.junit.jupiter.api.Test;
-import java.util.function.Supplier;
-
 import org.springframework.beans.factory.support.RootBeanDefinition;
-import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.http.client.autoconfigure.reactive.ReactiveHttpClientAutoConfiguration;
@@ -33,6 +32,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration;
 import org.springframework.cloud.commons.util.UtilAutoConfiguration;
 import org.springframework.cloud.kubernetes.commons.discovery.KubernetesDiscoveryProperties;
+import org.springframework.context.support.GenericApplicationContext;
 
 import de.codecentric.boot.admin.server.cloud.discovery.DefaultServiceInstanceConverter;
 import de.codecentric.boot.admin.server.cloud.discovery.EurekaServiceInstanceConverter;
@@ -48,9 +48,9 @@ import static org.mockito.Mockito.mock;
 class AdminServerDiscoveryAutoConfigurationTest {
 
 	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
-		.withConfiguration(AutoConfigurations.of(UtilAutoConfiguration.class,
-				ReactiveHttpClientAutoConfiguration.class, WebClientAutoConfiguration.class,
-				AdminServerAutoConfiguration.class, AdminServerDiscoveryAutoConfiguration.class))
+		.withConfiguration(AutoConfigurations.of(UtilAutoConfiguration.class, ReactiveHttpClientAutoConfiguration.class,
+				WebClientAutoConfiguration.class, AdminServerAutoConfiguration.class,
+				AdminServerDiscoveryAutoConfiguration.class))
 		.withUserConfiguration(AdminServerMarkerConfiguration.class);
 
 	@Test
@@ -70,8 +70,8 @@ class AdminServerDiscoveryAutoConfigurationTest {
 
 	@Test
 	void officialKubernetesServiceInstanceConverter() throws Exception {
-		Class<?> k8sClientClass = Class.forName(
-				"org.springframework.cloud.kubernetes.client.discovery.KubernetesClientInformerDiscoveryClient");
+		Class<?> k8sClientClass = Class
+			.forName("org.springframework.cloud.kubernetes.client.discovery.KubernetesClientInformerDiscoveryClient");
 		this.contextRunner.withUserConfiguration(KubernetesDiscoveryPropertiesConfiguration.class)
 			.withBean(CoreV1Api.class, () -> mock(CoreV1Api.class))
 			.withInitializer((context) -> {
@@ -122,6 +122,5 @@ class AdminServerDiscoveryAutoConfigurationTest {
 	public static class KubernetesDiscoveryPropertiesConfiguration {
 
 	}
-
 
 }

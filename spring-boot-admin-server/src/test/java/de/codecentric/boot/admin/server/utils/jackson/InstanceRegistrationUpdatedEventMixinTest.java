@@ -26,7 +26,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
@@ -42,13 +41,11 @@ class InstanceRegistrationUpdatedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-
 	protected InstanceRegistrationUpdatedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
-
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -159,11 +156,16 @@ class InstanceRegistrationUpdatedEventMixinTest {
 		assertThat(new JSONObject(jsonContent).has("registration")).isTrue();
 
 		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("name")).isEqualTo("test");
-		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("managementUrl")).isEqualTo("http://localhost:9080/");
-		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("healthUrl")).isEqualTo("http://localhost:9080/heath");
-		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("serviceUrl")).isEqualTo("http://localhost:8080/");
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("managementUrl"))
+			.isEqualTo("http://localhost:9080/");
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("healthUrl"))
+			.isEqualTo("http://localhost:9080/heath");
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("serviceUrl"))
+			.isEqualTo("http://localhost:8080/");
 		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("source")).isEqualTo("http-api");
-		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("registration").getJSONObject("metadata").toString(), java.util.Map.class))
+		assertThat(objectMapper.readValue(
+				new JSONObject(jsonContent).getJSONObject("registration").getJSONObject("metadata").toString(),
+				java.util.Map.class))
 			.containsOnly(entry("PASSWORD", "******"), entry("user", "humptydumpty"));
 	}
 
@@ -184,10 +186,14 @@ class InstanceRegistrationUpdatedEventMixinTest {
 
 		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("name")).isEqualTo("test");
 		assertThat(new JSONObject(jsonContent).getJSONObject("registration").isNull("managementUrl")).isTrue();
-		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("healthUrl")).isEqualTo("http://localhost:9080/heath");
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("healthUrl"))
+			.isEqualTo("http://localhost:9080/heath");
 		assertThat(new JSONObject(jsonContent).getJSONObject("registration").isNull("serviceUrl")).isTrue();
 		assertThat(new JSONObject(jsonContent).getJSONObject("registration").isNull("source")).isTrue();
-		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("registration").getJSONObject("metadata").toString(), java.util.Map.class)).isEmpty();
+		assertThat(objectMapper.readValue(
+				new JSONObject(jsonContent).getJSONObject("registration").getJSONObject("metadata").toString(),
+				java.util.Map.class))
+			.isEmpty();
 	}
 
 	@Test

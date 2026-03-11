@@ -28,7 +28,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
@@ -43,13 +42,11 @@ class InstanceInfoChangedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-
 	protected InstanceInfoChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
-
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -121,9 +118,12 @@ class InstanceInfoChangedEventMixinTest {
 		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(12345678);
 		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
 		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("INFO_CHANGED");
-		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("info").toString(), java.util.Map.class)).containsOnlyKeys("build", "foo");
+		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("info").toString(),
+				java.util.Map.class))
+			.containsOnlyKeys("build", "foo");
 
-		assertThat(new JSONObject(jsonContent).getJSONObject("info").getJSONObject("build").getString("version")).isEqualTo("1.0.0");
+		assertThat(new JSONObject(jsonContent).getJSONObject("info").getJSONObject("build").getString("version"))
+			.isEqualTo("1.0.0");
 		assertThat(new JSONObject(jsonContent).getJSONObject("info").getString("foo")).isEqualTo("bar");
 	}
 
@@ -153,7 +153,9 @@ class InstanceInfoChangedEventMixinTest {
 		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(12345678);
 		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
 		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("INFO_CHANGED");
-		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("info").toString(), java.util.Map.class)).isEmpty();
+		assertThat(objectMapper.readValue(new JSONObject(jsonContent).getJSONObject("info").toString(),
+				java.util.Map.class))
+			.isEmpty();
 	}
 
 }

@@ -26,7 +26,6 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
@@ -41,13 +40,11 @@ class InstanceEndpointsDetectedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-
 	protected InstanceEndpointsDetectedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
 	}
-
 
 	@Test
 	void verifyDeserialize() throws JSONException, JsonProcessingException {
@@ -116,11 +113,15 @@ class InstanceEndpointsDetectedEventMixinTest {
 		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("ENDPOINTS_DETECTED");
 		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").length()).isEqualTo(2);
 
-		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(0).getString("id")).isIn("info", "health");
-		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(0).getString("url")).isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(0).getString("id")).isIn("info",
+				"health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(0).getString("url"))
+			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
 
-		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(1).getString("id")).isIn("info", "health");
-		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(1).getString("url")).isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(1).getString("id")).isIn("info",
+				"health");
+		assertThat(new JSONObject(jsonContent).getJSONArray("endpoints").getJSONObject(1).getString("url"))
+			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
 	}
 
 	@Test
