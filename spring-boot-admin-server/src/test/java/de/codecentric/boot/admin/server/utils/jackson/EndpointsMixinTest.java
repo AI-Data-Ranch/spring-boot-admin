@@ -21,13 +21,12 @@ import java.io.IOException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.Endpoint;
@@ -39,17 +38,10 @@ class EndpointsMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<Endpoints> jsonTester;
-
 	protected EndpointsMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -69,16 +61,17 @@ class EndpointsMixinTest {
 		Endpoints endpoints = Endpoints.single("info", "http://localhost:8080/info")
 			.withEndpoint("health", "http://localhost:8080/health");
 
-		JsonContent<Endpoints> jsonContent = jsonTester.write(endpoints);
-		assertThat(jsonContent).extractingJsonPathArrayValue("$").hasSize(2);
+		String json = objectMapper.writeValueAsString(endpoints);
+		DocumentContext jsonContent = JsonPath.parse(json);
+		assertThat(jsonContent.read("$", java.util.List.class)).hasSize(2);
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$[0].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$[0].url")
-			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat((String) jsonContent.read("$[0].id")).isIn("info", "health");
+		assertThat((String) jsonContent.read("$[0].url")).isIn("http://localhost:8080/info",
+				"http://localhost:8080/health");
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$[1].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$[1].url")
-			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
+		assertThat((String) jsonContent.read("$[1].id")).isIn("info", "health");
+		assertThat((String) jsonContent.read("$[1].url")).isIn("http://localhost:8080/info",
+				"http://localhost:8080/health");
 	}
 
 }

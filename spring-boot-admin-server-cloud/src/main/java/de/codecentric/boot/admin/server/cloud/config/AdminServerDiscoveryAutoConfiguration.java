@@ -17,7 +17,7 @@
 package de.codecentric.boot.admin.server.cloud.config;
 
 import com.netflix.discovery.EurekaClient;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -25,9 +25,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnSingleCandidate;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.kubernetes.client.discovery.KubernetesInformerDiscoveryClient;
 import org.springframework.cloud.kubernetes.commons.discovery.KubernetesDiscoveryProperties;
-import org.springframework.cloud.kubernetes.fabric8.discovery.KubernetesDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
@@ -37,18 +35,16 @@ import de.codecentric.boot.admin.server.cloud.discovery.EurekaServiceInstanceCon
 import de.codecentric.boot.admin.server.cloud.discovery.InstanceDiscoveryListener;
 import de.codecentric.boot.admin.server.cloud.discovery.KubernetesServiceInstanceConverter;
 import de.codecentric.boot.admin.server.cloud.discovery.ServiceInstanceConverter;
-import de.codecentric.boot.admin.server.config.AdminServerAutoConfiguration;
 import de.codecentric.boot.admin.server.config.AdminServerMarkerConfiguration;
 import de.codecentric.boot.admin.server.domain.entities.InstanceRepository;
 import de.codecentric.boot.admin.server.services.InstanceRegistry;
 
-@Configuration(proxyBeanMethods = false)
+@AutoConfiguration(afterName = { "de.codecentric.boot.admin.server.config.AdminServerAutoConfiguration",
+		"org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration",
+		"org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration" })
 @ConditionalOnSingleCandidate(DiscoveryClient.class)
 @ConditionalOnBean(AdminServerMarkerConfiguration.Marker.class)
 @ConditionalOnProperty(prefix = "spring.boot.admin.discovery", name = "enabled", matchIfMissing = true)
-@AutoConfigureAfter(value = AdminServerAutoConfiguration.class,
-		name = { "org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration",
-				"org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration" })
 public class AdminServerDiscoveryAutoConfiguration {
 
 	@Bean
@@ -101,12 +97,12 @@ public class AdminServerDiscoveryAutoConfiguration {
 			super(ConfigurationPhase.REGISTER_BEAN);
 		}
 
-		@ConditionalOnBean(KubernetesInformerDiscoveryClient.class)
+		@ConditionalOnBean(name = "kubernetesClientInformerDiscoveryClient")
 		static class OfficialKubernetesCondition {
 
 		}
 
-		@ConditionalOnBean(KubernetesDiscoveryClient.class)
+		@ConditionalOnBean(name = "fabric8DiscoveryClient")
 		static class Fabric8KubernetesCondition {
 
 		}

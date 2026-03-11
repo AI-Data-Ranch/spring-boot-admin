@@ -25,12 +25,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Option;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceStatusChangedEvent;
@@ -45,17 +46,10 @@ class InstanceStatusChangedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceStatusChangedEvent> jsonTester;
-
 	protected InstanceStatusChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -139,15 +133,18 @@ class InstanceStatusChangedEventMixinTest {
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 12345678L, timestamp, statusInfo);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNotNull();
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(12345678);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("STATUS_CHANGED");
+		assertThat((Object) jsonContent.read("$.statusInfo")).isNotNull();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.statusInfo.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.statusInfo.details").containsOnly(entry("foo", "bar"));
+		assertThat((String) jsonContent.read("$.statusInfo.status")).isEqualTo("OFFLINE");
+		assertThat(jsonContent.read("$.statusInfo.details", java.util.Map.class)).containsOnly(entry("foo", "bar"));
 	}
 
 	@Test
@@ -158,15 +155,18 @@ class InstanceStatusChangedEventMixinTest {
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 0L, timestamp, statusInfo);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNotNull();
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(0);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("STATUS_CHANGED");
+		assertThat((Object) jsonContent.read("$.statusInfo")).isNotNull();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.statusInfo.status").isEqualTo("OFFLINE");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.statusInfo.details").isEmpty();
+		assertThat((String) jsonContent.read("$.statusInfo.status")).isEqualTo("OFFLINE");
+		assertThat(jsonContent.read("$.statusInfo.details", java.util.Map.class)).isEmpty();
 	}
 
 	@Test
@@ -176,12 +176,15 @@ class InstanceStatusChangedEventMixinTest {
 
 		InstanceStatusChangedEvent event = new InstanceStatusChangedEvent(id, 12345678L, timestamp, null);
 
-		JsonContent<InstanceStatusChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("STATUS_CHANGED");
-		assertThat(jsonContent).extractingJsonPathValue("$.statusInfo").isNull();
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(12345678);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("STATUS_CHANGED");
+		assertThat((Object) jsonContent.read("$.statusInfo")).isNull();
 	}
 
 }

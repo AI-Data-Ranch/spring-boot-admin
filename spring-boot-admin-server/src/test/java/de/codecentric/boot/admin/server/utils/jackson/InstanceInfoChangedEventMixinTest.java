@@ -26,12 +26,13 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.Option;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceInfoChangedEvent;
@@ -45,17 +46,10 @@ class InstanceInfoChangedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceInfoChangedEvent> jsonTester;
-
 	protected InstanceInfoChangedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -123,15 +117,18 @@ class InstanceInfoChangedEventMixinTest {
 		data.put("foo", "bar");
 		InstanceInfoChangedEvent event = new InstanceInfoChangedEvent(id, 12345678L, timestamp, Info.from(data));
 
-		JsonContent<InstanceInfoChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("INFO_CHANGED");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.info").containsOnlyKeys("build", "foo");
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(12345678);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("INFO_CHANGED");
+		assertThat(jsonContent.read("$.info", java.util.Map.class)).containsOnlyKeys("build", "foo");
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.info['build'].['version']").isEqualTo("1.0.0");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.info['foo']").isEqualTo("bar");
+		assertThat((String) jsonContent.read("$.info['build'].['version']")).isEqualTo("1.0.0");
+		assertThat((String) jsonContent.read("$.info['foo']")).isEqualTo("bar");
 	}
 
 	@Test
@@ -140,12 +137,15 @@ class InstanceInfoChangedEventMixinTest {
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceInfoChangedEvent event = new InstanceInfoChangedEvent(id, 0L, timestamp, null);
 
-		JsonContent<InstanceInfoChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("INFO_CHANGED");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.info").isNull();
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(0);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("INFO_CHANGED");
+		assertThat((Object) jsonContent.read("$.info")).isNull();
 	}
 
 	@Test
@@ -155,12 +155,15 @@ class InstanceInfoChangedEventMixinTest {
 		InstanceInfoChangedEvent event = new InstanceInfoChangedEvent(id, 12345678L, timestamp,
 				Info.from(Collections.emptyMap()));
 
-		JsonContent<InstanceInfoChangedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("INFO_CHANGED");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.info").isEmpty();
+		String json = objectMapper.writeValueAsString(event);
+		DocumentContext jsonContent = JsonPath
+			.using(Configuration.defaultConfiguration().addOptions(Option.SUPPRESS_EXCEPTIONS))
+			.parse(json);
+		assertThat((String) jsonContent.read("$.instance")).isEqualTo("test123");
+		assertThat(jsonContent.read("$.version", Integer.class)).isEqualTo(12345678);
+		assertThat(jsonContent.read("$.timestamp", Double.class)).isEqualTo(1587751031.0);
+		assertThat((String) jsonContent.read("$.type")).isEqualTo("INFO_CHANGED");
+		assertThat(jsonContent.read("$.info", java.util.Map.class)).isEmpty();
 	}
 
 }

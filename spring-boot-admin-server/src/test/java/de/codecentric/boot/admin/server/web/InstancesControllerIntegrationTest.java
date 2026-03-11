@@ -62,11 +62,16 @@ class InstancesControllerIntegrationTest {
 	void setUp() {
 		instance = new SpringApplicationBuilder().sources(AdminReactiveApplicationTest.TestAdminApplication.class)
 			.web(WebApplicationType.REACTIVE)
-			.run("--server.port=0", "--eureka.client.enabled=false");
+			.run("--server.port=0", "--eureka.client.enabled=false",
+					"--spring.http.codecs.preferred-json-mapper=jackson2",
+					"--spring.http.converters.preferred-json-mapper=jackson2");
 
 		localPort = instance.getEnvironment().getProperty("local.server.port", Integer.class, 0);
 
-		this.client = WebTestClient.bindToServer().baseUrl("http://localhost:" + localPort).build();
+		this.client = WebTestClient.bindToServer()
+			.baseUrl("http://localhost:" + localPort)
+			.responseTimeout(Duration.ofSeconds(30))
+			.build();
 		this.registerAsTest = "{ \"name\": \"test\", \"healthUrl\": \"http://localhost:" + localPort
 				+ "/application/health\" }";
 		this.registerAsTwice = "{ \"name\": \"twice\", \"healthUrl\": \"http://localhost:" + localPort

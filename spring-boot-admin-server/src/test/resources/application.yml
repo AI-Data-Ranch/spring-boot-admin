@@ -9,6 +9,11 @@ spring:
     mvc:
       pathmatch:
         matching-strategy: ant_path_matcher
+    http:
+      converters:
+        preferred-json-mapper: jackson2
+      codecs:
+        preferred-json-mapper: jackson2
 management:
   info:
     env:
