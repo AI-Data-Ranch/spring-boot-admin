@@ -26,10 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.events.InstanceRegistrationUpdatedEvent;
@@ -44,17 +41,10 @@ class InstanceRegistrationUpdatedEventMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<InstanceRegistrationUpdatedEvent> jsonTester;
-
 	protected InstanceRegistrationUpdatedEventMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -144,7 +134,7 @@ class InstanceRegistrationUpdatedEventMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		Registration registration = Registration.create("test", "http://localhost:9080/heath")
@@ -158,61 +148,66 @@ class InstanceRegistrationUpdatedEventMixinTest {
 		InstanceRegistrationUpdatedEvent event = new InstanceRegistrationUpdatedEvent(id, 12345678L, timestamp,
 				registration);
 
-		JsonContent<InstanceRegistrationUpdatedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("REGISTRATION_UPDATED");
-		assertThat(jsonContent).extractingJsonPathValue("$.registration").isNotNull();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(12345678);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("REGISTRATION_UPDATED");
+		assertThat(new JSONObject(jsonContent).has("registration")).isTrue();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.name").isEqualTo("test");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.managementUrl")
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("name")).isEqualTo("test");
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("managementUrl"))
 			.isEqualTo("http://localhost:9080/");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.healthUrl")
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("healthUrl"))
 			.isEqualTo("http://localhost:9080/heath");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.serviceUrl")
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("serviceUrl"))
 			.isEqualTo("http://localhost:8080/");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.source").isEqualTo("http-api");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.registration.metadata")
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("source")).isEqualTo("http-api");
+		assertThat(objectMapper.readValue(
+				new JSONObject(jsonContent).getJSONObject("registration").getJSONObject("metadata").toString(),
+				java.util.Map.class))
 			.containsOnly(entry("PASSWORD", "******"), entry("user", "humptydumpty"));
 	}
 
 	@Test
-	void verifySerializeWithOnlyRequiredProperties() throws IOException {
+	void verifySerializeWithOnlyRequiredProperties() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		Registration registration = Registration.create("test", "http://localhost:9080/heath").build();
 
 		InstanceRegistrationUpdatedEvent event = new InstanceRegistrationUpdatedEvent(id, 0L, timestamp, registration);
 
-		JsonContent<InstanceRegistrationUpdatedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(0);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("REGISTRATION_UPDATED");
-		assertThat(jsonContent).extractingJsonPathValue("$.registration").isNotNull();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(0);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("REGISTRATION_UPDATED");
+		assertThat(new JSONObject(jsonContent).has("registration")).isTrue();
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.name").isEqualTo("test");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.managementUrl").isNull();
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.healthUrl")
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("name")).isEqualTo("test");
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").isNull("managementUrl")).isTrue();
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").getString("healthUrl"))
 			.isEqualTo("http://localhost:9080/heath");
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.serviceUrl").isNull();
-		assertThat(jsonContent).extractingJsonPathStringValue("$.registration.source").isNull();
-		assertThat(jsonContent).extractingJsonPathMapValue("$.registration.metadata").isEmpty();
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").isNull("serviceUrl")).isTrue();
+		assertThat(new JSONObject(jsonContent).getJSONObject("registration").isNull("source")).isTrue();
+		assertThat(objectMapper.readValue(
+				new JSONObject(jsonContent).getJSONObject("registration").getJSONObject("metadata").toString(),
+				java.util.Map.class))
+			.isEmpty();
 	}
 
 	@Test
-	void verifySerializeWithoutRegistration() throws IOException {
+	void verifySerializeWithoutRegistration() throws IOException, JSONException {
 		InstanceId id = InstanceId.of("test123");
 		Instant timestamp = Instant.ofEpochSecond(1587751031).truncatedTo(ChronoUnit.SECONDS);
 		InstanceRegistrationUpdatedEvent event = new InstanceRegistrationUpdatedEvent(id, 12345678L, timestamp, null);
 
-		JsonContent<InstanceRegistrationUpdatedEvent> jsonContent = jsonTester.write(event);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.instance").isEqualTo("test123");
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.version").isEqualTo(12345678);
-		assertThat(jsonContent).extractingJsonPathNumberValue("$.timestamp").isEqualTo(1587751031.000000000);
-		assertThat(jsonContent).extractingJsonPathStringValue("$.type").isEqualTo("REGISTRATION_UPDATED");
-		assertThat(jsonContent).extractingJsonPathMapValue("$.registration").isNull();
+		String jsonContent = objectMapper.writeValueAsString(event);
+		assertThat(new JSONObject(jsonContent).getString("instance")).isEqualTo("test123");
+		assertThat(new JSONObject(jsonContent).getLong("version")).isEqualTo(12345678);
+		assertThat(new JSONObject(jsonContent).getDouble("timestamp")).isEqualTo(1587751031.0);
+		assertThat(new JSONObject(jsonContent).getString("type")).isEqualTo("REGISTRATION_UPDATED");
+		assertThat(new JSONObject(jsonContent).isNull("registration")).isTrue();
 	}
 
 }

@@ -20,6 +20,8 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.Scanner;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import org.springframework.lang.Nullable;
 import org.springframework.util.StringUtils;
 
@@ -39,8 +41,14 @@ public final class BuildVersion implements Serializable, Comparable<BuildVersion
 		}
 	}
 
+	@JsonCreator
 	public static BuildVersion valueOf(String s) {
 		return new BuildVersion(s);
+	}
+
+	@JsonValue
+	public String getValue() {
+		return this.value;
 	}
 
 	@Nullable

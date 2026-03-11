@@ -18,6 +18,8 @@ package de.codecentric.boot.admin.server.domain.values;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import org.springframework.util.Assert;
 
 /**
@@ -33,8 +35,14 @@ public final class InstanceId implements Serializable, Comparable<InstanceId> {
 		this.value = value;
 	}
 
+	@JsonCreator
 	public static InstanceId of(String value) {
 		return new InstanceId(value);
+	}
+
+	@JsonValue
+	public String getValue() {
+		return this.value;
 	}
 
 	@Override

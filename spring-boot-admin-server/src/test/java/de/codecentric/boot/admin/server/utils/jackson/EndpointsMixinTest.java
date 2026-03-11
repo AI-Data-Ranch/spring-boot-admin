@@ -24,10 +24,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.json.JsonContent;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 import de.codecentric.boot.admin.server.domain.values.Endpoint;
@@ -39,17 +36,10 @@ class EndpointsMixinTest {
 
 	private final ObjectMapper objectMapper;
 
-	private JacksonTester<Endpoints> jsonTester;
-
 	protected EndpointsMixinTest() {
 		AdminServerModule adminServerModule = new AdminServerModule(new String[] { ".*password$" });
 		JavaTimeModule javaTimeModule = new JavaTimeModule();
 		objectMapper = Jackson2ObjectMapperBuilder.json().modules(adminServerModule, javaTimeModule).build();
-	}
-
-	@BeforeEach
-	void setup() {
-		JacksonTester.initFields(this, objectMapper);
 	}
 
 	@Test
@@ -65,19 +55,19 @@ class EndpointsMixinTest {
 	}
 
 	@Test
-	void verifySerialize() throws IOException {
+	void verifySerialize() throws IOException, JSONException {
 		Endpoints endpoints = Endpoints.single("info", "http://localhost:8080/info")
 			.withEndpoint("health", "http://localhost:8080/health");
 
-		JsonContent<Endpoints> jsonContent = jsonTester.write(endpoints);
-		assertThat(jsonContent).extractingJsonPathArrayValue("$").hasSize(2);
+		String jsonContent = objectMapper.writeValueAsString(endpoints);
+		assertThat(new org.json.JSONArray(jsonContent).length()).isEqualTo(2);
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$[0].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$[0].url")
+		assertThat(new org.json.JSONArray(jsonContent).getJSONObject(0).getString("id")).isIn("info", "health");
+		assertThat(new org.json.JSONArray(jsonContent).getJSONObject(0).getString("url"))
 			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
 
-		assertThat(jsonContent).extractingJsonPathStringValue("$[1].id").isIn("info", "health");
-		assertThat(jsonContent).extractingJsonPathStringValue("$[1].url")
+		assertThat(new org.json.JSONArray(jsonContent).getJSONObject(1).getString("id")).isIn("info", "health");
+		assertThat(new org.json.JSONArray(jsonContent).getJSONObject(1).getString("url"))
 			.isIn("http://localhost:8080/info", "http://localhost:8080/health");
 	}
 
